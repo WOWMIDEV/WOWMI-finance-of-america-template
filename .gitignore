@@ -15,5 +15,6 @@ package-lock.json
 # generated files
 /build/
 /server/
+/.cache/
 
 Makefile
