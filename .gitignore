@@ -1,0 +1,19 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# IDE
+/.idea/
+/.vscode/
+
+# npm
+package-lock.json
+/node_modules/
+
+# generated files
+/build/
+/server/
+
+Makefile

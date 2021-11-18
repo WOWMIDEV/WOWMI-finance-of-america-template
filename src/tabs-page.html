@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About</title>
+  <script defer src="./pages/tabs-page/tabs-page.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Tabs component usage example</h1>
+
+    <div class="tabs">
+      <div class="tabs__nav">
+        <button class="tabs__nav-btn">Tab 1</button>
+        <button class="tabs__nav-btn">Tab 2</button>
+        <button class="tabs__nav-btn">Tab 3</button>
+      </div>
+      <div class="tabs-inner">
+        <div class="tab">
+          <picture>
+            <source srcset="./assets/images/test-1.jpg?width=800" type="image/jpeg" />
+            <source srcset="./assets/images/test-1.jpg?as=webp&width=800" type="image/webp" />
+            <img src="./assets/images/test-1.jpg?width=200" alt="Tab 1">
+          </picture>
+        </div>
+        <div class="tab">
+          <picture>
+            <source srcset="./assets/images/test-2.jpg?width=800" type="image/jpeg" />
+            <source srcset="./assets/images/test-2.jpg?as=webp&width=800" type="image/webp" />
+            <img src="./assets/images/test-2.jpg?width=200" alt="Tab 1">
+          </picture>
+        </div>
+        <div class="tab">
+          <picture>
+            <source srcset="./assets/images/test-3.jpg?width=800" type="image/jpeg" />
+            <source srcset="./assets/images/test-3.jpg?as=webp&width=800" type="image/webp" />
+            <img src="./assets/images/test-3.jpg?width=200" alt="Tab 1"/>
+          </picture>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
