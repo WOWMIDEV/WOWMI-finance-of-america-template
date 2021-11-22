@@ -1,0 +1,45 @@
+body {
+	font-family: "Proxima Nova", "Arial", sans-serif;
+}
+
+html {
+	font-size: 16px;
+}
+
+.container {
+	max-width: $container-width;
+	padding: 0rem 0.9375rem;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.section {
+	padding: 0rem 7.5rem;
+}
+
+.blue-text {
+	color: $blue;
+}
+
+.bg-gradient {
+	background-image: url(../images/noise.png), linear-gradient(98.74deg, #1C3155 0%, #2459B5 94.47%)
+}
+
+.btn {
+	padding: 1.25rem 2.875rem 1.25rem 2rem;
+	background: $blue;
+	font-weight: bold;
+	font-size: 0.875rem;
+	line-height: 140%;
+	color: #FFFFFF;
+	text-transform: capitalize;
+	background-image: url(../images/arrow-right.svg);
+	background-repeat: no-repeat;
+	background-position: center right 1.5rem;
+	display: inline-block;
+
+	&:hover {
+		background: linear-gradient(98.74deg, #1C3155 0%, #2459B5 94.47%);
+		box-shadow: 0px 14px 64px rgba(36, 89, 181, 0.42);
+	}
+}

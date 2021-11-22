@@ -1,5 +1,5 @@
 {
-	"name": "Finance of America Mortgage",
+	"name": "Finance-of-America-Mortgage",
 	"version": "1.0.0",
 	"main": "index.html",
 	"description": "Finance of America Mortgage",
@@ -112,6 +112,7 @@
 	"dependencies": {
 		"assemble": "^0.3.83",
 		"grunt": "^0.4.5",
-		"styles": "^0.2.1"
+		"styles": "^0.2.1",
+		"swiper": "^6.8.4"
 	}
 }
