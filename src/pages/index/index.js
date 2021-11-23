@@ -21,7 +21,7 @@ Swiper.use([Navigation, Pagination]);
 // eslint-disable-next-line no-unused-vars
 const swiper = new Swiper('.swiper', {
   slidesPerView: 'auto',
-  spaceBetween: 30,
+  spaceBetween: 20,
 
   navigation: {
     nextEl: '.swiper-button-next',
