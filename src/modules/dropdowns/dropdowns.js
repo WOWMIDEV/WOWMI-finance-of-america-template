@@ -16,7 +16,7 @@ function initDD({
   const contentHeights = [];
   let openedDdIndex;
 
-  for (let i = 0; i < ddList.length; i++) {
+  for (let i = 0; i < ddList.length; i += 1) {
     const dd = ddList[i];
     const toggle = !!toggleSelector.length
       ? dd.querySelector(toggleSelector)
@@ -54,3 +54,5 @@ function initDD({
     content.style.height = `${contentHeights[i]}px`;
   }
 }
+
+export default initDD;

@@ -27,7 +27,7 @@ html {
 
 .btn {
 	padding: 1.25rem 2.875rem 1.25rem 2rem;
-	background: $blue;
+	background-color: $blue;
 	font-weight: bold;
 	font-size: 0.875rem;
 	line-height: 140%;
@@ -58,6 +58,15 @@ html {
 	&:hover {
 		&::before {
 			opacity: 1;
+		}
+	}
+
+	&.btn-min {
+		padding: 0.75rem 2.125rem 0.75rem 1.25rem;
+		background-position: center right 1.0625rem;
+
+		&::before {
+			background-position: center right 17px, auto;
 		}
 	}
 
