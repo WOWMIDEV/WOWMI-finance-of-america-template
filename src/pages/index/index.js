@@ -51,40 +51,40 @@ window.addEventListener('resize', () => {
   });
 });
 
-// const $bl = document.querySelector('.blog-posts__category'),
-//   $th = document.querySelector('.category--blog'),
-//   blW = $bl.offsetWidth(),
-//   blSW = $bl[0].scrollWidth,
-//   wDiff = blSW / blW - 1, // widths difference ratio
-//   mPadd = 60, // Mousemove Padding
-//   damp = 20, // Mousemove response softness
-//   mX = 0, // Real mouse position
-//   mX2 = 0, // Modified mouse position
-//   posX = 0,
-//   mmAA = blW - mPadd * 2, // The mousemove available area
-//   mmAAr = blW / mmAA;
+// const $bl = document.querySelector('.quiz');
+// const $th = document.querySelector('.quiz__wrap');
+// const blW = $bl.offsetWidth;
+// const blSW = $bl.scrollWidth;
+// const wDiff = blSW / blW - 1; // widths difference ratio
+// const mPadd = 60; // Mousemove Padding
+// const damp = 20; // Mousemove response softness
+// let mX = 0; // Real mouse position
+// let mX2 = 0; // Modified mouse position
+// let posX = 0;
+// const mmAA = blW - mPadd * 2; // The mousemove available area
+// const mmAAr = blW / mmAA;
 
-// var $bl = $('.blog-posts__category'),
-//   $th = $('.category--blog'),
-//   blW = $bl.outerWidth(),
-//   blSW = $bl[0].scrollWidth,
-//   wDiff = blSW / blW - 1, // widths difference ratio
-//   mPadd = 60, // Mousemove Padding
-//   damp = 20, // Mousemove response softness
-//   mX = 0, // Real mouse position
-//   mX2 = 0, // Modified mouse position
-//   posX = 0,
-//   mmAA = blW - mPadd * 2, // The mousemove available area
-//   mmAAr = blW / mmAA; // get available mousemove fidderence ratio
-
-// $bl.mousemove(function (e) {
-//   mX = e.pageX - this.offsetLeft;
+// $bl.addEventListener('mousemove', (e) => {
+//   mX = e.pageX - $bl.offsetLeft;
 //   mX2 = Math.min(Math.max(0, mX - mPadd), mmAA) * mmAAr;
 // });
 
-// setInterval(function () {
-//   posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"
-//   $th.css({
-//     marginLeft: -posX * wDiff,
-//   });
-// }, 10);
+// (function delay() {
+//   posX += (mX2 - posX) / damp;
+//   const marginLeft = `${-posX * wDiff} + "px"`;
+//   $th.style.marginLeft = marginLeft;
+// })();
+// delay();
+
+const quizCards = document.querySelectorAll('.quiz__card');
+const quizWrap = document.querySelector('.quiz__wrap');
+const quizWrapStep2 = document.querySelector('.quiz-step-2');
+const stepNumber = document.querySelector('.quiz__step span');
+
+quizCards.forEach((card) => {
+  card.addEventListener('click', () => {
+    quizWrap.classList.add('js-hide');
+    quizWrapStep2.classList.add('js-visible');
+    stepNumber.textContent = 2;
+  });
+});

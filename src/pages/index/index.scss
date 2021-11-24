@@ -12,9 +12,11 @@
 	box-shadow: 0px 24px 74px rgba(29, 50, 86, 0.11);
 	padding: 0.625rem 0rem;
 	color: $dark-blue;
+	transition: all 0.3s ease 0s;
 
 	&.js-open {
 		color: $white;
+		background-color: $dark-blue;
 	}
 
 	&-wrp {
@@ -39,8 +41,8 @@
 	}
 
 	&__burger {
-		width: 18px;
-		height: 12px;
+		width: 1.25rem;
+		height: 1.0625rem;
 		cursor: pointer;
 		position: relative;
 		display: flex;
@@ -49,29 +51,46 @@
 		overflow: hidden;
 
 		&.js-open {
+			height: 1.25rem;
+
+			& span {
+				background-color: $white;
+			}
+
+			& span:nth-of-type(1) {
+				transform: translateY(0px) rotate(-45deg);
+				transition-delay: 0.225s;
+			}
+
+			& span:nth-of-type(2) {
+				width: 18px;
+				transform: translateY(0) rotate(45deg);
+				transition-delay: 0.125s;
+			}
+
 			& span:nth-of-type(3) {
-				transform: translateX(60px);
+				transform: translateX(3.75rem);
 			}
 		}
 
 		span {
-			height: 2px;
+			height: 0.0938rem;
 			background-color: $dark-blue;
 			position: absolute;
-			border-radius: 4px;
+			border-radius: 0.25rem;
 			transition: 0.5s;
-			width: 14px;
+			width: 0.875rem;
 			left: 0;
 		}
 
 		span:nth-of-type(1) {
-			width: 18px;
-			transform: translateY(-6px);
+			width: 1.125rem;
+			transform: translateY(-0.375rem);
 		}
 
 		span:nth-of-type(2) {
-			width: 10px;
-			transform: translateY(6px);
+			width: 0.625rem;
+			transform: translateY(0.375rem);
 		}
 
 	}
@@ -122,11 +141,11 @@
 	&__btn {
 		&.btn {
 			padding: 0.75rem 2.125rem 0.75rem 1.25rem;
-			background: url(../../assets/images/arrow-right.svg) no-repeat;
+			background-image: url(../../assets/images/arrow-right.svg) no-repeat;
 			background-position: center right 1.0625rem;
 
 			&::before {
-				background-position: center right 17px, auto;
+				background-position: center right 1.0625rem, center;
 			}
 		}
 
@@ -535,11 +554,38 @@
 }
 
 .reviews {
-	overflow: hidden;
+
+
+	&-wrp {
+		display: flex;
+		align-items: flex-start;
+	}
 
 	&__swiper {
-		overflow: visible;
+		overflow: hidden;
 		position: relative;
+
+		& .swiper-button-prev,
+		.swiper-button-next {
+			width: 3.625rem;
+			height: 3.625rem;
+			border-radius: 50%;
+			background-color: $white;
+			background-position: center center;
+			background-repeat: no-repeat;
+			left: auto;
+			top: 1.4375rem;
+		}
+
+		& .swiper-button-prev {
+			background-image: url(../../assets/images/slider-left.svg);
+			right: 7.5rem;
+		}
+
+		& .swiper-button-next {
+			background-image: url(../../assets/images/slider-right.svg);
+			right: 17.5rem;
+		}
 
 		& .swiper-wrapper {
 			align-items: flex-end;
@@ -554,11 +600,24 @@
 		width: 100%;
 		max-height: 23.375rem;
 		transition: all 0.6s ease 0s;
+		transition: max-height 1s ease-in-out;
 
 		&.swiper-slide-active {
 			max-width: 30.5rem;
 			width: 100%;
 			max-height: 30.875rem;
+			transition: max-height 1s ease-in-out;
+
+			& .reviews__info {
+				max-height: 500px;
+				transition: max-height 1s ease-in-out;
+			}
+
+			& .reviews__img img {
+				width: 10rem;
+				height: 10rem;
+				border: 0.5625rem solid $white;
+			}
 		}
 	}
 
@@ -570,7 +629,16 @@
 		top: 2.5rem;
 	}
 
-	&__img {}
+	&__img {
+		margin-bottom: 1.5rem;
+
+		img {
+			width: 6rem;
+			height: 6rem;
+			border-radius: 50%;
+			transition: all 0.5s ease 0s;
+		}
+	}
 
 	&__name {
 		font-size: 1.5rem;
@@ -601,6 +669,9 @@
 		grid-template-rows: 1fr 1fr;
 		grid-row-gap: 0.25rem;
 		grid-column-gap: 3.625rem;
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height 1s cubic-bezier(0, 1, 0, 1);
 	}
 
 	&__info-type {
@@ -624,11 +695,70 @@
 		letter-spacing: -0.01em;
 		color: $white;
 	}
+
+	&__logos {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 8rem;
+		margin-right: 10.9375rem;
+		margin-top: -10.375rem;
+	}
+
+	&__logos-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 3.75rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__logo-img {
+		width: 6.5rem;
+		height: 6.5rem;
+		object-fit: cover;
+		margin-bottom: 1.25rem;
+	}
+
+	&__grade {
+		font-size: 2rem;
+		line-height: 2.5rem;
+		color: $white;
+		font-weight: 700;
+		margin-bottom: 0.25rem;
+	}
+
+	&__stars {
+		background-image: url(../../assets/images/stars-sprite.svg);
+		width: 7.75rem;
+		height: 1.5rem;
+	}
+
+	&__stars--5 {
+		background-position: top left;
+	}
+
+	&__stars--4 {
+		background-position: top 6.0625rem left;
+	}
+
+	&__stars--3 {
+		background-position: top 3.9375rem left;
+	}
+
+	&__logo-numbers {
+		font-size: 0.875rem;
+		line-height: 1.0625rem;
+		text-align: center;
+		color: rgba(255, 255, 255, 0.7);
+		margin-top: 0.625rem;
+	}
 }
 
-.swiper-button-prev {}
-
-.swiper-button-next {}
 
 .faq {
 
