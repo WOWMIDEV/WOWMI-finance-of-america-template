@@ -29,14 +29,6 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-const menuBtn = document.querySelector('.header__burger');
-const header = document.querySelector('.header');
-
-menuBtn.addEventListener('click', () => {
-  menuBtn.classList.toggle('js-open');
-  header.classList.toggle('js-open');
-});
-
 window.addEventListener('load', () => {
   initDD({
     ddSelector: '.faq__item',
@@ -80,6 +72,7 @@ const quizCards = document.querySelectorAll('.quiz__card');
 const quizWrap = document.querySelector('.quiz__wrap');
 const quizWrapStep2 = document.querySelector('.quiz-step-2');
 const stepNumber = document.querySelector('.quiz__step span');
+const btnBack = document.querySelector('.btn-back');
 
 quizCards.forEach((card) => {
   card.addEventListener('click', () => {
@@ -87,4 +80,9 @@ quizCards.forEach((card) => {
     quizWrapStep2.classList.add('js-visible');
     stepNumber.textContent = 2;
   });
+});
+
+btnBack.addEventListener('click', () => {
+  quizWrapStep2.classList.remove('js-visible');
+  quizWrap.classList.remove('js-hide');
 });

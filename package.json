@@ -82,7 +82,14 @@
 			".css.map": "styles",
 			".js": "scripts",
 			".js.map": "scripts",
-			".ttf": "fonts",
+			"fonts": [
+				".ttf",
+				".otf",
+				".woff",
+				".woff2",
+				".svg",
+				".eot"
+			],
 			"images": [
 				".jpg",
 				".png",
