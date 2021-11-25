@@ -561,6 +561,12 @@
 		align-items: flex-start;
 	}
 
+    &__slider-wrp {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 	&__swiper {
 		overflow: hidden;
 		position: relative;
