@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Module 1/4 Video</title>
+  <title>Module 1/4 Carousel</title>
 
 </head>
 
@@ -67,13 +67,33 @@
           Unparalleled support and operations to help your mortgage business
           not only grow, but flourish.
         </p>
-        <div class="video">
-          <img class="video__preview" src="./assets/images/video-preview.jpg" alt="Video preview" />
-          <div class="video__info">
-            <div class="video__play play-icon"></div>
-            <p class="video__time">1:17</p>
+        <div class="swiper carousel">
+
+          <div class="swiper-wrapper carousel__wrapper">
+            <div class="swiper-slide carousel__slide"><img src="./assets/images/slider-1.jpg" alt="Slide 1" /></div>
+            <div class="swiper-slide carousel__slide"><img src="./assets/images/slider-2.jpg" alt="Slide 2" /></div>
+            <div class="swiper-slide carousel__slide"><img src="./assets/images/slider-3.jpg" alt="Slide 3" /></div>
+            <div class="swiper-slide carousel__slide"><img src="./assets/images/slider-1.jpg" alt="Slide 1" /></div>
+            <div class="swiper-slide carousel__slide"><img src="./assets/images/slider-2.jpg" alt="Slide 2" /></div>
+          </div>
+          <div class="swiper-pagination"></div>
+
+          <div class="swiper-button-prev">
+            <svg class="slider-arrow" width="6" height="10" viewBox="0 0 6 10" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 1L1 5L5 9" stroke="#163B7D" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="swiper-button-next">
+            <svg class="slider-arrow" width="6" height="10" viewBox="0 0 6 10" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.999999 1L5 5L1 9" stroke="#163B7D" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
         </div>
+
         <h2 class="inner-page__h2">
           More content in this module
         </h2>
@@ -264,7 +284,7 @@
     </div>
   </footer>
 
-  <script defer src="./pages/video/video.js"></script>
+  <script defer src="./pages/module-carousel/module-carousel.js"></script>
 </body>
 
 </html>

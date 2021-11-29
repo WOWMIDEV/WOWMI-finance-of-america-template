@@ -1,0 +1,214 @@
+@import '../../assets/styles/variables.scss';
+
+
+
+.bg-hero {
+  position: relative;
+  color: $white;
+  background-image: $bg-gradient;
+  padding: 5rem 0;
+
+  &__img-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: -1;
+  }
+
+  &__info {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+    color: inherit;
+    color: $white;
+    margin-bottom: 0.9375rem;
+  }
+
+  &__text {
+    color: $white;
+    max-width: 26.375rem;
+    width: 100%;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+  }
+
+  &__btn {}
+}
+
+.breadcrumbs.breadcrumbs--white {
+
+  .breadcrumbs__link {
+    color: rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      color: $white;
+    }
+
+    &:last-child {
+      color: $white;
+    }
+  }
+
+  .breadcrumbs__divider {
+    background-color: rgba(255, 255, 255, 0.5);
+
+    &:last-child {
+      background-color: $white;
+    }
+  }
+
+  &__link--module {}
+}
+
+
+.learn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1.25rem;
+  grid-template-rows: 1fr auto;
+  grid-row-gap: 3.75rem;
+
+  .play-icon {
+    margin-bottom: 5.625rem;
+  }
+
+  &__info {}
+
+  &__title {
+    font-weight: 800;
+    font-size: 3.375rem;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+    color: $dark-blue;
+    margin-bottom: 1.5625rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+    line-height: 180%;
+    color: $dark-blue;
+    max-width: 28.75rem;
+  }
+
+  &__card {
+    background: $white;
+    box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    background-image: url(../../assets/images/card-white-logo.svg);
+    background-repeat: no-repeat;
+    background-size: 9.875rem;
+    background-position: bottom right 2.4rem;
+  }
+
+  &__card-img {
+    width: 4.1875rem;
+    height: 4.1875rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(22, 59, 125, 0.08);
+    box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
+  }
+
+  &__card-name {
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 120%;
+    color: $dark-blue;
+    margin-right: 2.5rem;
+    margin-left: 0.625rem;
+  }
+
+  &__card-text {
+    font-size: 0.875rem;
+    line-height: 180%;
+    color: rgba(28, 49, 84, 0.8);
+    max-width: 15.625rem;
+  }
+}
+
+.news {
+
+  &__text {
+    margin-bottom: 3.75rem;
+    max-width: 26.8125rem;
+    margin: 0 auto 3.75rem auto;
+  }
+}
+
+.more {
+
+  &__title {
+    margin-bottom: 1.5625rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+    line-height: 180%;
+    text-align: center;
+    color: rgba(28, 49, 85, 0.8);
+    margin-bottom: 3.75rem;
+    max-width: 26.8125rem;
+    margin: 0 auto 3.75rem auto;
+  }
+
+  .news {
+    grid-template-columns: 30.5rem 1fr;
+  }
+
+  .news__card:first-child {
+    grid-row-start: auto;
+    grid-row-end: auto;
+  }
+
+  .news__card:last-child {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+  }
+}
+
+.types {
+
+  &__cards {}
+}
+
+.look {
+
+  &-wrp {}
+
+  &__info {}
+
+  &__title {}
+
+  &__text {}
+
+  &__person {}
+
+  &__img {}
+
+  &__person-info {}
+}
+
+
+.h2 {
+  font-weight: 800;
+  font-size: 3.375rem;
+  line-height: 110%;
+  text-align: center;
+  color: $dark-blue;
+}

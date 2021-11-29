@@ -18,8 +18,8 @@
     background-color: $dark-blue;
 
     & .header__phone-icon path {
-      fill: #FFFFFF;
-      stroke: #ffffff;
+      fill: $white;
+      stroke: $white;
     }
   }
 
@@ -112,6 +112,10 @@
     margin-left: 1.5625rem;
     transition: all 0.3s ease 0s;
 
+    @media screen and(max-width: $breakpointIpadPro) {
+      margin-left: 1rem;
+    }
+
     &:hover {
       color: $blue;
     }
@@ -164,6 +168,11 @@
     display: flex;
     padding: 9.375rem 0 8.75rem 0;
     position: relative;
+    justify-content: space-between;
+  }
+
+  &__bg {
+    margin-left: 1rem;
   }
 
   &__info {
@@ -301,8 +310,22 @@
         margin-right: 0;
       }
 
+      &--insta {
+        path {
+          fill: $dark-blue;
+        }
+
+        &:first-child path:last-child {
+          fill: $white;
+        }
+      }
+
       &:hover {
         background-color: $white;
+
+        svg path {
+          fill: $dark-blue;
+        }
       }
     }
   }
@@ -663,7 +686,6 @@
   &__card {
     padding: 2.5rem;
     position: relative;
-    max-height: 30.25rem;
 
     & .btn {
       width: max-content;
@@ -788,4 +810,104 @@
     grid-template-rows: 1fr 1fr;
     gap: 1.25rem;
   }
+}
+
+.inner-page {
+
+  &__title {
+    margin-bottom: 1.5625rem;
+  }
+
+  &__text {
+    margin-bottom: 3.75rem;
+  }
+
+  &__h2 {
+    font-weight: 800;
+    font-size: 3.375rem;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $dark-blue;
+    margin-bottom: 3.75rem;
+  }
+}
+
+.menu {
+  padding: 5rem;
+  height: calc(100vh - 4.25rem);
+  overflow-y: auto;
+  position: relative;
+  background-image: $bg-gradient;
+
+  & .types__cards {
+    display: grid;
+    grid-template-columns: 1fr 19.8125rem;
+  }
+
+  & .news {
+    margin-left: 3rem;
+  }
+
+  &-wrp {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__dd {
+    flex: 0 0 auto;
+  }
+
+  &__dd-item {
+
+    &.js-open {
+      .menu__arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__arrow {
+    margin-left: 1.5625rem;
+    transition: all 0.3s ease 0s;
+  }
+
+  &__dd-category {
+    font-size: 2.25rem;
+    line-height: 110%;
+    color: $white;
+    font-weight: bold;
+    margin-bottom: 1.875rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__dd-content {}
+
+  &__dd-link {
+    font-size: 1.125rem;
+    line-height: 110%;
+    color: $white;
+    transition: all 0.3s ease 0s;
+    font-weight: normal;
+    display: block;
+    margin-bottom: 1.875rem;
+
+    &:hover {
+      font-weight: bold;
+      color: $blue;
+    }
+  }
+
+  &__cards {
+    margin-left: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 19.8125rem;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  &__card {}
 }
