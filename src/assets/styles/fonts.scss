@@ -5,9 +5,7 @@
   font-display: swap;
 
   src: local("Proxima Nova"),
-    /* Если не получилось, загрузит woff2 */
     url("../fonts/ProximaNova-Regular.woff2") format("woff2"),
-    /* Если браузер не поддерживает woff2, загрузит woff */
     url("../fonts/ProximaNova-Regular.woff") format("woff");
 }
 
