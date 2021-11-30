@@ -22,10 +22,11 @@ Swiper.use([Navigation, Pagination]);
 const swiper = new Swiper('.swiper', {
   slidesPerView: 'auto',
   spaceBetween: 20,
+  speed: 800,
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.reviews__slider-btn--next',
+    prevEl: '.reviews__slider-btn--prev',
   },
 });
 
