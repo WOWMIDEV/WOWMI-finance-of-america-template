@@ -44,30 +44,41 @@ window.addEventListener('resize', () => {
   });
 });
 
-// const $bl = document.querySelector('.quiz');
-// const $th = document.querySelector('.quiz__wrap');
-// const blW = $bl.offsetWidth;
-// const blSW = $bl.scrollWidth;
-// const wDiff = blSW / blW - 1; // widths difference ratio
-// const mPadd = 60; // Mousemove Padding
-// const damp = 20; // Mousemove response softness
-// let mX = 0; // Real mouse position
-// let mX2 = 0; // Modified mouse position
-// let posX = 0;
-// const mmAA = blW - mPadd * 2; // The mousemove available area
-// const mmAAr = blW / mmAA;
 
-// $bl.addEventListener('mousemove', (e) => {
-//   mX = e.pageX - $bl.offsetLeft;
-//   mX2 = Math.min(Math.max(0, mX - mPadd), mmAA) * mmAAr;
-// });
+function initMousemoveHandler({
+  wrapperSelector,
+  targetSelector,
+  padding = 60,
+  softness = 20,
+}) {
+  const wrapper = document.querySelector(wrapperSelector);
+  const target = document.querySelector(targetSelector);
 
-// (function delay() {
-//   posX += (mX2 - posX) / damp;
-//   const marginLeft = `${-posX * wDiff} + "px"`;
-//   $th.style.marginLeft = marginLeft;
-// })();
-// delay();
+  const targetWidth = target.clientWidth;
+  const targetScrollWidth = target.scrollWidth;
+  const widthDifferenceRatio = targetScrollWidth / targetWidth - 1;
+
+  let mX = 0; // Real mouse position
+  let mX2 = 0; // Modified mouse position
+  let posX = 0;
+  const mmAA = targetWidth - padding * 2; // The mousemove available area
+  const mmAAr = targetWidth / mmAA; // get available mousemove fidderence ratio
+
+  target.addEventListener('mousemove', (event) => {
+    mX = event.pageX - target.offsetLeft;
+    mX2 = Math.min(Math.max(0, mX - padding), mmAA) * mmAAr;
+  });
+
+  setInterval(() => {
+    posX += (mX2 - posX) / softness; // zeno's paradox equation "catching delay"
+    wrapper.style.marginLeft = `${-posX * widthDifferenceRatio}px`;
+  }, 10);
+}
+
+initMousemoveHandler({
+  wrapperSelector: '.quiz__wrap',
+  targetSelector: '.quiz',
+});
 
 const quizCards = document.querySelectorAll('.quiz__card');
 const quizWrap = document.querySelector('.quiz__wrap');
