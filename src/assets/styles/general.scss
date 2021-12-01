@@ -112,7 +112,7 @@
     margin-left: 1.5625rem;
     transition: all 0.3s ease 0s;
 
-    @media screen and(max-width: $breakpointIpadPro) {
+    @media screen and(max-width: $md) {
       margin-left: 1rem;
     }
 
