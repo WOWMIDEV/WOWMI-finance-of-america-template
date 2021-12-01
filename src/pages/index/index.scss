@@ -1,16 +1,100 @@
 @import '../../assets/styles/variables.scss';
 @import '../../assets/styles/animation.scss';
 
+
+.hero-card {
+  padding: 1.5625rem;
+  background: $white;
+  box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
+  max-width: 16rem;
+  width: 100%;
+  position: absolute;
+  bottom: 8.75rem;
+  left: -5.125rem;
+
+  @media screen and (max-width: $lg) {
+    left: -0.125rem;
+  }
+
+  @media screen and (max-width: $md) {
+    bottom: 2.5rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    background: transparent;
+    box-shadow: none;
+    position: static;
+    padding: 0;
+    margin-bottom: 1.5625rem;
+    margin-left: auto;
+    max-width: max-content;
+    margin-right: 2.1875rem;
+  }
+
+  & .play-icon {
+    width: 2.625rem;
+    height: 2.625rem;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 140%;
+    color: $dark-blue;
+  }
+
+  &__category {
+    font-size: 0.875rem;
+    line-height: 140%;
+    color: rgba(28, 49, 85, 0.7);
+    margin-bottom: 0.9375rem;
+
+    @media screen and (max-width: $sm) {
+      max-width: 9.0625rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    line-height: 110%;
+    color: $dark-blue;
+    font-weight: bold;
+  }
+}
+
+
+.btn-back {
+  margin: 3.75rem auto 0 auto;
+}
+
 .future {
 
   &-wrp {
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+    }
   }
 
   &__left {
     max-width: 30.5rem;
     width: 100%;
+
+    @media screen and (max-width: $lg) {
+      margin-right: 1rem;
+    }
+
+    @media screen and (max-width: $md) {
+      max-width: none;
+      margin-bottom: 1.5625rem;
+    }
   }
 
   &__title {
@@ -20,6 +104,14 @@
     letter-spacing: -0.01em;
     color: $white;
     margin-bottom: 1.5625rem;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 
   &__text {
@@ -29,7 +121,7 @@
   }
 
   &__number {
-    padding-bottom: 1.25rem;
+    padding-bottom: 2.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
   }
@@ -38,6 +130,17 @@
     margin-top: 2.5rem;
     display: flex;
     margin-left: -0.625rem;
+
+    @media screen and (max-width: $lg) {
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: $sm) {
+      margin-top: 1.875rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-row-gap: 1.875rem;
+    }
   }
 
   &__year {
@@ -57,6 +160,11 @@
 
 .future-item {
   display: flex;
+  margin-right: 0.625rem;
+
+  @media screen and (max-width: $sm) {
+    margin-right: 1.875rem;
+  }
 
   &__info {
     max-width: 8rem;
@@ -114,6 +222,14 @@
     max-width: 25.375rem;
     width: 100%;
     margin: 0 auto 1.5625rem auto;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 
   &__text {
@@ -147,13 +263,23 @@
     color: $blue;
     text-align: center;
     margin-bottom: 2.5rem;
+
+
+    @media screen and (max-width: $sm) {
+      font-size: 1.5rem;
+    }
   }
 
   &__wrap {
     display: grid;
     grid-column-gap: 1.25rem;
     grid-template-columns: repeat(6, 24.125rem);
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease 0;
+
+    @media screen and (max-width: $sm) {
+      grid-template-columns: repeat(6, 17.25rem);
+      grid-column-gap: 0.625rem;
+    }
 
     &.js-hide {
       position: absolute;
@@ -161,6 +287,20 @@
       width: 100%;
       opacity: 0;
       pointer-events: none;
+      transition: opacity 0.5s ease 0;
+    }
+  }
+
+  &__wrap-2 {
+    transition: opacity 0.5s ease 0;
+
+    &:not(.js-visible) {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease 0;
     }
   }
 
@@ -172,6 +312,10 @@
     position: relative;
     z-index: 1;
     cursor: pointer;
+
+    @media screen and (max-width: $sm) {
+      padding: 2.5rem;
+    }
 
     &:hover {
       &::before {
@@ -210,6 +354,12 @@
     border-radius: 50%;
     background-image: url(../../assets/images/illustration.svg);
     background-repeat: no-repeat;
+    background-size: contain;
+
+    @media screen and (max-width: $sm) {
+      width: 12rem;
+      height: 12rem;
+    }
   }
 
   &__type {
@@ -278,15 +428,7 @@
   grid-column-gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
 
-  transition: opacity 0.3s ease;
 
-  &:not(.js-visible) {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    opacity: 0;
-    pointer-events: none;
-  }
 
 
   &__card {
@@ -328,9 +470,15 @@
 }
 
 .reviews {
+  overflow: hidden;
+
   &-wrp {
     display: flex;
     align-items: flex-start;
+
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+    }
   }
 
   &__slider-wrp {
@@ -445,7 +593,7 @@
   &__info {
     margin-top: 1.5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr;
     grid-row-gap: 0.25rem;
     grid-column-gap: 3.625rem;
@@ -474,6 +622,14 @@
     line-height: 3.9375rem;
     letter-spacing: -0.01em;
     color: $white;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 
   &__logos {
@@ -483,6 +639,18 @@
     max-width: 8rem;
     margin-right: 10.9375rem;
     margin-top: -10.375rem;
+
+    @media screen and (max-width: $md) {
+      margin-top: 0;
+      margin-right: 0;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-row-gap: 1.875rem;
+      grid-column-gap: 1.875rem;
+      width: 100%;
+      max-width: none;
+      align-items: initial;
+    }
   }
 
   &__logos-item {
@@ -495,6 +663,12 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    @media screen and (max-width: $md) {
+      margin-bottom: 0;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
   }
 
   &__logo-img {
@@ -502,6 +676,11 @@
     height: 6.5rem;
     object-fit: contain;
     margin-bottom: 1.25rem;
+
+    @media screen and (max-width: $md) {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
   &__grade {
@@ -510,6 +689,11 @@
     color: $white;
     font-weight: 700;
     margin-bottom: 0.25rem;
+
+    @media screen and (max-width: $md) {
+      font-size: 1.5rem;
+    }
+
   }
 
   &__stars {
@@ -549,6 +733,14 @@
     color: $white;
     text-align: center;
     margin-bottom: 1.5625rem;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 
   &__text {
@@ -585,6 +777,10 @@
     justify-content: center;
     align-items: center;
     width: max-content;
+
+    @media screen and (max-width: $md) {
+      margin-bottom: 1.875rem;
+    }
   }
 
   &__btn {
@@ -605,6 +801,11 @@
     display: grid;
     grid-column-gap: 1.25rem;
     grid-template-columns: repeat(3, 1fr);
+
+    @media screen and (max-width: $sm) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 0.9375rem;
+    }
   }
 
   &__card {
@@ -636,12 +837,37 @@
   &__row {
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    @media screen and (max-width: $lg) {
+      max-width: 12.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media screen and (max-width: $md) {
+      max-width: 10rem;
+      width: 100%;
+    }
   }
 
   &__left-column {
     max-width: 18.3125rem;
     width: 100%;
     margin-right: 7.1875rem;
+
+    @media screen and (max-width: $lg) {
+      margin-right: 4rem;
+    }
+
+    @media screen and (max-width: $md) {
+      margin-bottom: 2.5rem;
+      margin-right: 0;
+    }
   }
 
   &__title {
@@ -650,6 +876,14 @@
     line-height: 110%;
     margin-bottom: 1.5625rem;
     color: $dark-blue;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 
   &__text {
@@ -662,8 +896,13 @@
   &__card {
     background-color: $white;
     box-shadow: 0 0 74px rgba(29, 50, 86, 0.07);
-    padding: 3rem 2.5rem;
+    padding: 2.625rem 2.5rem;
     display: flex;
+
+    @media screen and (max-width: $lg) {
+      padding: 2.25rem 1.5625rem;
+      flex-direction: column;
+    }
 
     &:first-child {
       margin-bottom: 1.5625rem;
@@ -672,6 +911,10 @@
 
   &__card-info {
     margin-left: 3.75rem;
+
+    @media screen and (max-width: $lg) {
+      margin-left: 0;
+    }
   }
 
   &__card-title {
@@ -686,6 +929,21 @@
     font-size: 0.875rem;
     line-height: 180%;
     color: $dark-blue;
+  }
+}
+
+.btn.btn-mobile-hide {
+  @media screen and (max-width: $md) {
+    display: none;
+  }
+}
+
+.btn.btn-mobile-vis {
+  display: none;
+  margin: 2.5rem auto 0 auto;
+
+  @media screen and (max-width: $md) {
+    display: block;
   }
 }
 
@@ -709,6 +967,14 @@
     font-size: 3.375rem;
     line-height: 110%;
     margin-bottom: 1.5625rem;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 
   &__text {
@@ -723,96 +989,5 @@
     bottom: -7.5rem;
     right: 14.1875rem;
     max-height: 32.3125rem;
-  }
-}
-
-.footer {
-  background-color: $dark-blue;
-  background-image: url(../../assets/images/noise.png);
-  color: $white;
-  padding: 5rem 0 1.25rem 0;
-
-  &__top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  &__text {
-    font-size: 0.75rem;
-    line-height: 180%;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 8.375rem 0 4rem;
-    max-width: 24.125rem;
-  }
-
-  &__links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-row-gap: 1.25rem;
-    grid-column-gap: 2rem;
-  }
-
-  &__link {
-    font-size: 0.875rem;
-    line-height: 100%;
-    color: inherit;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__top-right {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-
-  &__social {
-    display: flex;
-
-    & .social__icon {
-      background: rgba(255, 255, 255, 0.13);
-      margin-right: 0.9375rem;
-
-      &:hover {
-        background-color: $white;
-      }
-    }
-  }
-
-  &__phone {
-    color: inherit;
-    font-weight: 600;
-    font-size: 0.875rem;
-    line-height: 100%;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__bottom {
-    font-size: 0.75rem;
-    line-height: 140%;
-    color: rgba(255, 255, 255, 0.5);
-    padding-top: 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__bottom-link {
-    color: inherit;
-    transition: all 0.3s ease 0s;
-    margin-left: 1.875rem;
-
-    &:hover {
-      color: $white;
-    }
   }
 }

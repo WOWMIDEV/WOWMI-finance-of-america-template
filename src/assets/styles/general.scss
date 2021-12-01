@@ -12,6 +12,7 @@
   padding: 0.625rem 0;
   color: $dark-blue;
   transition: all 0.3s ease 0s;
+  position: relative;
 
   &.js-open {
     color: $white;
@@ -37,11 +38,24 @@
 
   &__logo {
     margin-right: 3.75rem;
+
+    @media screen and (max-width: $sm) {
+      margin-right: 1.875rem;
+    }
   }
 
   &__nav {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $md) {
+      position: absolute;
+      right: 1.875rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      right: 0.625rem;
+    }
   }
 
   &__burger {
@@ -102,6 +116,10 @@
   &__list {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $md) {
+      display: none;
+    }
   }
 
   &__link {
@@ -112,8 +130,12 @@
     margin-left: 1.5625rem;
     transition: all 0.3s ease 0s;
 
-    @media screen and(max-width: $breakpointIpadPro) {
+    @media screen and(max-width: $lg) {
       margin-left: 1rem;
+    }
+
+    @media screen and(max-width: $md) {
+      display: none;
     }
 
     &:hover {
@@ -143,16 +165,30 @@
     margin-right: 3.125rem;
     transition: all 0.3s ease 0s;
 
+    @media screen and (max-width: $md) {
+      margin-right: 4.125rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      margin-right: 2.8125rem;
+    }
+
     &:hover {
       color: $blue;
     }
   }
 
   &__btn {
+
+
     &.btn {
       padding: 0.75rem 2.125rem 0.75rem 1.25rem;
       background-image: url(../../assets/images/arrow-right.svg) no-repeat;
       background-position: center right 1.0625rem;
+
+      @media screen and (max-width:$md) {
+        display: none;
+      }
 
       &::before {
         background-position: center right 1.0625rem, center;
@@ -169,6 +205,14 @@
     padding: 9.375rem 0 8.75rem 0;
     position: relative;
     justify-content: space-between;
+
+    @media screen and (max-width: $md) {
+      padding: 5.375rem 0 6.75rem 0;
+    }
+
+    @media screen and (max-width: $sm) {
+      padding: 5.375rem 0 19.875rem 0;
+    }
   }
 
   &__bg {
@@ -178,6 +222,21 @@
   &__info {
     max-width: 33.5rem;
     width: 100%;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (max-width: $md) {
+      max-width: 25.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      max-width: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__title {
@@ -187,6 +246,15 @@
     letter-spacing: -0.01em;
     color: $dark-blue;
     margin-bottom: 1.5625rem;
+
+    @media screen and (max-width: $md) {
+      font-size: 3rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      text-align: center;
+      font-size: 2.5rem;
+    }
   }
 
   &__text {
@@ -194,8 +262,9 @@
     line-height: 180%;
     color: $dark-blue;
     margin-bottom: 2.5rem;
-    max-width: 338px;
+    max-width: 21.125rem;
     width: 100%;
+
   }
 
   &__photo {
@@ -205,9 +274,34 @@
     max-width: 36.875rem;
     width: 100%;
 
+    @media screen and (max-width: $lg) {
+      max-width: 29.875rem;
+    }
+
+    @media screen and (max-width: $md) {
+      max-width: 25rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      right: auto;
+      left: 0;
+      max-width: none;
+      padding-bottom: 5rem;
+    }
+
     &-lady {
       // need search best variant
       padding-left: 3.5625rem;
+
+      @media screen and (max-width: $sm) {
+        position: absolute;
+        bottom: -5.9375rem;
+        z-index: -1;
+        left: -4.25rem;
+        height: 410px;
+        padding: 0;
+        width: auto;
+      }
     }
   }
 
@@ -216,17 +310,44 @@
     bottom: 0;
     z-index: -1;
 
+    @media screen and (max-width: $sm) {
+      display: none;
+    }
   }
+
 
   &__social {
     position: absolute;
     display: flex;
     flex-direction: column;
-    right: 0;
+    right: 3rem;
     bottom: 8.75rem;
+
+    @media screen and (max-width: $md) {
+      bottom: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      flex-direction: row;
+      right: 0.75rem;
+
+      & .social__icon {
+        margin-bottom: 0;
+        margin-right: 0.625rem;
+
+        &:last-child {
+          margin-bottom: 0;
+          margin-right: 0;
+        }
+      }
+    }
 
     & .social__icon {
       margin-bottom: 0.3125rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -260,7 +381,6 @@
   &__top {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
     padding-bottom: 2.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     align-self: flex-end;
@@ -272,6 +392,11 @@
     color: rgba(255, 255, 255, 0.7);
     margin: 0 8.375rem 0 4rem;
     max-width: 24.125rem;
+
+    @media screen and (max-width: $lg) {
+      margin: 0 2.375rem 0 1rem;
+      max-width: 20.125rem;
+    }
   }
 
   &__links {
@@ -292,15 +417,25 @@
     }
   }
 
+  &__top-left {
+    display: flex;
+    align-items: flex-start;
+  }
+
   &__top-right {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-self: stretch;
+    margin-left: auto;
   }
 
   &__social {
     display: flex;
+
+    @media screen and (max-width: $lg) {
+      margin-left: 0.625rem;
+    }
 
     & .social__icon {
       background-color: rgba(255, 255, 255, 0.13);
@@ -374,6 +509,14 @@
     max-width: 39.8125rem;
     width: 100%;
     margin: 0 auto 1.5625rem auto;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 
   &__descr {
@@ -387,14 +530,18 @@
   }
 
   &__item {
-    padding: 2.375rem 1.5rem 2.375rem 2.1875rem;
+    padding: 2.375rem 5.375rem 2.375rem 2.1875rem;
     background-color: $white;
     box-shadow: 0 0 74px rgba(29, 50, 86, 0.07);
     position: relative;
-    max-width: 60.375rem;
+    max-width: 62.25rem;
     width: 100%;
     margin: 0 auto 1.25rem auto;
     cursor: pointer;
+
+    @media screen and (max-width: $sm) {
+      padding: 1.25rem 5.375rem 1.25rem 1.25rem;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -417,6 +564,11 @@
     font-size: 1.125rem;
     line-height: 100%;
     color: $dark-blue;
+
+    @media screen and (max-width: $md) {
+      font-size: 1.125rem;
+      line-height: 160%;
+    }
   }
 
   &__content {
@@ -432,6 +584,11 @@
     opacity: 0.8;
     max-width: 34.6875rem;
     width: 100%;
+
+    @media screen and (max-width: $md) {
+      padding-top: 0.9375rem;
+      line-height: 180%;
+    }
   }
 
   &__arrow {
@@ -445,6 +602,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: $sm) {
+      right: 0.625rem;
+    }
 
     &::after {
       content: "";
@@ -484,6 +645,14 @@
     font-size: 3.375rem;
     line-height: 110%;
     margin-bottom: 1.5625rem;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 
   &__text {
@@ -495,6 +664,10 @@
 
   &__person-info {
     margin-right: 5rem;
+
+    @media screen and (max-width: $lg) {
+      margin-right: 0;
+    }
   }
 
   &__img {
@@ -502,6 +675,11 @@
     bottom: -14.5rem;
     right: 12.1875rem;
     max-height: 41.3125rem;
+
+    @media screen and (max-width: $lg) {
+      right: 7.188rem;
+      max-height: 37.313rem;
+    }
   }
 }
 
@@ -519,10 +697,24 @@
   max-width: 62.25rem;
   width: 100%;
   margin: 7.5rem auto 0 auto;
+  background-size: contain;
+
+  @media screen and (max-width: $sm) {
+    padding: 5rem 1.25rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 
   &__info {
     max-width: 16.5625rem;
     width: 100%;
+    position: relative;
+    z-index: 3;
+
+    @media screen and (max-width: $sm) {
+      margin-bottom: 3.75rem;
+    }
   }
 
   &__title {
@@ -532,6 +724,14 @@
     letter-spacing: -0.01em;
     text-transform: uppercase;
     margin-bottom: 0.625rem;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 
   &__btn {
@@ -559,6 +759,13 @@
     right: 14rem;
     z-index: 2;
     height: 24.6875rem;
+
+    @media screen and (max-width: $md) {
+      bottom: -1.0625rem;
+      right: -8.5rem;
+      height: 100%;
+      width: auto;
+    }
   }
 
   &__person-info {
@@ -620,13 +827,20 @@
   width: 3.625rem;
   height: 3.625rem;
   border-radius: 50%;
-  background-image: url(../images/play.svg);
-  background-repeat: no-repeat;
-  background-position: right 1.25rem center;
+  // background-image: url(../images/play.svg);
+  // background-repeat: no-repeat;
+  // background-position: right 1.25rem center;
   background-color: $blue;
   box-shadow: 0 14px 64px rgb(70 161 209 / 42%);
   margin-right: 0.75rem;
   transition: all 0.3s ease 0s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    margin-left: 5px;
+  }
 
   svg path {
     transition: all 0.3s ease 0s;
@@ -830,6 +1044,14 @@
     letter-spacing: -0.01em;
     color: $dark-blue;
     margin-bottom: 3.75rem;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 }
 

@@ -42,7 +42,7 @@
             fill="#1B3355" stroke="#1B3355" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         <a href="tel:3490242442" class="header__phone">(349) 024-24-42</a>
-        <a href="#" class="btn header__btn">Get Started</a>
+        <a href="#" class="btn header__btn btn-min">Get Started</a>
       </div>
     </div>
   </header>
@@ -53,6 +53,7 @@
           <div class="hero__info">
             <h1 class="hero__title">
               Your New Mortgage Career...
+              <br>
               <span class="blue-text">Starts Here</span>
             </h1>
             <p class="hero__text">
@@ -61,6 +62,26 @@
             <a href="#" class="btn hero__btn">Learn More</a>
           </div>
           <div class="hero__photo">
+            <div class="hero__card hero-card">
+              <p class="hero-card__name">
+                Jessica Siguenza
+              </p>
+              <p class="hero-card__category">
+                Business Development Executive
+              </p>
+              <div class="hero-card__info">
+                <div class="play-icon">
+                  <svg class="play-icon__arrow" width="12" height="14" viewBox="0 0 12 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 7L-6.52533e-07 13.9282L-4.68497e-08 0.0717964L12 7Z" fill="white" />
+                  </svg>
+                </div>
+                <p class="hero-card__text">
+                  See My<br>
+                  Philosophy
+                </p>
+              </div>
+            </div>
             <img class="hero__photo-lady" src="./assets/images/hero-lady.png" alt="Jessica Siguenza" />
             <img class="hero__main-logo" src="./assets/images/logo.svg" alt="logo" />
             <div class="hero__social social">
@@ -263,58 +284,60 @@
               </p>
             </div>
           </div>
-          <div class="quiz__wrap-2 quiz-step-2">
-            <div class="quiz-step-2__card">
-              <div class="quiz-step-2__number">
-                01
+          <div class="quiz__wrap-2">
+            <div class="quiz-step-2">
+              <div class="quiz-step-2__card">
+                <div class="quiz-step-2__number">
+                  01
+                </div>
+                <h4 class="quiz-step-2__title">
+                  Growth
+                </h4>
+                <p class="quiz-step-2__text">
+                  Scale Your Mortgage Business
+                  Overnight
+                </p>
+                <a href="#" class="btn btn-min">Learn More</a>
               </div>
-              <h4 class="quiz-step-2__title">
-                Growth
-              </h4>
-              <p class="quiz-step-2__text">
-                Scale Your Mortgage Business
-                Overnight
-              </p>
-              <a href="#" class="btn btn-min">Learn More</a>
-            </div>
-            <div class="quiz-step-2__card">
-              <div class="quiz-step-2__number">
-                02
+              <div class="quiz-step-2__card">
+                <div class="quiz-step-2__number">
+                  02
+                </div>
+                <h4 class="quiz-step-2__title">
+                  Support
+                </h4>
+                <p class="quiz-step-2__text">
+                  How Not To Lose Referral
+                  Partners
+                </p>
+                <a href="#" class="btn btn-min">Learn More</a>
               </div>
-              <h4 class="quiz-step-2__title">
-                Support
-              </h4>
-              <p class="quiz-step-2__text">
-                How Not To Lose Referral
-                Partners
-              </p>
-              <a href="#" class="btn btn-min">Learn More</a>
-            </div>
-            <div class="quiz-step-2__card">
-              <div class="quiz-step-2__number">
-                03
+              <div class="quiz-step-2__card">
+                <div class="quiz-step-2__number">
+                  03
+                </div>
+                <h4 class="quiz-step-2__title">
+                  FAM(ily)
+                </h4>
+                <p class="quiz-step-2__text">
+                  Unusual Mortgage Leadership
+                  Style
+                </p>
+                <a href="#" class="btn btn-min">Learn More</a>
               </div>
-              <h4 class="quiz-step-2__title">
-                FAM(ily)
-              </h4>
-              <p class="quiz-step-2__text">
-                Unusual Mortgage Leadership
-                Style
-              </p>
-              <a href="#" class="btn btn-min">Learn More</a>
-            </div>
-            <div class="quiz-step-2__card">
-              <div class="quiz-step-2__number">
-                04
+              <div class="quiz-step-2__card">
+                <div class="quiz-step-2__number">
+                  04
+                </div>
+                <h4 class="quiz-step-2__title">
+                  Marketing
+                </h4>
+                <p class="quiz-step-2__text">
+                  Build A Digital Mortgage
+                  Footprint
+                </p>
+                <a href="#" class="btn btn-min">Learn More</a>
               </div>
-              <h4 class="quiz-step-2__title">
-                Marketing
-              </h4>
-              <p class="quiz-step-2__text">
-                Build A Digital Mortgage
-                Footprint
-              </p>
-              <a href="#" class="btn btn-min">Learn More</a>
             </div>
             <button class="btn btn-back">Сome back</button>
           </div>
@@ -771,7 +794,7 @@
               We don’t just work at improving the lives of our customers & team members, our work extends into
               communities we serve nationwide.
             </p>
-            <a href="#" class="btn">Learn More</a>
+            <a href="#" class="btn btn-mobile-hide">Learn More</a>
           </div>
           <div class="better__right-column">
             <div class="better__card">
@@ -796,6 +819,7 @@
                 </p>
               </div>
             </div>
+            <a href="#" class="btn btn-mobile-vis">Learn More</a>
           </div>
         </div>
       </div>
@@ -874,12 +898,14 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
-        <img src="./assets/images/white-logo.svg" alt="Finance of America Mortgage" class="footer__logo">
-        <p class="footer__text">
-          At Finance of America Mortgage, we don’t see customers as numbers and paperworks. For us, doing business ia
-          bout making human connections. welisten to the people we serve. We find the rightmortgage solution for their
-          specific needs. And we help them tachiece their dreams of homeownership. You’ll see it in everything we do.
-        </p>
+        <div class="footer__top-left">
+          <img src="./assets/images/white-logo.svg" alt="Finance of America Mortgage" class="footer__logo">
+          <p class="footer__text">
+            At Finance of America Mortgage, we don’t see customers as numbers and paperworks. For us, doing business ia
+            bout making human connections. welisten to the people we serve. We find the rightmortgage solution for their
+            specific needs. And we help them tachiece their dreams of homeownership. You’ll see it in everything we do.
+          </p>
+        </div>
         <div class="footer__links">
           <a href="#" class="footer__link">My Listings</a>
           <a href="#" class="footer__link">Buying</a>

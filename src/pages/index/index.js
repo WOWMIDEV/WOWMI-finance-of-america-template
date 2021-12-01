@@ -1,6 +1,7 @@
 import './index.scss';
 import '../../assets/scripts/main';
 
+import Lottie from 'lottie-web';
 import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
@@ -43,6 +44,16 @@ window.addEventListener('resize', () => {
   });
 });
 
+Lottie.loadAnimation({
+  container: document.querySelector('.quiz__lottie'), // the dom element that will contain the animation
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: '../assets/images/Closer.json', // the path to the animation json
+});
+
+console.log(Lottie);
+
 // const $bl = document.querySelector('.quiz');
 // const $th = document.querySelector('.quiz__wrap');
 // const blW = $bl.offsetWidth;
@@ -70,7 +81,7 @@ window.addEventListener('resize', () => {
 
 const quizCards = document.querySelectorAll('.quiz__card');
 const quizWrap = document.querySelector('.quiz__wrap');
-const quizWrapStep2 = document.querySelector('.quiz-step-2');
+const quizWrapStep2 = document.querySelector('.quiz__wrap-2');
 const stepNumber = document.querySelector('.quiz__step span');
 const btnBack = document.querySelector('.btn-back');
 

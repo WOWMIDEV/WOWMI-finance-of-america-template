@@ -8,13 +8,21 @@ html {
 
 .container {
   max-width: $container-width;
-  padding: 0 0.9375rem;
+  padding: 0 1.25rem;
   width: 100%;
   margin: 0 auto;
+
+  @media screen and (max-width: $md) {
+    padding: 0 0.625rem;
+  }
 }
 
 .section {
-  padding: 3.75rem 0;
+  padding: 7.5rem 0;
+
+  @media screen and (max-width: $md) {
+    padding: 5rem 0;
+  }
 }
 
 .blue-text {
@@ -23,7 +31,11 @@ html {
 
 .bg-gradient {
   padding: 7.5rem 0;
-  background-image: url(../images/noise.png), linear-gradient(98.74deg, #1C3155 0%, #2459B5 94.47%)
+  background-image: url(../images/noise.png), linear-gradient(98.74deg, #1C3155 0%, #2459B5 94.47%);
+
+  @media screen and (max-width: $sm) {
+    padding: 5rem 0;
+  }
 }
 
 .h1 {
@@ -32,6 +44,15 @@ html {
   line-height: 110%;
   text-align: center;
   color: $dark-blue;
+
+  @media screen and (max-width: $md) {
+    font-size: 3rem;
+    letter-spacing: -0.01em;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: 2.5rem;
+  }
 }
 
 .btn-time {
@@ -69,7 +90,6 @@ html {
   font-size: 0.875rem;
   line-height: 140%;
   color: $white;
-  text-transform: capitalize;
   background-image: url(../images/arrow-right.svg);
   background-repeat: no-repeat;
   background-position: center right 1.5rem;
@@ -81,6 +101,10 @@ html {
   display: flex;
   align-items: center;
   width: max-content;
+
+  @media screen and (max-width: $sm) {
+    font-size: 1rem;
+  }
 
   &::before {
     content: '';
