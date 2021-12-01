@@ -470,49 +470,65 @@
 }
 
 .reviews {
-  overflow: hidden;
+  $slider-width: 30.5rem;
 
-  &-wrp {
-    display: flex;
-    align-items: flex-start;
-
-    @media screen and (max-width: $md) {
-      flex-direction: column;
-    }
+  &__container {
+    display: grid;
+    column-gap: 10.9375rem;
+    grid-template-columns: auto 1fr;
+    align-items: start;
   }
 
-  &__slider-wrp {
+  &__content-wrp {
     align-self: stretch;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+  }
+
+  &__controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    position: absolute;
+    right: 0;
+    bottom: 27.25rem;
+  }
+
+  &__slider-wrp {
+    margin-right: calc((#{$container-width} - #{$container-inline-padding} - 100vw) / 2);
+    overflow: hidden;
+  }
+
+  &__slider-inner {
+    width: $slider-width;
+  }
+
+  &__swiper.swiper {
+    overflow: unset;
+  }
+
+  &__slider-btn {
+    width: 3.625rem;
+    height: 3.625rem;
+    border-radius: 50%;
+    background-color: $white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 2;
+
+    &--prev {
+      background-image: url(../../assets/images/slider-left.svg);
+    }
+
+    &--next {
+      background-image: url(../../assets/images/slider-right.svg);
+    }
   }
 
   &__swiper {
-    overflow: hidden;
     position: relative;
-
-    & .swiper-button-prev,
-    .swiper-button-next {
-      width: 3.625rem;
-      height: 3.625rem;
-      border-radius: 50%;
-      background-color: $white;
-      background-position: center center;
-      background-repeat: no-repeat;
-      left: auto;
-      top: 1.4375rem;
-    }
-
-    & .swiper-button-prev {
-      background-image: url(../../assets/images/slider-left.svg);
-      right: 7.5rem;
-    }
-
-    & .swiper-button-next {
-      background-image: url(../../assets/images/slider-right.svg);
-      right: 17.5rem;
-    }
 
     & .swiper-wrapper {
       align-items: flex-end;
@@ -523,14 +539,13 @@
     background-color: $dark-blue;
     position: relative;
     padding: 2.5rem;
-    max-width: 31.6875rem;
+    max-width: $slider-width;
     width: 100%;
     max-height: 23.375rem;
     transition: all 0.6s ease 0s;
     transition: max-height 1s ease-in-out;
 
     &.swiper-slide-active {
-      max-width: 30.5rem;
       width: 100%;
       max-height: 30.875rem;
       transition: max-height 1s ease-in-out;
@@ -637,7 +652,6 @@
     flex-direction: column;
     align-items: center;
     max-width: 8rem;
-    margin-right: 10.9375rem;
     margin-top: -10.375rem;
 
     @media screen and (max-width: $md) {

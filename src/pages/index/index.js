@@ -11,6 +11,9 @@ import 'swiper/components/pagination/pagination.min.css';
 import Tabs from '../../modules/tabs/tabs';
 import initDD from '../../modules/dropdowns/dropdowns';
 
+import '../../assets/scripts/main';
+import './index.scss';
+
 const tabs = new Tabs({
   tabSelector: '.tab',
   btnSelector: '.tabs__nav-btn',
@@ -23,10 +26,11 @@ Swiper.use([Navigation, Pagination]);
 const swiper = new Swiper('.swiper', {
   slidesPerView: 'auto',
   spaceBetween: 20,
+  speed: 800,
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.reviews__slider-btn--next',
+    prevEl: '.reviews__slider-btn--prev',
   },
 });
 
