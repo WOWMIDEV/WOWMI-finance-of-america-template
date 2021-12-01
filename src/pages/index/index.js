@@ -79,7 +79,7 @@ quizCards.forEach((card) => {
   card.addEventListener('click', () => {
     quizWrap.classList.add('js-hide');
     quizWrapStep2.classList.add('js-visible');
-    stepNumber.textContent = 2;
+    stepNumber.textContent = '2';
   });
 });
 
