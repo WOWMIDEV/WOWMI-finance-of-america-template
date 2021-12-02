@@ -14,6 +14,24 @@ const swiper = new Swiper('.carousel', {
   slidesPerView: 'auto',
   loopedSlides: 1,
 
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    570: {
+      spaceBetween: 40,
+      slidesPerView: 'auto',
+    },
+    1024: {
+      spaceBetween: 112,
+      centeredSlides: true,
+      loop: true,
+      loopedSlides: 1,
+    },
+  },
+
   pagination: {
     el: '.swiper-pagination',
     clickable: true,

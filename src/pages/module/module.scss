@@ -81,8 +81,17 @@
   grid-template-rows: 1fr auto;
   grid-row-gap: 3.75rem;
 
+  @media screen and (max-width: $md) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 0.9375rem;
+  }
+
   .play-icon {
     margin-bottom: 5.625rem;
+
+    @media screen and (max-width: $md) {
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__info {}
@@ -94,6 +103,14 @@
     letter-spacing: -0.01em;
     color: $dark-blue;
     margin-bottom: 1.5625rem;
+
+    @media screen and (max-width: $md) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.125rem;
+    }
   }
 
   &__text {
@@ -113,6 +130,10 @@
     background-repeat: no-repeat;
     background-size: 9.875rem;
     background-position: bottom right 2.4rem;
+
+    @media screen and (max-width: $lg) {
+      padding: 1.5rem;
+    }
   }
 
   &__card-img {
@@ -131,6 +152,10 @@
     color: $dark-blue;
     margin-right: 2.5rem;
     margin-left: 0.625rem;
+
+    @media screen and (max-width: $lg) {
+      margin-right: 2rem;
+    }
   }
 
   &__card-text {
@@ -138,6 +163,10 @@
     line-height: 180%;
     color: rgba(28, 49, 84, 0.8);
     max-width: 15.625rem;
+
+    @media screen and (max-width: $md) {
+      max-width: none;
+    }
   }
 }
 
@@ -168,42 +197,36 @@
 
   .news {
     grid-template-columns: 30.5rem 1fr;
+
+    @media screen and (max-width: $md) {
+      grid-template-columns: 20.5rem 1fr;
+    }
+
+    @media screen and (max-width: $sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
   }
 
   .news__card:first-child {
     grid-row-start: auto;
     grid-row-end: auto;
+
+    // @media screen and (max-width: $md) {}
   }
 
   .news__card:last-child {
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column-start: 2;
+
+    @media screen and (max-width: $md) {
+      grid-row-start: auto;
+      grid-row-end: auto;
+      grid-column-start: auto;
+    }
   }
 }
-
-.types {
-
-  &__cards {}
-}
-
-.look {
-
-  &-wrp {}
-
-  &__info {}
-
-  &__title {}
-
-  &__text {}
-
-  &__person {}
-
-  &__img {}
-
-  &__person-info {}
-}
-
 
 .h2 {
   font-weight: 800;
@@ -211,4 +234,12 @@
   line-height: 110%;
   text-align: center;
   color: $dark-blue;
+
+  @media screen and (max-width: $md) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: 2.125rem;
+  }
 }

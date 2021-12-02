@@ -11,9 +11,6 @@ import 'swiper/components/pagination/pagination.min.css';
 import Tabs from '../../modules/tabs/tabs';
 import initDD from '../../modules/dropdowns/dropdowns';
 
-import '../../assets/scripts/main';
-import './index.scss';
-
 const tabs = new Tabs({
   tabSelector: '.tab',
   btnSelector: '.tabs__nav-btn',
