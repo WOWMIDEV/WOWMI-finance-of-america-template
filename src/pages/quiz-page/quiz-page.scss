@@ -1,0 +1,115 @@
+@import '../../assets/styles/variables.scss';
+
+.quiz {
+  &__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+  }
+}
+
+.form {}
+
+.faq-quiz {
+
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.25rem;
+    line-height: 100%;
+    color: $dark-blue;
+    margin-bottom: 2.5rem;
+  }
+
+  &__answer-preview {
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 100%;
+    color: $blue;
+  }
+
+  &__question {
+    max-width: 36.3125rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 3.125rem 0;
+  }
+
+  &__img {
+    margin-bottom: 2.5rem;
+  }
+
+  &__button {
+    input[type="radio"] {
+      display: none;
+    }
+
+    & .option {
+      background: $white;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 1.25rem;
+      background: #E8ECF2;
+      font-size: 1.125rem;
+      line-height: 110%;
+      color: rgba(27, 51, 85, 0.5);
+
+      & span {
+        transition: all 0.3s ease 0s;
+      }
+    }
+
+
+    & .dot {
+      height: 1.5rem;
+      width: 1.5rem;
+      background: #d9d9d9;
+      border-radius: 50%;
+      position: relative;
+      margin-right: 0.625rem;
+      background-color: $white;
+      border: 0.0625rem solid rgba(22, 59, 125, 0.5);
+      transition: all 0.3s ease 0s;
+    }
+
+    & #option-1:checked:checked~.option-1,
+    & #option-2:checked:checked~.option-2 {
+      background: $white;
+      box-shadow: 0 0.875rem 5.25rem rgba(29, 50, 86, 0.14);
+
+      & span {
+        color: $blue;
+        font-weight: bold;
+      }
+
+      & .dot {
+        background-color: $blue;
+        border-color: $blue;
+      }
+    }
+  }
+}
+
+.faq {
+
+  &__item {}
+
+  &__question {}
+
+  &__content {}
+
+  &__arrow {}
+
+  &__answer {}
+}

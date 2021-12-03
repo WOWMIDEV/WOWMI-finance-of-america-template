@@ -1,0 +1,135 @@
+@import '../../assets/styles/variables.scss';
+
+.hero {
+
+  &__row {
+    justify-content: space-between;
+  }
+
+  &__info {
+    margin-right: 1rem;
+  }
+
+
+  &__bg {
+    max-width: 36.875rem;
+    width: 100%;
+    background: #E8ECF2;
+  }
+}
+
+
+.manager {
+  margin-top: 4.5rem;
+  background: #FFFFFF;
+  box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
+  padding: 1.5625rem;
+  max-width: 25.4375rem;
+  width: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.9375rem;
+  }
+
+  &__img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 1px solid rgba(22, 59, 125, 0.08);
+    filter: drop-shadow(0 24px 74px rgba(29, 50, 86, 0.11));
+  }
+
+  &__info {
+    margin-left: 0.75rem;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 140%;
+    color: $dark-blue;
+  }
+
+  &__position {
+    font-size: 0.875rem;
+    line-height: 140%;
+    color: rgba(28, 49, 85, 0.7);
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 180%;
+    color: rgba(28, 49, 85, 0.8);
+    margin-bottom: 0.7rem;
+  }
+
+  &__link {
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 140%;
+    color: $blue;
+    transition: all 0.3s ease 0s;
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      margin-left: 0.4rem;
+    }
+
+    &:hover {
+      color: $dark-blue
+    }
+  }
+}
+
+
+.tabs {
+
+  &__nav {
+    background: rgba(22, 59, 125, 0.1);
+    padding: 0.25rem;
+    width: max-content;
+    margin: 0 auto 3.75rem auto;
+  }
+
+  &__nav-btn {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 140%;
+    color: rgba(27, 51, 85, 0.6);
+    padding: 1.125rem 2rem;
+    background-color: transparent;
+    transition: all 0.3s ease 0s;
+
+    &.js-active {
+      color: $white;
+      background-color: $dark-blue;
+    }
+  }
+}
+
+.types-tabs {
+
+  &__title {
+    font-weight: 800;
+    font-size: 3.375rem;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $dark-blue;
+    margin-bottom: 1.5625rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+    line-height: 180%;
+    text-align: center;
+    color: rgba(22, 59, 125, 0.8);
+    margin: 0 auto 2.5rem auto;
+    max-width: 28.875rem;
+    text-align: center;
+  }
+}

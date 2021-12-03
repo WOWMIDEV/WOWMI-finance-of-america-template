@@ -1,0 +1,121 @@
+@import '../../assets/styles/variables.scss';
+
+.carousel-section {
+
+  &__title {
+    margin-bottom: 1.5625rem;
+  }
+
+  &__text {
+    max-width: 40.75rem;
+  }
+
+  &__h2 {
+    margin-bottom: 3.75rem;
+    font-weight: 800;
+    font-size: 3.375rem;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $dark-blue;
+  }
+}
+
+.section.inner-page {
+  overflow: hidden;
+}
+
+.carousel {
+  margin-bottom: 7.5rem;
+  position: relative;
+
+  &.swiper {
+    overflow: visible;
+
+    & .swiper-pagination-bullets {
+      bottom: -3.25rem !important;
+
+      @media screen and (max-width: $md) {
+        bottom: -1.875rem !important;
+      }
+
+    }
+  }
+
+  &__wrapper {}
+
+  & .swiper-slide {
+    width: 37.375rem;
+
+    @media screen and (max-width: $lg) {
+      width: 29.375rem;
+    }
+
+    @media screen and (max-width: $md) {
+      width: 25rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      width: 100vw;
+      max-width: 100%;
+    }
+  }
+
+  & .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: $dark-blue;
+  }
+
+  & .swiper-pagination-bullet {
+    margin: 0 0.9375rem !important;
+    height: 0.125rem;
+    width: 5.625rem;
+    border-radius: 0;
+    opacity: 1;
+    background-color: rgba(22, 59, 125, 0.3);
+    transition: all 0.3s ease 0s;
+
+    @media screen and (max-width: $md) {
+      width: 2.5rem;
+      margin: 0 0.4375rem !important;
+    }
+  }
+
+  & .swiper-container-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: -3.125rem;
+  }
+
+  & .swiper-button-prev,
+  & .swiper-button-next {
+    width: 4rem;
+    height: 4rem;
+    background: #E1E6EE;
+    border-radius: 50%;
+    transition: all 0.3s ease 0s;
+
+    @media screen and (max-width: $md) {
+      display: none;
+    }
+
+    & .slider-arrow path {
+      transition: all 0.3s ease 0s;
+    }
+
+    &:hover {
+      background-color: $dark-blue;
+
+      .slider-arrow path {
+        stroke: $white;
+      }
+    }
+  }
+
+  & .swiper-button-prev {
+    left: 16.8125rem;
+  }
+
+  & .swiper-button-next {
+    right: 16.8125rem;
+  }
+}

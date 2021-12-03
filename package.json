@@ -1,117 +1,133 @@
 {
-	"name": "Finance of America Mortgage",
-	"version": "1.0.0",
-	"main": "index.html",
-	"description": "Finance of America Mortgage",
-	"notes": {
-		"server": "Run server at https://192.168.1.49:3000"
-	},
-	"scripts": {
-		"serve": "del /q server && parcel serve src/*.html --out-dir server/ --port 3000",
-		"build": "del /q build && NODE_ENV=production parcel build src/*.html --no-cache --out-dir build --public-url ./",
-		"build-no-minify": "del /q build && NODE_ENV=production parcel build src/index.html --no-minify --no-cache --out-dir build --public-url ./",
-		"lint-js": "npx eslint src/**/*.js",
-		"lint-js-fix": "npx eslint --fix src/**/*.js",
-		"lint-scss": "npx stylelint src/**/*.scss",
-		"lint-scss-fix": "npx stylelint --fix src/**/*.scss"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"@babel/core": "^7.14.0",
-		"@babel/plugin-transform-runtime": "^7.13.15",
-		"@babel/runtime-corejs2": "^7.9.2",
-		"autoprefixer": "^9.7.1",
-		"eslint": "^7.32.0",
-		"eslint-config-airbnb-base": "^14.2.1",
-		"eslint-plugin-import": "^2.25.2",
-		"npm-run-all": "^4.1.5",
-		"parcel-bundler": "^1.9.4",
-		"parcel-plugin-custom-dist-structure": "^1.1.17",
-		"parcel-plugin-imagemin": "3.0.0",
-		"parcel-resolver-ignore": "^1.0.2",
-		"postcss": "^8.3.11",
-		"postcss-sass": "^0.5.0",
-		"postcss-scss": "^4.0.2",
-		"sass": "^1.32.13",
-		"stylelint": "^14.1.0",
-		"stylelint-config-idiomatic-order": "^8.1.0",
-		"stylelint-config-sass-guidelines": "^9.0.1",
-		"stylelint-config-standard": "^24.0.0",
-		"stylelint-config-standard-scss": "^2.0.1",
-		"stylelint-scss": "^4.0.0",
-		"win-node-env": "^0.4.0"
-	},
-	"postcss": {
-		"plugins": {
-			"autoprefixer": {
-				"overrideBrowserslist": [
-					"> 1%",
-					"last 4 versions",
-					"ie >= 9"
-				]
-			}
-		}
-	},
-	"cssnano": {
-		"preset": [
-			"default",
-			{
-				"minifyFontValues": {
-					"removeQuotes": false
-				},
-				"normalizeUrl": false
-			}
-		]
-	},
-	"babel": {
-		"plugins": [
-			[
-				"@babel/plugin-transform-runtime",
-				{
-					"corejs": 2,
-					"regenerator": true
-				}
-			]
-		]
-	},
-	"customDistStructure": {
-		"config": {
-			".css": "styles",
-			".css.map": "styles",
-			".js": "scripts",
-			".js.map": "scripts",
-			".ttf": "fonts",
-			"images": [
-				".jpg",
-				".png",
-				".svg",
-				".gif",
-				".ttf",
-				".bmp"
-			],
-			".fileExtension": "folder/in/dist",
-			"folder/in/dist": [
-				".file",
-				".extensions"
-			]
-		},
-		"options": {
-			"development": true
-		}
-	},
-	"htmlnano": {
-		"collapseAttributeWhitespace": false,
-		"collapseBooleanAttributes": false,
-		"collapseWhitespace": false,
-		"minifyJson": false,
-		"minifySvg": false
-	},
-	"parcelIgnore": [],
-	"dependencies": {
-		"assemble": "^0.3.83",
-		"grunt": "^0.4.5",
-		"styles": "^0.2.1"
-	}
+  "name": "finance-of-america-mortgage",
+  "main": "index.html",
+  "description": "Finance of America Mortgage",
+  "notes": {
+    "server": "Run server at https://192.168.1.49:3000"
+  },
+  "scripts": {
+    "serve": "del /q server && NODE_ENV=development parcel serve src/*.html --out-dir server/ --port 3000",
+    "build": "del /q build && NODE_ENV=production parcel build src/*.html --no-cache --out-dir build --public-url ./",
+    "build-no-minify": "del /q build && NODE_ENV=production parcel build src/index.html --no-minify --no-cache --out-dir build --public-url ./",
+    "lint-js": "npx eslint src/**/*.js",
+    "lint-js-fix": "npx eslint --fix src/**/*.js",
+    "lint-scss": "npx stylelint src/**/*.scss",
+    "lint-scss-fix": "npx stylelint --fix src/**/*.scss"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/runtime-corejs2": "^7.9.2",
+    "autoprefixer": "^9.7.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.9.4",
+    "parcel-plugin-custom-dist-structure": "^1.1.17",
+    "parcel-plugin-imagemin": "3.0.0",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "parcel-resolver-ignore": "^1.0.2",
+    "postcss": "^8.3.11",
+    "postcss-sass": "^0.5.0",
+    "postcss-scss": "^4.0.2",
+    "sass": "^1.32.13",
+    "stylelint": "^14.1.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^2.0.1",
+    "stylelint-scss": "^4.0.0",
+    "win-node-env": "^0.4.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "overrideBrowserslist": [
+          "> 1%",
+          "last 4 versions",
+          "ie >= 9"
+        ]
+      }
+    }
+  },
+  "cssnano": {
+    "preset": [
+      "default",
+      {
+        "minifyFontValues": {
+          "removeQuotes": false
+        },
+        "normalizeUrl": false
+      }
+    ]
+  },
+  "babel": {
+    "plugins": [
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "corejs": 2,
+          "regenerator": true
+        }
+      ]
+    ]
+  },
+  "customDistStructure": {
+    "config": {
+      ".css": "styles",
+      ".css.map": "styles",
+      ".js": "scripts",
+      ".js.map": "scripts",
+      "fonts": [
+        ".ttf",
+        ".otf",
+        ".woff",
+        ".woff2",
+        ".eot"
+      ],
+      "images": [
+        ".jpg",
+        ".png",
+        ".svg",
+        ".gif",
+        ".ttf",
+        ".bmp"
+      ]
+    },
+    "options": {
+      "development": true
+    }
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "public",
+        "env": "development"
+      },
+      {
+        "staticPath": "public",
+        "env": "production"
+      }
+    ],
+    "watcherGlob": "**"
+  },
+  "htmlnano": {
+    "collapseAttributeWhitespace": false,
+    "collapseBooleanAttributes": false,
+    "collapseWhitespace": false,
+    "minifyJson": false,
+    "minifySvg": false
+  },
+  "parcelIgnore": [],
+  "dependencies": {
+    "assemble": "^0.3.83",
+    "grunt": "^0.4.5",
+    "lottie-web": "^5.8.1",
+    "styles": "^0.2.1",
+    "swiper": "^6.8.4"
+  }
 }
