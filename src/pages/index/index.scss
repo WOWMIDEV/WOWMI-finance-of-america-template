@@ -211,6 +211,19 @@
 .help {
   overflow: hidden;
 
+  &.section {
+    padding-bottom: 10.8rem;
+
+    @media screen and (max-width: $md) {
+      padding-bottom: 8rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      padding-bottom: 5rem;
+    }
+  }
+
+
   &__title {
     text-align: center;
     font-weight: 800;
