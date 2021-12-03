@@ -6,7 +6,7 @@
     "server": "Run server at https://192.168.1.49:3000"
   },
   "scripts": {
-    "serve": "del /q server && parcel serve src/*.html --out-dir server/ --port 3000",
+    "serve": "del /q server && NODE_ENV=development parcel serve src/*.html --out-dir server/ --port 3000",
     "build": "del /q build && NODE_ENV=production parcel build src/*.html --no-cache --out-dir build --public-url ./",
     "build-no-minify": "del /q build && NODE_ENV=production parcel build src/index.html --no-minify --no-cache --out-dir build --public-url ./",
     "lint-js": "npx eslint src/**/*.js",
@@ -29,6 +29,7 @@
     "parcel-bundler": "^1.9.4",
     "parcel-plugin-custom-dist-structure": "^1.1.17",
     "parcel-plugin-imagemin": "3.0.0",
+    "parcel-plugin-static-files-copy": "^2.6.0",
     "parcel-resolver-ignore": "^1.0.2",
     "postcss": "^8.3.11",
     "postcss-sass": "^0.5.0",
@@ -95,16 +96,24 @@
         ".gif",
         ".ttf",
         ".bmp"
-      ],
-      ".fileExtension": "folder/in/dist",
-      "folder/in/dist": [
-        ".file",
-        ".extensions"
       ]
     },
     "options": {
       "development": true
     }
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "public",
+        "env": "development"
+      },
+      {
+        "staticPath": "public",
+        "env": "production"
+      }
+    ],
+    "watcherGlob": "**"
   },
   "htmlnano": {
     "collapseAttributeWhitespace": false,
