@@ -206,6 +206,10 @@
     position: relative;
     justify-content: space-between;
 
+    @media screen and (max-width: $lg) {
+      padding-top: 7rem;
+    }
+
     @media screen and (max-width: $md) {
       padding: 5.375rem 0 6.75rem 0;
     }
@@ -372,11 +376,20 @@
   }
 }
 
+
 .footer {
   background-color: $dark-blue;
   background-image: url(../../assets/images/noise.png);
   color: $white;
   padding: 5rem 0 1.25rem 0;
+
+  @media screen and (max-width: $md) {
+    padding: 3rem 0 1.25rem 0;
+  }
+
+  @media screen and (max-width: $sm) {
+    padding: 3.75rem 0 2.5rem 0;
+  }
 
   &__top {
     display: flex;
@@ -384,6 +397,12 @@
     padding-bottom: 2.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     align-self: flex-end;
+
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+    }
+
+
   }
 
   &__text {
@@ -397,6 +416,33 @@
       margin: 0 2.375rem 0 1rem;
       max-width: 20.125rem;
     }
+
+    @media screen and (max-width: $md) {
+      margin-top: 1.5625rem 0 0 0;
+      margin-left: 0;
+      max-width: none;
+    }
+
+    @media screen and (max-width: $sm) {
+      margin: 1.5625rem 0 0 0;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 1 auto;
+    margin-left: 0.625rem;
+
+    @media screen and (max-width: $md) {
+      align-items: end;
+    }
+
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
   }
 
   &__links {
@@ -405,6 +451,22 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-row-gap: 1.25rem;
     grid-column-gap: 2rem;
+
+    @media screen and (max-width: $md) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      align-items: end;
+      margin-right: 0.625rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      display-template-rows: 1fr;
+      grid-template-columns: repeat(5, auto);
+      align-items: center;
+      grid-column-gap: 1.25rem;
+      margin-right: 0;
+      margin: 0 auto;
+    }
   }
 
   &__link {
@@ -420,6 +482,16 @@
   &__top-left {
     display: flex;
     align-items: flex-start;
+
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: $sm) {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
   }
 
   &__top-right {
@@ -428,6 +500,16 @@
     flex-direction: column;
     align-self: stretch;
     margin-left: auto;
+
+    @media screen and (max-width: $md) {
+      margin-top: 2rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      margin: 0;
+      justify-content: center;
+      align-self: center;
+    }
   }
 
   &__social {
@@ -435,6 +517,14 @@
 
     @media screen and (max-width: $lg) {
       margin-left: 0.625rem;
+    }
+
+    @media screen and (max-width: $md) {
+      margin-bottom: 1rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      margin-left: 0;
     }
 
     & .social__icon {
@@ -472,6 +562,10 @@
     line-height: 100%;
     text-align: right;
 
+    @media screen and (max-width: $sm) {
+      text-align: center;
+    }
+
     &:hover {
       text-decoration: underline;
     }
@@ -487,10 +581,22 @@
     justify-content: space-between;
   }
 
+  &__bottom-right {
+    @media screen and (max-width: $sm) {
+      display: flex;
+      justify-content: space-between;
+      width: 57%;
+    }
+  }
+
   &__bottom-link {
     color: inherit;
     transition: all 0.3s ease 0s;
     margin-left: 1.875rem;
+
+    @media screen and (max-width: $sm) {
+      margin-left: 0;
+    }
 
     &:hover {
       color: $white;
@@ -633,11 +739,34 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__info {
     max-width: 26.1rem;
     width: 100%;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (max-width: $sm) {
+      margin-bottom: 3.75rem;
+      text-align: center;
+    }
+
+    & .btn {
+      @media screen and (max-width: $sm) {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__person {
+    align-self: end;
   }
 
   &__title {
@@ -670,6 +799,10 @@
     }
   }
 
+  &__person-type {
+    max-width: 9.0625rem;
+  }
+
   &__img {
     position: absolute;
     bottom: -14.5rem;
@@ -679,6 +812,16 @@
     @media screen and (max-width: $lg) {
       right: 7.188rem;
       max-height: 37.313rem;
+    }
+
+    @media screen and (max-width: $md) {
+      right: 0;
+    }
+
+    @media screen and (max-width: $sm) {
+      max-height: 30rem;
+      right: auto;
+      left: -4.125rem;
     }
   }
 }
@@ -860,6 +1003,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 1.5625rem;
+  flex-wrap: wrap;
 
   &--center {
     justify-content: center;
@@ -872,6 +1016,10 @@
     line-height: 100%;
     color: rgba(27, 51, 85, 0.5);
     transition: all 0.3s ease 0s;
+
+    @media screen and (max-width: $sm) {
+      font-size: 0.875rem;
+    }
 
     &:hover {
       color: $dark-blue;
@@ -890,6 +1038,10 @@
     margin: 0 0.75rem;
     display: inline-block;
 
+    @media screen and (max-width: $sm) {
+      margin: 0 0.5rem;
+    }
+
     &--blue {
       background-color: $dark-blue;
     }
@@ -901,6 +1053,21 @@
     padding: 2.5rem;
     position: relative;
 
+    & .play-icon {
+      @media screen and (max-width: $sm) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin: 0;
+      }
+    }
+
+    @media screen and (max-width: $md) {
+      padding: 2.5rem 1.25rem;
+    }
+
     & .btn {
       width: max-content;
     }
@@ -908,6 +1075,11 @@
     &:first-child {
       grid-row-start: 1;
       grid-row-end: 3;
+
+      @media screen and (max-width: $md) {
+        grid-row-start: auto;
+        grid-row-end: auto;
+      }
     }
   }
 
@@ -917,6 +1089,10 @@
     display: grid;
     grid-template-rows: 1fr auto;
     height: 100%;
+
+    @media screen and (max-width: $sm) {
+      display: block;
+    }
   }
 
   &__card-img {
@@ -979,6 +1155,7 @@
     color: $white;
     margin-bottom: 0.9375rem;
     max-width: 15.3125rem;
+
   }
 
   &__title--big {
@@ -986,6 +1163,14 @@
     line-height: 110%;
     letter-spacing: 0;
     max-width: none;
+
+    @media screen and (max-width: $md) {
+      font-size: 1.8rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 1.5rem;
+    }
   }
 
   &__descr {
@@ -993,6 +1178,10 @@
     line-height: 180%;
     color: $white;
     margin-bottom: 1.875rem;
+
+    @media screen and (max-width: $md) {
+      margin-bottom: 1.5625rem;
+    }
   }
 
   &__card--white {
@@ -1023,6 +1212,17 @@
     grid-template-columns: 1fr 30.5rem;
     grid-template-rows: 1fr 1fr;
     gap: 1.25rem;
+
+    @media screen and (max-width: $md) {
+      grid-template-columns: 1fr 20.5rem;
+      grid-template-rows: auto;
+    }
+
+
+    @media screen and (max-width: $sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
   }
 }
 
@@ -1034,6 +1234,14 @@
 
   &__text {
     margin-bottom: 3.75rem;
+
+    @media screen and (max-width: $md) {
+      margin-bottom: 3rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      margin-bottom: 2.5rem;
+    }
   }
 
   &__h2 {
@@ -1053,6 +1261,11 @@
       font-size: 2.125rem;
     }
   }
+
+  & .news__card:first-child {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
 }
 
 .menu {
@@ -1062,13 +1275,32 @@
   position: relative;
   background-image: $bg-gradient;
 
+  @media screen and (max-width: $sm) {
+    padding: 5rem 0rem;
+  }
+
   & .types__cards {
     display: grid;
     grid-template-columns: 1fr 19.8125rem;
+
+    @media screen and (max-width: $md) {
+      grid-template-columns: 1fr 20.5rem;
+      grid-template-rows: 1fr 1fr;
+    }
+
+
+    @media screen and (max-width: $sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
   }
 
   & .news {
     margin-left: 3rem;
+
+    @media screen and (max-width: $md) {
+      margin-left: 0;
+    }
   }
 
   &-wrp {
@@ -1076,6 +1308,10 @@
     align-items: flex-start;
     position: relative;
     z-index: 2;
+
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+    }
   }
 
   &__dd {
@@ -1104,6 +1340,10 @@
     margin-bottom: 1.875rem;
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $sm) {
+      font-size: 2.25rem;
+    }
   }
 
   &__dd-content {}
@@ -1130,6 +1370,9 @@
     grid-template-rows: 1fr 1fr;
     gap: 1.25rem;
   }
+}
 
-  &__card {}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: none !important;
 }

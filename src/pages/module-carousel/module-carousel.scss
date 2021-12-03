@@ -33,7 +33,12 @@
     overflow: visible;
 
     & .swiper-pagination-bullets {
-      bottom: -52px !important;
+      bottom: -3.25rem !important;
+
+      @media screen and (max-width: $md) {
+        bottom: -1.875rem !important;
+      }
+
     }
   }
 
@@ -41,6 +46,19 @@
 
   & .swiper-slide {
     width: 37.375rem;
+
+    @media screen and (max-width: $lg) {
+      width: 29.375rem;
+    }
+
+    @media screen and (max-width: $md) {
+      width: 25rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      width: 100vw;
+      max-width: 100%;
+    }
   }
 
   & .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -55,10 +73,11 @@
     opacity: 1;
     background-color: rgba(22, 59, 125, 0.3);
     transition: all 0.3s ease 0s;
-  }
 
-  & .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 0.9375rem;
+    @media screen and (max-width: $md) {
+      width: 2.5rem;
+      margin: 0 0.4375rem !important;
+    }
   }
 
   & .swiper-container-horizontal>.swiper-pagination-bullets,
@@ -74,6 +93,10 @@
     background: #E1E6EE;
     border-radius: 50%;
     transition: all 0.3s ease 0s;
+
+    @media screen and (max-width: $md) {
+      display: none;
+    }
 
     & .slider-arrow path {
       transition: all 0.3s ease 0s;
