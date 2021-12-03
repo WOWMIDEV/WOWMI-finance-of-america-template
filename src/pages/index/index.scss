@@ -3,14 +3,14 @@
 
 
 .hero-card {
-  padding: 1.5625rem;
-  background: $white;
-  box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
-  max-width: 16rem;
-  width: 100%;
   position: absolute;
   bottom: 8.75rem;
   left: -5.125rem;
+  width: 100%;
+  max-width: 16rem;
+  padding: 1.5625rem;
+  background: $white;
+  box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
 
   @media screen and (max-width: $lg) {
     left: -0.125rem;
@@ -21,14 +21,14 @@
   }
 
   @media screen and (max-width: $sm) {
-    background: transparent;
-    box-shadow: none;
     position: static;
+    max-width: max-content;
     padding: 0;
+    margin-right: 2.1875rem;
     margin-bottom: 1.5625rem;
     margin-left: auto;
-    max-width: max-content;
-    margin-right: 2.1875rem;
+    background: transparent;
+    box-shadow: none;
   }
 
   & .play-icon {
@@ -37,17 +37,17 @@
   }
 
   &__name {
-    font-weight: bold;
-    font-size: 1.125rem;
-    line-height: 140%;
     color: $dark-blue;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 140%;
   }
 
   &__category {
+    margin-bottom: 0.9375rem;
+    color: rgba(28, 49, 85, 0.7);
     font-size: 0.875rem;
     line-height: 140%;
-    color: rgba(28, 49, 85, 0.7);
-    margin-bottom: 0.9375rem;
 
     @media screen and (max-width: $sm) {
       max-width: 9.0625rem;
@@ -60,20 +60,19 @@
   }
 
   &__text {
-    font-size: 0.875rem;
-    line-height: 110%;
     color: $dark-blue;
+    font-size: 0.875rem;
     font-weight: bold;
+    line-height: 110%;
   }
 }
 
 
 .btn-back {
-  margin: 3.75rem auto 0 auto;
+  margin: 3.75rem auto 0;
 }
 
 .future {
-
   &-wrp {
     display: flex;
     justify-content: space-between;
@@ -84,8 +83,8 @@
   }
 
   &__left {
-    max-width: 30.5rem;
     width: 100%;
+    max-width: 30.5rem;
 
     @media screen and (max-width: $lg) {
       margin-right: 1rem;
@@ -98,12 +97,12 @@
   }
 
   &__title {
-    font-weight: 800;
-    font-size: 3.375rem;
-    line-height: 110%;
-    letter-spacing: -0.01em;
-    color: $white;
     margin-bottom: 1.5625rem;
+    color: $white;
+    font-size: 3.375rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 110%;
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
@@ -115,20 +114,20 @@
   }
 
   &__text {
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
     line-height: 180%;
-    color: rgba(255, 255, 255, 0.7);
   }
 
   &__number {
+    position: relative;
     padding-bottom: 2.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    position: relative;
   }
 
   &__items {
-    margin-top: 2.5rem;
     display: flex;
+    margin-top: 2.5rem;
     margin-left: -0.625rem;
 
     @media screen and (max-width: $lg) {
@@ -136,20 +135,20 @@
     }
 
     @media screen and (max-width: $sm) {
-      margin-top: 1.875rem;
       display: grid;
-      grid-template-columns: 1fr auto;
+      margin-top: 1.875rem;
       grid-row-gap: 1.875rem;
+      grid-template-columns: 1fr auto;
     }
   }
 
   &__year {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
     line-height: 100%;
-    color: rgba(255, 255, 255, 0.7);
-    position: absolute;
-    right: 0;
-    top: 50%;
     transform: translate(42%, -50%) rotate(-90deg);
   }
 
@@ -167,19 +166,19 @@
   }
 
   &__info {
-    max-width: 8rem;
     width: 100%;
+    max-width: 8rem;
   }
 
   &__img {
     width: 3rem;
     height: 3rem;
-    background-color: $white;
-    border-radius: 50%;
-    margin-right: 1rem;
-    background-repeat: no-repeat;
-    background-position: center center;
     flex: 0 0 auto;
+    margin-right: 1rem;
+    background-color: $white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
 
     &--people {
       background-image: url(../../assets/images/customers.svg);
@@ -195,16 +194,16 @@
   }
 
   &__numbers {
-    font-weight: bold;
-    font-size: 1.75rem;
-    line-height: 100%;
     color: $white;
+    font-size: 1.75rem;
+    font-weight: bold;
+    line-height: 100%;
   }
 
   &__number {
+    color: rgba(255, 255, 255, 0.5);
     font-size: 1rem;
     line-height: 140%;
-    color: rgba(255, 255, 255, 0.5);
   }
 }
 
@@ -225,16 +224,16 @@
 
 
   &__title {
-    text-align: center;
-    font-weight: 800;
+    width: 100%;
+    max-width: 25.375rem;
+    margin: 0 auto 1.5625rem;
+    color: $dark-blue;
     font-size: 3.375rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
     line-height: 110%;
     text-align: center;
-    letter-spacing: -0.01em;
-    color: $dark-blue;
-    max-width: 25.375rem;
-    width: 100%;
-    margin: 0 auto 1.5625rem auto;
+    text-align: center;
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
@@ -246,13 +245,13 @@
   }
 
   &__text {
+    width: 100%;
+    max-width: 44.1875rem;
+    margin: 0 auto;
+    color: rgba(28, 49, 85, 0.7);
     font-size: 1rem;
     line-height: 180%;
     text-align: center;
-    color: rgba(28, 49, 85, 0.7);
-    max-width: 44.1875rem;
-    width: 100%;
-    margin: 0 auto;
   }
 }
 
@@ -261,21 +260,21 @@
 
 
   &__step {
-    font-weight: 800;
-    font-size: 0.875rem;
-    line-height: 100%;
-    color: rgba(28, 49, 84, 0.5);
-    text-align: center;
     margin-bottom: 0.625rem;
+    color: rgba(28, 49, 84, 0.5);
+    font-size: 0.875rem;
+    font-weight: 800;
+    line-height: 100%;
+    text-align: center;
   }
 
   &__title {
-    font-weight: 800;
-    font-size: 1.5rem;
-    line-height: 110%;
-    color: $blue;
-    text-align: center;
     margin-bottom: 2.5rem;
+    color: $blue;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 110%;
+    text-align: center;
 
 
     @media screen and (max-width: $sm) {
@@ -290,8 +289,8 @@
     transition: opacity 0.5s ease 0;
 
     @media screen and (max-width: $sm) {
-      grid-template-columns: repeat(6, 17.25rem);
       grid-column-gap: 0.625rem;
+      grid-template-columns: repeat(6, 17.25rem);
     }
 
     &.js-hide {
@@ -318,13 +317,13 @@
   }
 
   &__card {
-    background-color: $white;
-    box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
-    padding: 4.375rem;
-    transition: all 0.3s ease 0s;
     position: relative;
     z-index: 1;
+    padding: 4.375rem;
+    background-color: $white;
+    box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
     cursor: pointer;
+    transition: all 0.3s ease 0s;
 
     @media screen and (max-width: $sm) {
       padding: 2.5rem;
@@ -346,17 +345,17 @@
 
 
     &::before {
-      content: '';
-      transition: all 300ms ease-in-out;
-      opacity: 0;
-      z-index: -1;
-      display: block;
       position: absolute;
-      left: 0;
+      z-index: -1;
+      top: 0;
       right: 0;
       bottom: 0;
-      top: 0;
+      left: 0;
+      display: block;
       background-image: $bg-gradient;
+      content: '';
+      opacity: 0;
+      transition: all 300ms ease-in-out;
     }
   }
 
@@ -364,10 +363,10 @@
     width: 15.375rem;
     height: 15.375rem;
     margin-bottom: 2.5rem;
-    border-radius: 50%;
     background-image: url(../../assets/images/illustration.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    border-radius: 50%;
 
     @media screen and (max-width: $sm) {
       width: 12rem;
@@ -376,15 +375,15 @@
   }
 
   &__type {
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $dark-blue;
     font-size: 1.125rem;
+    font-weight: bold;
     line-height: 110%;
     text-align: center;
-    color: $dark-blue;
     transition: all 0.3s ease 0s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     svg {
       margin-left: 0.625rem;
@@ -400,39 +399,39 @@
   }
 
   &__mouse {
-    margin: 2.5rem auto 0.625rem auto;
+    position: relative;
     width: 1.5rem;
     height: 2.375rem;
-    border: 0.125rem solid $blue;
     box-sizing: border-box;
-    border-radius: 1.875rem;
-    position: relative;
+    border: 0.125rem solid $blue;
+    margin: 2.5rem auto 0.625rem;
     animation-duration: 1s;
-    animation-timing-function: ease;
     animation-fill-mode: backwards;
     animation-iteration-count: infinite;
     animation-name: mouseScroll;
+    animation-timing-function: ease;
+    border-radius: 1.875rem;
 
     &::before {
-      content: "";
-      width: 0.125rem;
-      height: 0.4375rem;
       position: absolute;
       top: 0.5625rem;
       left: 50%;
-      transform: translateX(-50%);
+      width: 0.125rem;
+      height: 0.4375rem;
       background-color: $blue;
       border-radius: 6.25rem;
+      content: '';
+      transform: translateX(-50%);
     }
   }
 
   &__mouse-text {
-    font-weight: 600;
+    color: rgba(22, 60, 126, 0.5);
     font-size: 0.875rem;
+    font-weight: 600;
     line-height: 100%;
     text-align: center;
     text-transform: capitalize;
-    color: rgba(22, 60, 126, 0.5);
   }
 }
 
@@ -451,34 +450,34 @@
   }
 
   &__number {
-    font-weight: bold;
-    font-size: 1.125rem;
-    line-height: 110%;
-    color: $dark-blue;
+    display: flex;
     width: 3.625rem;
     height: 3.625rem;
-    border-radius: 50%;
-    background-color: #E1E6EE;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     margin-bottom: 3.5rem;
+    background-color: #e1e6ee;
+    border-radius: 50%;
+    color: $dark-blue;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 110%;
   }
 
   &__title {
-    font-weight: bold;
-    font-size: 1.5rem;
-    line-height: 110%;
-    color: $dark-blue;
     margin-bottom: 0.625rem;
+    color: $dark-blue;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 110%;
   }
 
   &__text {
     max-width: 11.625rem;
+    margin-bottom: 1.25rem;
+    color: rgba(28, 49, 85, 0.8);
     font-size: 0.875rem;
     line-height: 140%;
-    color: rgba(28, 49, 85, 0.8);
-    margin-bottom: 1.25rem;
   }
 }
 
@@ -487,31 +486,31 @@
 
   &__container {
     display: grid;
+    align-items: start;
     column-gap: 10.9375rem;
     grid-template-columns: auto 1fr;
-    align-items: start;
   }
 
   &__content-wrp {
-    align-self: stretch;
+    position: relative;
     display: flex;
     flex-direction: column;
+    align-self: stretch;
     justify-content: space-between;
-    position: relative;
   }
 
   &__controls {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
     position: absolute;
     right: 0;
     bottom: 27.25rem;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   &__slider-wrp {
-    margin-right: calc((#{$container-width} - #{$container-inline-padding} - 100vw) / 2);
     overflow: hidden;
+    margin-right: calc((#{$container-width} - #{$container-inline-padding} - 100vw) / 2);
   }
 
   &__slider-inner {
@@ -523,13 +522,13 @@
   }
 
   &__slider-btn {
+    z-index: 2;
     width: 3.625rem;
     height: 3.625rem;
-    border-radius: 50%;
     background-color: $white;
     background-position: center center;
     background-repeat: no-repeat;
-    z-index: 2;
+    border-radius: 50%;
 
     &--prev {
       background-image: url(../../assets/images/slider-left.svg);
@@ -549,12 +548,12 @@
   }
 
   &__slide {
-    background-color: $dark-blue;
     position: relative;
-    padding: 2.5rem;
-    max-width: $slider-width;
     width: 100%;
+    max-width: $slider-width;
     max-height: 23.375rem;
+    padding: 2.5rem;
+    background-color: $dark-blue;
     transition: all 0.6s ease 0s;
     transition: max-height 1s ease-in-out;
 
@@ -577,11 +576,11 @@
   }
 
   &__logo {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
     width: 3rem;
     height: 3rem;
-    position: absolute;
-    right: 2.5rem;
-    top: 2.5rem;
   }
 
   &__img {
@@ -591,65 +590,65 @@
       width: 6rem;
       height: 6rem;
       border-radius: 50%;
-      transition: all 0.5s ease 0s;
       object-fit: contain;
+      transition: all 0.5s ease 0s;
     }
   }
 
   &__name {
-    font-size: 1.5rem;
-    line-height: 110%;
-    color: $white;
     margin-bottom: 0.25rem;
+    color: $white;
+    font-size: 1.5rem;
     font-weight: bold;
+    line-height: 110%;
   }
 
   &__tag {
+    margin-bottom: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 1rem;
     line-height: 140%;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 0.9375rem;
   }
 
   &__text {
+    color: $white;
     font-size: 1rem;
     line-height: 180%;
-    color: $white;
 
   }
 
   &__info {
-    margin-top: 1.5rem;
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-row-gap: 0.25rem;
-    grid-column-gap: 3.625rem;
     overflow: hidden;
     max-height: 0;
+    margin-top: 1.5rem;
+    grid-column-gap: 3.625rem;
+    grid-row-gap: 0.25rem;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
     transition: max-height 1s cubic-bezier(0, 1, 0, 1);
   }
 
   &__info-type {
+    color: rgba(255, 255, 255, 0.6);
     font-size: 1rem;
     line-height: 140%;
-    color: rgba(255, 255, 255, 0.6);
   }
 
   &__info-value {
-    font-weight: bold;
-    font-size: 1.5rem;
-    line-height: 110%;
     color: $white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 110%;
   }
 
   &__title {
     margin-bottom: 3.75rem;
-    font-weight: 800;
-    font-size: 3.25rem;
-    line-height: 3.9375rem;
-    letter-spacing: -0.01em;
     color: $white;
+    font-size: 3.25rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 3.9375rem;
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
@@ -662,21 +661,21 @@
 
   &__logos {
     display: flex;
+    max-width: 8rem;
     flex-direction: column;
     align-items: center;
-    max-width: 8rem;
     margin-top: -10.375rem;
 
     @media screen and (max-width: $md) {
-      margin-top: 0;
-      margin-right: 0;
       display: grid;
-      grid-template-columns: auto 1fr;
-      grid-row-gap: 1.875rem;
-      grid-column-gap: 1.875rem;
       width: 100%;
       max-width: none;
       align-items: initial;
+      margin-top: 0;
+      margin-right: 0;
+      grid-column-gap: 1.875rem;
+      grid-row-gap: 1.875rem;
+      grid-template-columns: auto 1fr;
     }
   }
 
@@ -692,17 +691,17 @@
     }
 
     @media screen and (max-width: $md) {
-      margin-bottom: 0;
-      justify-content: flex-start;
       align-items: flex-start;
+      justify-content: flex-start;
+      margin-bottom: 0;
     }
   }
 
   &__logo-img {
     width: 6.5rem;
     height: 6.5rem;
-    object-fit: contain;
     margin-bottom: 1.25rem;
+    object-fit: contain;
 
     @media screen and (max-width: $md) {
       width: 2rem;
@@ -711,11 +710,11 @@
   }
 
   &__grade {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    color: $white;
-    font-weight: 700;
     margin-bottom: 0.25rem;
+    color: $white;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.5rem;
 
     @media screen and (max-width: $md) {
       font-size: 1.5rem;
@@ -724,9 +723,9 @@
   }
 
   &__stars {
-    background-image: url(../../assets/images/stars-sprite.svg);
     width: 7.75rem;
     height: 1.5rem;
+    background-image: url(../../assets/images/stars-sprite.svg);
   }
 
   &__stars--5 {
@@ -742,24 +741,23 @@
   }
 
   &__logo-numbers {
+    margin-top: 0.625rem;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.875rem;
     line-height: 1.0625rem;
     text-align: center;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 0.625rem;
   }
 }
 
 .grow {
-
   &__title {
-    font-weight: 800;
-    font-size: 3.375rem;
-    line-height: 110%;
-    letter-spacing: -0.01em;
-    color: $white;
-    text-align: center;
     margin-bottom: 1.5625rem;
+    color: $white;
+    font-size: 3.375rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 110%;
+    text-align: center;
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
@@ -771,39 +769,37 @@
   }
 
   &__text {
+    max-width: 29.625rem;
+    margin: 0 auto 2.5rem;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
     line-height: 180%;
-    color: rgba(255, 255, 255, 0.7);
-    max-width: 29.625rem;
     text-align: center;
-    margin: 0 auto 2.5rem auto;
   }
 }
 
 .tabs {
-
   &__nav {
     background-color: rgba(255, 255, 255, 0.1);
   }
 
   &__nav-btn {
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 140%;
-    color: rgba(255, 255, 255, 0.6);
     background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 140%;
   }
 }
 
 .grow-tabs {
-
   &__nav {
-    margin: 0 auto 3.75rem auto;
-    padding: 0.25rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: max-content;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    margin: 0 auto 3.75rem;
 
     @media screen and (max-width: $md) {
       margin-bottom: 1.875rem;
@@ -811,16 +807,16 @@
   }
 
   &__btn {
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 140%;
     padding: 1.125rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 140%;
     transition: all 0.3s ease 0s;
 
 
     &.js-active {
-      color: $dark-blue;
       background-color: $white;
+      color: $dark-blue;
     }
   }
 
@@ -830,8 +826,8 @@
     grid-template-columns: repeat(3, 1fr);
 
     @media screen and (max-width: $sm) {
-      grid-template-columns: 1fr;
       grid-row-gap: 0.9375rem;
+      grid-template-columns: 1fr;
     }
   }
 
@@ -845,22 +841,21 @@
   }
 
   &__company {
-    font-weight: bold;
-    font-size: 1.125rem;
-    line-height: 110%;
-    color: $blue;
     margin-bottom: 0.9375rem;
+    color: $blue;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 110%;
   }
 
   &__text {
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.875rem;
     line-height: 180%;
-    color: rgba(255, 255, 255, 0.8);
   }
 }
 
 .better {
-
   &__row {
     display: flex;
     justify-content: space-between;
@@ -877,14 +872,14 @@
     }
 
     @media screen and (max-width: $md) {
-      max-width: 10rem;
       width: 100%;
+      max-width: 10rem;
     }
   }
 
   &__left-column {
-    max-width: 18.3125rem;
     width: 100%;
+    max-width: 18.3125rem;
     margin-right: 7.1875rem;
 
     @media screen and (max-width: $lg) {
@@ -892,18 +887,18 @@
     }
 
     @media screen and (max-width: $md) {
-      margin-bottom: 2.5rem;
-      margin-right: 0;
       max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 2.5rem;
     }
   }
 
   &__title {
-    font-weight: 800;
-    font-size: 3.375rem;
-    line-height: 110%;
     margin-bottom: 1.5625rem;
     color: $dark-blue;
+    font-size: 3.375rem;
+    font-weight: 800;
+    line-height: 110%;
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
@@ -916,27 +911,27 @@
   }
 
   &__text {
+    margin-bottom: 2.5rem;
+    color: $dark-blue;
     font-size: 1rem;
     line-height: 180%;
-    color: $dark-blue;
-    margin-bottom: 2.5rem;
 
     @media screen and (max-width: $md) {
       max-width: 440px;
-      margin: 0 auto 2.5rem auto;
+      margin: 0 auto 2.5rem;
       text-align: center;
     }
   }
 
   &__card {
+    display: flex;
+    padding: 2.625rem 2.5rem;
     background-color: $white;
     box-shadow: 0 0 74px rgba(29, 50, 86, 0.07);
-    padding: 2.625rem 2.5rem;
-    display: flex;
 
     @media screen and (max-width: $lg) {
-      padding: 2.25rem 1.5625rem;
       flex-direction: column;
+      padding: 2.25rem 1.5625rem;
     }
 
     &:first-child {
@@ -953,17 +948,17 @@
   }
 
   &__card-title {
-    font-weight: bold;
-    font-size: 1.125rem;
-    line-height: 110%;
-    color: $blue;
     margin-bottom: 0.9375rem;
+    color: $blue;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 110%;
   }
 
   &__card-text {
+    color: $dark-blue;
     font-size: 0.875rem;
     line-height: 180%;
-    color: $dark-blue;
   }
 }
 
@@ -975,7 +970,7 @@
 
 .btn.btn-mobile-vis {
   display: none;
-  margin: 2.5rem auto 0 auto;
+  margin: 2.5rem auto 0;
 
   @media screen and (max-width: $md) {
     display: block;
@@ -988,20 +983,20 @@
   &-wrp {
     position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
+    justify-content: space-between;
   }
 
   &__info {
-    max-width: 26.0625rem;
     width: 100%;
+    max-width: 26.0625rem;
   }
 
   &__title {
-    font-weight: 800;
-    font-size: 3.375rem;
-    line-height: 110%;
     margin-bottom: 1.5625rem;
+    font-size: 3.375rem;
+    font-weight: 800;
+    line-height: 110%;
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
@@ -1013,16 +1008,16 @@
   }
 
   &__text {
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
     line-height: 180%;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 2.5rem;
   }
 
   &__img {
     position: absolute;
-    bottom: -7.5rem;
     right: 14.1875rem;
+    bottom: -7.5rem;
     max-height: 32.3125rem;
   }
 }

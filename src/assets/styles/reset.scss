@@ -29,15 +29,15 @@ dd {
 
 body {
   min-height: 100vh;
+  line-height: 1.5;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
 }
 
 button {
+  padding: 0;
   border: 0;
   cursor: pointer;
-  padding: 0;
 }
 
 ul[class],
@@ -54,8 +54,8 @@ a {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 article > * + * {

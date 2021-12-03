@@ -50,7 +50,7 @@ Lottie.loadAnimation({
   renderer: 'svg',
   loop: true,
   autoplay: true,
-  path: '../assets/images/Closer.json', // the path to the animation json
+  path: './public/lottie/closer.json', // the path to the animation json
 });
 
 function initMousemoveHandler({

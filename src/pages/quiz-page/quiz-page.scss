@@ -3,43 +3,42 @@
 .quiz {
   &__options {
     display: grid;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    gap: 1.25rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
-    width: 100%;
   }
 }
 
 .form {}
 
 .faq-quiz {
-
   &__title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 2.25rem;
-    line-height: 100%;
-    color: $dark-blue;
     margin-bottom: 2.5rem;
+    color: $dark-blue;
+    font-size: 2.25rem;
+    font-weight: bold;
+    line-height: 100%;
+    text-align: center;
   }
 
   &__answer-preview {
-    font-weight: bold;
-    font-size: 1.125rem;
-    line-height: 100%;
     color: $blue;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 100%;
   }
 
   &__question {
-    max-width: 36.3125rem;
-    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    max-width: 36.3125rem;
     flex-direction: column;
-    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
     padding: 3.125rem 0;
+    margin: 0 auto;
   }
 
   &__img {
@@ -47,23 +46,23 @@
   }
 
   &__button {
-    input[type="radio"] {
+    input[type='radio'] {
       display: none;
     }
 
     & .option {
-      background: $white;
-      height: 100%;
-      width: 100%;
       display: flex;
+      width: 100%;
+      height: 100%;
       align-items: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
       padding: 1.25rem;
-      background: #E8ECF2;
+      background: $white;
+      background: #e8ecf2;
+      color: rgba(27, 51, 85, 0.5);
+      cursor: pointer;
       font-size: 1.125rem;
       line-height: 110%;
-      color: rgba(27, 51, 85, 0.5);
+      transition: all 0.3s ease;
 
       & span {
         transition: all 0.3s ease 0s;
@@ -72,14 +71,14 @@
 
 
     & .dot {
-      height: 1.5rem;
-      width: 1.5rem;
-      background: #d9d9d9;
-      border-radius: 50%;
       position: relative;
-      margin-right: 0.625rem;
-      background-color: $white;
+      width: 1.5rem;
+      height: 1.5rem;
       border: 0.0625rem solid rgba(22, 59, 125, 0.5);
+      margin-right: 0.625rem;
+      background: #d9d9d9;
+      background-color: $white;
+      border-radius: 50%;
       transition: all 0.3s ease 0s;
     }
 
@@ -94,8 +93,8 @@
       }
 
       & .dot {
-        background-color: $blue;
         border-color: $blue;
+        background-color: $blue;
       }
     }
   }

@@ -1,7 +1,6 @@
 @import '../../assets/styles/variables.scss';
 
 .carousel-section {
-
   &__title {
     margin-bottom: 1.5625rem;
   }
@@ -12,12 +11,12 @@
 
   &__h2 {
     margin-bottom: 3.75rem;
-    font-weight: 800;
+    color: $dark-blue;
     font-size: 3.375rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
     line-height: 110%;
     text-align: center;
-    letter-spacing: -0.01em;
-    color: $dark-blue;
   }
 }
 
@@ -26,6 +25,8 @@
 }
 
 .carousel {
+
+  position: relative;
   margin-bottom: 11.2rem;
 
   @media screen and (max-width: $lg) {
@@ -35,8 +36,6 @@
   @media screen and (max-width: $sm) {
     margin-bottom: 5rem;
   }
-
-  position: relative;
 
   &.swiper {
     overflow: visible;
@@ -75,12 +74,12 @@
   }
 
   & .swiper-pagination-bullet {
-    margin: 0 0.9375rem !important;
-    height: 0.125rem;
     width: 5.625rem;
+    height: 0.125rem;
+    margin: 0 0.9375rem !important;
+    background-color: rgba(22, 59, 125, 0.3);
     border-radius: 0;
     opacity: 1;
-    background-color: rgba(22, 59, 125, 0.3);
     transition: all 0.3s ease 0s;
 
     @media screen and (max-width: $md) {
@@ -99,7 +98,7 @@
   & .swiper-button-next {
     width: 4rem;
     height: 4rem;
-    background: #E1E6EE;
+    background: #e1e6ee;
     border-radius: 50%;
     transition: all 0.3s ease 0s;
 

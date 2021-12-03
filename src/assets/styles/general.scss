@@ -1,23 +1,23 @@
 @import '../../assets/styles/variables.scss';
 
 .swiper {
+  overflow: hidden;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 .header {
-  background-color: $white;
-  box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
-  padding: 0.625rem 0;
-  color: $dark-blue;
-  transition: all 0.3s ease 0s;
   position: relative;
   z-index: 10;
+  padding: 0.625rem 0;
+  background-color: $white;
+  box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
+  color: $dark-blue;
+  transition: all 0.3s ease 0s;
 
   &.js-open {
-    color: $white;
     background-color: $dark-blue;
+    color: $white;
 
     & .header__phone-icon path {
       fill: $white;
@@ -27,14 +27,14 @@
 
   &-wrp {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
   &__left {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   &__logo {
@@ -68,14 +68,14 @@
   }
 
   &__burger {
-    width: 1.25rem;
-    height: 1.0625rem;
-    cursor: pointer;
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
+    width: 1.25rem;
+    height: 1.0625rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
     &.js-open {
       height: 1.25rem;
@@ -101,13 +101,13 @@
     }
 
     span {
+      position: absolute;
+      left: 0;
+      width: 0.875rem;
       height: 0.0938rem;
       background-color: $dark-blue;
-      position: absolute;
       border-radius: 0.25rem;
       transition: 0.5s;
-      width: 0.875rem;
-      left: 0;
     }
 
     span:nth-of-type(1) {
@@ -132,11 +132,11 @@
   }
 
   &__link {
-    font-weight: bold;
-    font-size: 0.875rem;
-    line-height: 140%;
-    color: inherit;
     margin-left: 1.5625rem;
+    color: inherit;
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 140%;
     transition: all 0.3s ease 0s;
 
     @media screen and(max-width: $lg) {
@@ -154,8 +154,8 @@
 
   &__right {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   &__phone-icon {
@@ -167,11 +167,11 @@
   }
 
   &__phone {
-    font-weight: bold;
-    font-size: 0.875rem;
-    line-height: 140%;
-    color: inherit;
     margin-right: 3.125rem;
+    color: inherit;
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 140%;
     transition: all 0.3s ease 0s;
 
     @media screen and (max-width: $md) {
@@ -188,8 +188,6 @@
   }
 
   &__btn {
-
-
     &.btn {
       padding: 0.75rem 2.125rem 0.75rem 1.25rem;
       background-image: url(../../assets/images/arrow-right.svg) no-repeat;
@@ -208,23 +206,22 @@
 }
 
 .hero {
-
   &__row {
-    display: flex;
-    padding: 9.375rem 0 7.5rem 0;
     position: relative;
+    display: flex;
     justify-content: space-between;
+    padding: 9.375rem 0 7.5rem;
 
     @media screen and (max-width: $lg) {
       padding-top: 7rem;
     }
 
     @media screen and (max-width: $md) {
-      padding: 5.375rem 0 6.75rem 0;
+      padding: 5.375rem 0 6.75rem;
     }
 
     @media screen and (max-width: $sm) {
-      padding: 5.375rem 0 19.875rem 0;
+      padding: 5.375rem 0 19.875rem;
     }
   }
 
@@ -233,59 +230,59 @@
   }
 
   &__info {
-    max-width: 33.5rem;
-    width: 100%;
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 33.5rem;
 
     @media screen and (max-width: $md) {
       max-width: 25.5rem;
     }
 
     @media screen and (max-width: $sm) {
-      max-width: none;
-      text-align: center;
       display: flex;
+      max-width: none;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
     }
   }
 
   &__title {
-    font-weight: 800;
-    font-size: 4rem;
-    line-height: 110%;
-    letter-spacing: -0.01em;
-    color: $dark-blue;
     margin-bottom: 1.5625rem;
+    color: $dark-blue;
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 110%;
 
     @media screen and (max-width: $md) {
       font-size: 3rem;
     }
 
     @media screen and (max-width: $sm) {
-      text-align: center;
       font-size: 2.5rem;
+      text-align: center;
     }
   }
 
   &__text {
+    width: 100%;
+    max-width: 22.2125rem;
+    margin-bottom: 2.5rem;
+    color: $dark-blue;
     font-size: 1rem;
     line-height: 180%;
-    color: $dark-blue;
-    margin-bottom: 2.5rem;
-    max-width: 22.2125rem;
-    width: 100%;
 
   }
 
   &__photo {
     position: absolute;
-    bottom: 0;
     right: 0;
-    max-width: 36.875rem;
+    bottom: 0;
     width: 100%;
+    max-width: 36.875rem;
 
     @media screen and (max-width: $lg) {
       max-width: 29.875rem;
@@ -308,20 +305,20 @@
 
       @media screen and (max-width: $sm) {
         position: absolute;
-        bottom: -5.9375rem;
         z-index: -1;
+        bottom: -5.9375rem;
         left: -4.25rem;
+        width: auto;
         height: 410px;
         padding: 0;
-        width: auto;
       }
     }
   }
 
   &__main-logo {
     position: absolute;
-    bottom: 0;
     z-index: -1;
+    bottom: 0;
 
     @media screen and (max-width: $sm) {
       display: none;
@@ -331,26 +328,26 @@
 
   &__social {
     position: absolute;
-    display: flex;
-    flex-direction: column;
     right: 3rem;
     bottom: 8.75rem;
+    display: flex;
+    flex-direction: column;
 
     @media screen and (max-width: $md) {
       bottom: 2.5rem;
     }
 
     @media screen and (max-width: $sm) {
-      flex-direction: row;
       right: 0.75rem;
+      flex-direction: row;
 
       & .social__icon {
-        margin-bottom: 0;
         margin-right: 0.625rem;
+        margin-bottom: 0;
 
         &:last-child {
-          margin-bottom: 0;
           margin-right: 0;
+          margin-bottom: 0;
         }
       }
     }
@@ -366,46 +363,45 @@
 }
 
 .social {
-
   &__icon {
+    display: flex;
     width: 2.125rem;
     height: 2.125rem;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    background-color: $white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    justify-content: center;
     padding: 0.625rem;
+    background-color: $white;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease 0s;
 
     &:hover {
-      background-color: #E1E6EE;
+      background-color: #e1e6ee;
     }
   }
 }
 
 
 .footer {
+  padding: 5rem 0 1.25rem;
   background-color: $dark-blue;
   background-image: url(../../assets/images/noise.png);
   color: $white;
-  padding: 5rem 0 1.25rem 0;
 
   @media screen and (max-width: $md) {
-    padding: 3rem 0 1.25rem 0;
+    padding: 3rem 0 1.25rem;
   }
 
   @media screen and (max-width: $sm) {
-    padding: 3.75rem 0 2.5rem 0;
+    padding: 3.75rem 0 2.5rem;
   }
 
   &__top {
     display: flex;
     align-items: flex-start;
+    align-self: flex-end;
     padding-bottom: 2.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    align-self: flex-end;
 
     @media screen and (max-width: $sm) {
       flex-direction: column;
@@ -415,32 +411,32 @@
   }
 
   &__text {
+    max-width: 24.125rem;
+    margin: 0 8.375rem 0 4rem;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.75rem;
     line-height: 180%;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 8.375rem 0 4rem;
-    max-width: 24.125rem;
 
     @media screen and (max-width: $lg) {
-      margin: 0 2.375rem 0 1rem;
       max-width: 20.125rem;
+      margin: 0 2.375rem 0 1rem;
     }
 
     @media screen and (max-width: $md) {
+      max-width: none;
       margin-top: 1.5625rem 0 0 0;
       margin-left: 0;
-      max-width: none;
     }
 
     @media screen and (max-width: $sm) {
-      margin: 1.5625rem 0 0 0;
+      margin: 1.5625rem 0 0;
     }
   }
 
   &__right {
     display: flex;
-    align-items: flex-start;
     flex: 1 1 auto;
+    align-items: flex-start;
     margin-left: 0.625rem;
 
     @media screen and (max-width: $md) {
@@ -448,40 +444,40 @@
     }
 
     @media screen and (max-width: $sm) {
+      width: 100%;
       flex-direction: column;
       justify-content: center;
-      width: 100%;
     }
   }
 
   &__links {
     display: grid;
+    grid-column-gap: 2rem;
+    grid-row-gap: 1.25rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-row-gap: 1.25rem;
-    grid-column-gap: 2rem;
 
     @media screen and (max-width: $md) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
       align-items: end;
       margin-right: 0.625rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
     }
 
     @media screen and (max-width: $sm) {
-      display-template-rows: 1fr;
-      grid-template-columns: repeat(5, auto);
       align-items: center;
-      grid-column-gap: 1.25rem;
-      margin-right: 0;
       margin: 0 auto;
+      margin-right: 0;
+      display-template-rows: 1fr;
+      grid-column-gap: 1.25rem;
+      grid-template-columns: repeat(5, auto);
     }
   }
 
   &__link {
+    color: inherit;
     font-size: 0.875rem;
     line-height: 100%;
-    color: inherit;
 
     &:hover {
       text-decoration: underline;
@@ -497,17 +493,17 @@
     }
 
     @media screen and (max-width: $sm) {
-      margin-bottom: 2.5rem;
       padding-bottom: 2.5rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 2.5rem;
     }
   }
 
   &__top-right {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     align-self: stretch;
+    justify-content: space-between;
     margin-left: auto;
 
     @media screen and (max-width: $md) {
@@ -515,9 +511,9 @@
     }
 
     @media screen and (max-width: $sm) {
-      margin: 0;
-      justify-content: center;
       align-self: center;
+      justify-content: center;
+      margin: 0;
     }
   }
 
@@ -537,8 +533,8 @@
     }
 
     & .social__icon {
-      background-color: rgba(255, 255, 255, 0.13);
       margin-right: 0.9375rem;
+      background-color: rgba(255, 255, 255, 0.13);
 
       &:last-child {
         margin-right: 0;
@@ -566,8 +562,8 @@
 
   &__phone {
     color: inherit;
-    font-weight: 600;
     font-size: 0.875rem;
+    font-weight: 600;
     line-height: 100%;
     text-align: right;
 
@@ -581,27 +577,27 @@
   }
 
   &__bottom {
-    font-size: 0.75rem;
-    line-height: 140%;
-    color: rgba(255, 255, 255, 0.5);
-    padding-top: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 1.25rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    line-height: 140%;
   }
 
   &__bottom-right {
     @media screen and (max-width: $sm) {
       display: flex;
-      justify-content: space-between;
       width: 57%;
+      justify-content: space-between;
     }
   }
 
   &__bottom-link {
+    margin-left: 1.875rem;
     color: inherit;
     transition: all 0.3s ease 0s;
-    margin-left: 1.875rem;
 
     @media screen and (max-width: $sm) {
       margin-left: 0;
@@ -615,15 +611,15 @@
 
 .faq {
   &__title {
-    font-weight: 800;
-    font-size: 3.375rem;
-    text-align: center;
-    line-height: 110%;
-    letter-spacing: -0.01em;
-    color: $dark-blue;
-    max-width: 39.8125rem;
     width: 100%;
-    margin: 0 auto 1.5625rem auto;
+    max-width: 39.8125rem;
+    margin: 0 auto 1.5625rem;
+    color: $dark-blue;
+    font-size: 3.375rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 110%;
+    text-align: center;
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
@@ -635,23 +631,23 @@
   }
 
   &__descr {
+    width: 100%;
+    max-width: 26.625rem;
+    margin: 0 auto 3.75rem;
+    color: rgba(28, 49, 85, 0.8);
     font-size: 1rem;
     line-height: 180%;
     text-align: center;
-    color: rgba(28, 49, 85, 0.8);
-    max-width: 26.625rem;
-    width: 100%;
-    margin: 0 auto 3.75rem auto;
   }
 
   &__item {
+    position: relative;
+    width: 100%;
+    max-width: 62.25rem;
     padding: 2.375rem 5.375rem 2.375rem 2.1875rem;
+    margin: 0 auto 1.25rem;
     background-color: $white;
     box-shadow: 0 0 74px rgba(29, 50, 86, 0.07);
-    position: relative;
-    max-width: 62.25rem;
-    width: 100%;
-    margin: 0 auto 1.25rem auto;
     cursor: pointer;
 
     @media screen and (max-width: $sm) {
@@ -675,10 +671,10 @@
   }
 
   &__question {
-    font-weight: bold;
-    font-size: 1.125rem;
-    line-height: 100%;
     color: $dark-blue;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 100%;
 
     @media screen and (max-width: $md) {
       font-size: 1.125rem;
@@ -692,13 +688,13 @@
   }
 
   &__answer {
+    width: 100%;
+    max-width: 34.6875rem;
     padding-top: 1.25rem;
+    color: rgba(22, 59, 125, 0.8);
     font-size: 0.875rem;
     line-height: 140%;
-    color: rgba(22, 59, 125, 0.8);
     opacity: 0.8;
-    max-width: 34.6875rem;
-    width: 100%;
 
     @media screen and (max-width: $md) {
       padding-top: 0.9375rem;
@@ -707,28 +703,28 @@
   }
 
   &__arrow {
+    position: absolute;
+    top: 1.125rem;
+    right: 1.5rem;
+    display: flex;
     width: 3.625rem;
     height: 3.625rem;
+    align-items: center;
+    justify-content: center;
     background-color: rgba(22, 59, 125, 0.13);
     border-radius: 50%;
-    position: absolute;
-    right: 1.5rem;
-    top: 1.125rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     @media screen and (max-width: $sm) {
       right: 0.625rem;
     }
 
     &::after {
-      content: "";
+      display: block;
       width: 0.5rem;
       height: 0.25rem;
       background-image: url(../../assets/images/arrow-botttom.svg);
-      display: block;
       background-size: 0.5rem 0.25rem;
+      content: '';
       transition: all 0.3s ease 0s;
     }
   }
@@ -736,31 +732,31 @@
 }
 
 .look {
-  color: $white;
   overflow: hidden;
-  background-image: url(../images/noise.png), url(../images/opacity-logo.svg), linear-gradient(98.74deg, #1C3155 0%, #2459B5 94.47%);
+  background-image: url(../images/noise.png), url(../images/opacity-logo.svg), linear-gradient(98.74deg, #1c3155 0%, #2459b5 94.47%);
   background-position: center, center right, center;
   background-repeat: repeat, no-repeat;
+  color: $white;
 
 
   &-wrp {
     position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
+    justify-content: space-between;
 
     @media screen and (max-width: $sm) {
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
   }
 
   &__info {
-    max-width: 26.1rem;
-    width: 100%;
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 26.1rem;
 
     @media screen and (max-width: $sm) {
       margin-bottom: 3.75rem;
@@ -779,10 +775,10 @@
   }
 
   &__title {
-    font-weight: 800;
-    font-size: 3.375rem;
-    line-height: 110%;
     margin-bottom: 1.5625rem;
+    font-size: 3.375rem;
+    font-weight: 800;
+    line-height: 110%;
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
@@ -794,10 +790,10 @@
   }
 
   &__text {
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
     line-height: 180%;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 2.5rem;
   }
 
   &__person-info {
@@ -814,8 +810,8 @@
 
   &__img {
     position: absolute;
-    bottom: -14.5rem;
     right: 12.1875rem;
+    bottom: -14.5rem;
     max-height: 41.3125rem;
 
     @media screen and (max-width: $lg) {
@@ -828,41 +824,41 @@
     }
 
     @media screen and (max-width: $sm) {
-      max-height: 30rem;
       right: auto;
       left: -4.125rem;
+      max-height: 30rem;
     }
   }
 }
 
 .banner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  width: 100%;
+  max-width: 62.25rem;
+  align-items: flex-end;
+  justify-content: space-between;
   padding: 3.75rem 2.5rem 3.75rem 3.75rem;
+  margin: 7.5rem auto 0;
   background-image: url(../images/banner-logo.svg), $bg-gradient;
   background-position: center right, center;
   background-repeat: no-repeat, repeat;
-  color: $white;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  z-index: 3;
-  max-width: 62.25rem;
-  width: 100%;
-  margin: 7.5rem auto 0 auto;
   background-size: contain;
+  color: $white;
 
   @media screen and (max-width: $sm) {
-    padding: 5rem 1.25rem;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
+    justify-content: flex-start;
+    padding: 5rem 1.25rem;
   }
 
   &__info {
-    max-width: 16.5625rem;
-    width: 100%;
     position: relative;
     z-index: 3;
+    width: 100%;
+    max-width: 16.5625rem;
 
     @media screen and (max-width: $sm) {
       margin-bottom: 3.75rem;
@@ -870,12 +866,12 @@
   }
 
   &__title {
-    font-weight: 800;
-    font-size: 2.625rem;
-    line-height: 110%;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
     margin-bottom: 0.625rem;
+    font-size: 2.625rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 110%;
+    text-transform: uppercase;
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
@@ -898,25 +894,25 @@
   }
 
   &__text {
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 110%;
-    letter-spacing: -0.01em;
     margin-bottom: 2.1875rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 110%;
   }
 
   &__img {
     position: absolute;
-    bottom: -0.75rem;
-    right: 14rem;
     z-index: 2;
+    right: 14rem;
+    bottom: -0.75rem;
     height: 24.6875rem;
 
     @media screen and (max-width: $md) {
-      bottom: -1.0625rem;
       right: -8.5rem;
-      height: 100%;
+      bottom: -1.0625rem;
       width: auto;
+      height: 100%;
     }
   }
 
@@ -926,69 +922,69 @@
   }
 
   &__person-name {
-    font-weight: bold;
-    font-size: 1.125rem;
-    line-height: 140%;
     color: $white;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 140%;
   }
 
   &__person-type {
+    margin-bottom: 0.625rem;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.875rem;
     line-height: 140%;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 0.625rem;
   }
 
   &__video {
-    margin-bottom: 1.875rem;
     display: flex;
     align-items: center;
+    margin-bottom: 1.875rem;
   }
 
   &__video-play {
     width: 2.625rem;
     height: 2.625rem;
-    border-radius: 50%;
-    background-image: url(../../assets/images/play.svg);
-    background-repeat: no-repeat;
-    background-position: right 0.8125rem center;
-    background-color: $blue;
-    box-shadow: 0 14px 64px rgba(70, 161, 209, 0.42);
     margin-right: 0.75rem;
+    background-color: $blue;
+    background-image: url(../../assets/images/play.svg);
+    background-position: right 0.8125rem center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: 0 14px 64px rgba(70, 161, 209, 0.42);
   }
 
   &__video-text {
-    font-weight: bold;
-    font-size: 0.875rem;
-    line-height: 110%;
     max-width: 4.5rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 110%;
   }
 
   &__social {
     display: flex;
 
     & .social__icon {
-      margin-bottom: 0;
       margin-right: 0.9375rem;
+      margin-bottom: 0;
     }
   }
 }
 
 .play-icon {
-  cursor: pointer;
+  display: flex;
   width: 3.625rem;
   height: 3.625rem;
-  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
   // background-image: url(../images/play.svg);
   // background-repeat: no-repeat;
   // background-position: right 1.25rem center;
   background-color: $blue;
+  border-radius: 50%;
   box-shadow: 0 14px 64px rgb(70 161 209 / 42%);
-  margin-right: 0.75rem;
+  cursor: pointer;
   transition: all 0.3s ease 0s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   svg {
     margin-left: 5px;
@@ -1010,9 +1006,9 @@
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 1.5625rem;
-  flex-wrap: wrap;
 
   &--center {
     justify-content: center;
@@ -1020,10 +1016,10 @@
   }
 
   &__link {
-    font-weight: bold;
-    font-size: 0.875rem;
-    line-height: 100%;
     color: rgba(27, 51, 85, 0.5);
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 100%;
     transition: all 0.3s ease 0s;
 
     @media screen and (max-width: $sm) {
@@ -1040,12 +1036,12 @@
   }
 
   &__divider {
-    background-color: rgba(27, 51, 85, 0.5);
+    display: inline-block;
     width: 0.25rem;
     height: 0.25rem;
-    border-radius: 50%;
     margin: 0 0.75rem;
-    display: inline-block;
+    background-color: rgba(27, 51, 85, 0.5);
+    border-radius: 50%;
 
     @media screen and (max-width: $sm) {
       margin: 0 0.5rem;
@@ -1059,14 +1055,14 @@
 
 .news {
   &__card {
-    padding: 2.5rem;
     position: relative;
+    padding: 2.5rem;
 
     & .play-icon {
       @media screen and (max-width: $sm) {
         position: absolute;
-        bottom: 0;
         right: 0;
+        bottom: 0;
         width: 2.75rem;
         height: 2.75rem;
         margin: 0;
@@ -1082,12 +1078,12 @@
     }
 
     &:first-child {
-      grid-row-start: 1;
       grid-row-end: 3;
+      grid-row-start: 1;
 
       @media screen and (max-width: $md) {
-        grid-row-start: auto;
         grid-row-end: auto;
+        grid-row-start: auto;
       }
     }
   }
@@ -1096,8 +1092,8 @@
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-rows: 1fr auto;
     height: 100%;
+    grid-template-rows: 1fr auto;
 
     @media screen and (max-width: $sm) {
       display: block;
@@ -1106,25 +1102,25 @@
 
   &__card-img {
     position: absolute;
-    inset: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
+    inset: 0;
     object-fit: cover;
-    z-index: -1;
   }
 
   &__card--bg {
     position: relative;
 
     &::after {
-      content: "";
+      position: absolute;
+      z-index: -1;
       width: 100%;
       height: 100%;
-      position: absolute;
-      inset: 0;
       background-image: linear-gradient(98.74deg, rgba(28, 49, 85, 0.9) 0%, rgba(36, 89, 181, 0.9) 94.47%);
       box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
-      z-index: -1;
+      content: '';
+      inset: 0;
     }
 
     .news__tag {
@@ -1137,41 +1133,41 @@
   }
 
   &__tag {
-    font-weight: 600;
-    font-size: 0.875rem;
-    line-height: 100%;
-    margin-bottom: 0.9375rem;
     display: inline-flex;
     align-items: center;
+    margin-bottom: 0.9375rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 100%;
 
     &::before {
-      content: '';
-      background-color: inherit;
+      display: inline-block;
       width: 0.25rem;
       height: 0.25rem;
-      border-radius: 50%;
-      display: inline-block;
-      background-color: $dark-blue;
       margin-right: 0.3125rem;
+      background-color: inherit;
+      background-color: $dark-blue;
+      border-radius: 50%;
+      content: '';
     }
   }
 
   &__title {
-    font-weight: bold;
-    font-size: 1.5rem;
-    line-height: 120%;
-    letter-spacing: -0.01em;
-    color: $white;
-    margin-bottom: 0.9375rem;
     max-width: 15.3125rem;
+    margin-bottom: 0.9375rem;
+    color: $white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+    line-height: 120%;
 
   }
 
   &__title--big {
-    font-size: 2.25rem;
-    line-height: 110%;
-    letter-spacing: 0;
     max-width: none;
+    font-size: 2.25rem;
+    letter-spacing: 0;
+    line-height: 110%;
 
     @media screen and (max-width: $md) {
       font-size: 1.8rem;
@@ -1183,10 +1179,10 @@
   }
 
   &__descr {
+    margin-bottom: 1.875rem;
+    color: $white;
     font-size: 1rem;
     line-height: 180%;
-    color: $white;
-    margin-bottom: 1.875rem;
 
     @media screen and (max-width: $md) {
       margin-bottom: 1.5625rem;
@@ -1195,10 +1191,10 @@
 
   &__card--white {
     background-color: $white;
-    box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
     background-image: url(../../assets/images/card-white-logo.svg);
-    background-repeat: no-repeat;
     background-position: bottom right 1.875rem;
+    background-repeat: no-repeat;
+    box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
 
     .news__tag {
       color: rgba(22, 60, 126, 0.6);
@@ -1215,12 +1211,11 @@
 }
 
 .types {
-
   &__cards {
     display: grid;
+    gap: 1.25rem;
     grid-template-columns: 1fr 30.5rem;
     grid-template-rows: 1fr 1fr;
-    gap: 1.25rem;
 
     @media screen and (max-width: $md) {
       grid-template-columns: 1fr 20.5rem;
@@ -1236,7 +1231,6 @@
 }
 
 .inner-page {
-
   &__title {
     margin-bottom: 1.5625rem;
   }
@@ -1254,13 +1248,13 @@
   }
 
   &__h2 {
-    font-weight: 800;
+    margin-bottom: 3.75rem;
+    color: $dark-blue;
     font-size: 3.375rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
     line-height: 110%;
     text-align: center;
-    letter-spacing: -0.01em;
-    color: $dark-blue;
-    margin-bottom: 3.75rem;
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
@@ -1272,21 +1266,21 @@
   }
 
   & .news__card:first-child {
-    grid-row-start: 1;
     grid-row-end: 3;
+    grid-row-start: 1;
   }
 }
 
 .menu {
-  padding: 5rem;
-  height: calc(100vh - 4.25rem);
-  overflow-y: auto;
   position: relative;
+  z-index: 9;
+  height: calc(100vh - 4.25rem);
+  padding: 5rem;
   background-image: $bg-gradient;
   opacity: 0;
-  transition: all 0.3s ease 0s;
-  z-index: 9;
+  overflow-y: auto;
   transform: translateY(-100%);
+  transition: all 0.3s ease 0s;
 
   &.js-open {
     position: absolute;
@@ -1298,7 +1292,7 @@
   }
 
   @media screen and (max-width: $sm) {
-    padding: 5rem 0rem;
+    padding: 5rem 0;
   }
 
   & .types__cards {
@@ -1326,10 +1320,10 @@
   }
 
   &-wrp {
-    display: flex;
-    align-items: flex-start;
     position: relative;
     z-index: 2;
+    display: flex;
+    align-items: flex-start;
 
     @media screen and (max-width: $md) {
       flex-direction: column;
@@ -1341,7 +1335,6 @@
   }
 
   &__dd-item {
-
     &.js-open {
       .menu__arrow {
         transform: rotate(180deg);
@@ -1355,13 +1348,13 @@
   }
 
   &__dd-category {
-    font-size: 2.25rem;
-    line-height: 110%;
-    color: $white;
-    font-weight: bold;
-    margin-bottom: 1.875rem;
     display: flex;
     align-items: center;
+    margin-bottom: 1.875rem;
+    color: $white;
+    font-size: 2.25rem;
+    font-weight: bold;
+    line-height: 110%;
 
     @media screen and (max-width: $sm) {
       font-size: 2.25rem;
@@ -1369,31 +1362,31 @@
   }
 
   &__dd-content {
-    height: 0;
     overflow: hidden;
+    height: 0;
   }
 
   &__dd-link {
-    font-size: 1.125rem;
-    line-height: 110%;
-    color: $white;
-    transition: all 0.3s ease 0s;
-    font-weight: normal;
     display: block;
     margin-bottom: 1.875rem;
+    color: $white;
+    font-size: 1.125rem;
+    font-weight: normal;
+    line-height: 110%;
+    transition: all 0.3s ease 0s;
 
     &:hover {
-      font-weight: bold;
       color: $blue;
+      font-weight: bold;
     }
   }
 
   &__cards {
-    margin-left: 4rem;
     display: grid;
+    margin-left: 4rem;
+    gap: 1.25rem;
     grid-template-columns: 1fr 19.8125rem;
     grid-template-rows: 1fr 1fr;
-    gap: 1.25rem;
   }
 }
 

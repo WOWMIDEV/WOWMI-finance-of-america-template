@@ -1,7 +1,6 @@
 @import '../../assets/styles/variables.scss';
 
 .hero {
-
   &__row {
     justify-content: space-between;
   }
@@ -12,20 +11,20 @@
 
 
   &__bg {
-    max-width: 36.875rem;
     width: 100%;
-    background: #E8ECF2;
+    max-width: 36.875rem;
+    background: #e8ecf2;
   }
 }
 
 
 .manager {
-  margin-top: 4.5rem;
-  background: #FFFFFF;
-  box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
-  padding: 1.5625rem;
-  max-width: 25.4375rem;
   width: 100%;
+  max-width: 25.4375rem;
+  padding: 1.5625rem;
+  margin-top: 4.5rem;
+  background: #fff;
+  box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
 
   &__header {
     display: flex;
@@ -36,8 +35,8 @@
   &__img {
     width: 4rem;
     height: 4rem;
-    border-radius: 50%;
     border: 1px solid rgba(22, 59, 125, 0.08);
+    border-radius: 50%;
     filter: drop-shadow(0 24px 74px rgba(29, 50, 86, 0.11));
   }
 
@@ -46,90 +45,88 @@
   }
 
   &__name {
-    font-weight: bold;
-    font-size: 1.125rem;
-    line-height: 140%;
     color: $dark-blue;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 140%;
   }
 
   &__position {
+    color: rgba(28, 49, 85, 0.7);
     font-size: 0.875rem;
     line-height: 140%;
-    color: rgba(28, 49, 85, 0.7);
   }
 
   &__text {
-    font-weight: normal;
-    font-size: 0.875rem;
-    line-height: 180%;
-    color: rgba(28, 49, 85, 0.8);
     margin-bottom: 0.7rem;
+    color: rgba(28, 49, 85, 0.8);
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 180%;
   }
 
   &__link {
-    font-weight: bold;
-    font-size: 0.875rem;
-    line-height: 140%;
-    color: $blue;
-    transition: all 0.3s ease 0s;
     display: inline-flex;
     align-items: center;
+    color: $blue;
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 140%;
+    transition: all 0.3s ease 0s;
 
     svg {
       margin-left: 0.4rem;
     }
 
     &:hover {
-      color: $dark-blue
+      color: $dark-blue;
     }
   }
 }
 
 
 .tabs {
-
   &__nav {
-    background: rgba(22, 59, 125, 0.1);
-    padding: 0.25rem;
     width: max-content;
-    margin: 0 auto 3.75rem auto;
+    padding: 0.25rem;
+    margin: 0 auto 3.75rem;
+    background: rgba(22, 59, 125, 0.1);
   }
 
   &__nav-btn {
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 140%;
-    color: rgba(27, 51, 85, 0.6);
     padding: 1.125rem 2rem;
     background-color: transparent;
+    color: rgba(27, 51, 85, 0.6);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 140%;
     transition: all 0.3s ease 0s;
 
     &.js-active {
-      color: $white;
       background-color: $dark-blue;
+      color: $white;
     }
   }
 }
 
 .types-tabs {
-
   &__title {
-    font-weight: 800;
+    margin-bottom: 1.5625rem;
+    color: $dark-blue;
     font-size: 3.375rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
     line-height: 110%;
     text-align: center;
-    letter-spacing: -0.01em;
-    color: $dark-blue;
-    margin-bottom: 1.5625rem;
   }
 
   &__text {
+    max-width: 28.875rem;
+    margin: 0 auto 2.5rem;
+    color: rgba(22, 59, 125, 0.8);
     font-size: 1rem;
     line-height: 180%;
     text-align: center;
-    color: rgba(22, 59, 125, 0.8);
-    margin: 0 auto 2.5rem auto;
-    max-width: 28.875rem;
     text-align: center;
   }
 }

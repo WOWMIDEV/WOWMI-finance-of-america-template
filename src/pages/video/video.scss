@@ -4,13 +4,13 @@
 
 .video {
   position: relative;
-  height: 31.25rem;
   width: 100%;
+  height: 31.25rem;
   margin-bottom: 7.5rem;
 
   @media screen and (max-width: $md) {
-    margin-bottom: 5rem;
     height: 25rem;
+    margin-bottom: 5rem;
   }
 
   @media screen and (max-width: $sm) {
@@ -20,44 +20,43 @@
   &__preview {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     max-height: 31.25rem;
+    object-fit: cover;
   }
 
   &::after {
-    content: '';
+    position: absolute;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    position: absolute;
-    inset: 0;
     background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1;
+    content: '';
+    inset: 0;
   }
 
   &__play {
-
     &.play-icon {
-      margin-right: 0;
       width: 5rem;
       height: 5rem;
+      margin-right: 0;
       background-size: 2rem 2rem;
     }
   }
 
   &__time {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.3125rem;
-    line-height: 140%;
-    color: $white;
     margin-top: 1.25rem;
+    color: $white;
+    font-size: 1.3125rem;
+    font-weight: bold;
+    line-height: 140%;
+    text-align: center;
   }
 
   &__info {
     position: absolute;
+    z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
   }
 }
