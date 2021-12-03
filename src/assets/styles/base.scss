@@ -25,6 +25,10 @@ html {
   }
 }
 
+.section.section-no-padding {
+  padding-bottom: 0;
+}
+
 .blue-text {
   color: $blue;
 }
@@ -87,7 +91,7 @@ html {
   padding: 1.25rem 2.875rem 1.25rem 2rem;
   background-color: $blue;
   font-weight: bold;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 140%;
   color: $white;
   background-image: url(../images/arrow-right.svg);
@@ -135,6 +139,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 0.875rem;
 
     &::before {
       background-position: center right 1.0625rem, center;
