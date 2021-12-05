@@ -18,19 +18,6 @@ const tabs = new Tabs({
 
 tabs.init();
 
-Swiper.use([Navigation, Pagination]);
-// eslint-disable-next-line no-unused-vars
-const swiper = new Swiper('.swiper', {
-  slidesPerView: 'auto',
-  spaceBetween: 20,
-  speed: 800,
-
-  navigation: {
-    nextEl: '.reviews__slider-btn--next',
-    prevEl: '.reviews__slider-btn--prev',
-  },
-});
-
 window.addEventListener('load', () => {
   initDD({
     ddSelector: '.faq__item',
@@ -45,12 +32,26 @@ window.addEventListener('resize', () => {
   });
 });
 
-Lottie.loadAnimation({
-  container: document.querySelector('.quiz__lottie'), // the dom element that will contain the animation
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: './public/lottie/closer.json', // the path to the animation json
+const quizLottieContainer = [...document.querySelectorAll('.quiz__lottie')];
+
+const lottieQuizAnimPath = [
+  './lottie/closer.json',
+  './lottie/loan-officer-assistant.json',
+  './lottie/branch-manager.json',
+  './lottie/underwriter.json',
+  './lottie/mortgage-advisor.json',
+  './lottie/processor.json',
+];
+
+lottieQuizAnimPath.forEach((item, i) => {
+  const animData = {
+    container: quizLottieContainer[i], // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: lottieQuizAnimPath[i],
+  };
+  Lottie.loadAnimation(animData);
 });
 
 function initMousemoveHandler({
@@ -70,7 +71,7 @@ function initMousemoveHandler({
   let mX2 = 0; // Modified mouse position
   let posX = 0;
   const mmAA = targetWidth - padding * 2; // The mousemove available area
-  const mmAAr = targetWidth / mmAA; // get available mousemove fidderence ratio
+  const mmAAr = targetWidth / mmAA; // get available mousemove difference ratio
 
   target.addEventListener('mousemove', (event) => {
     mX = event.pageX - target.offsetLeft;
@@ -105,4 +106,18 @@ quizCards.forEach((card) => {
 btnBack.addEventListener('click', () => {
   quizWrapStep2.classList.remove('js-visible');
   quizWrap.classList.remove('js-hide');
+  stepNumber.textContent = '1';
+});
+
+Swiper.use([Navigation, Pagination]);
+// eslint-disable-next-line no-unused-vars
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  speed: 800,
+
+  navigation: {
+    nextEl: '.reviews__slider-btn--next',
+    prevEl: '.reviews__slider-btn--prev',
+  },
 });

@@ -257,7 +257,7 @@
 
 .quiz {
   margin-top: 3.75rem;
-
+  position: relative;
 
   &__step {
     margin-bottom: 0.625rem;
@@ -406,7 +406,7 @@
     border: 0.125rem solid $blue;
     margin: 2.5rem auto 0.625rem;
     animation-duration: 1s;
-    animation-fill-mode: backwards;
+    animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-name: mouseScroll;
     animation-timing-function: ease;
@@ -432,6 +432,12 @@
     line-height: 100%;
     text-align: center;
     text-transform: capitalize;
+  }
+
+  &__lottie {
+    svg {
+      border-radius: 50%;
+    }
   }
 }
 
@@ -825,6 +831,10 @@
     grid-column-gap: 1.25rem;
     grid-template-columns: repeat(3, 1fr);
 
+    @media screen and (max-width: $md) {
+      grid-column-gap: 0.6rem;
+    }
+
     @media screen and (max-width: $sm) {
       grid-row-gap: 0.9375rem;
       grid-template-columns: 1fr;
@@ -832,8 +842,12 @@
   }
 
   &__card {
-    padding: 40px;
+    padding: 2.5rem;
     background-color: $dark-blue;
+
+    @media screen and (max-width: $lg) {
+      padding: 1.875rem;
+    }
   }
 
   &__img {
@@ -868,12 +882,17 @@
   &__img {
     @media screen and (max-width: $lg) {
       max-width: 12.5rem;
-      margin-bottom: 1.5rem;
+      margin-right: 2.8125rem;
     }
 
     @media screen and (max-width: $md) {
+      max-width: 14.375rem;
+    }
+
+    @media screen and (max-width: $sm) {
       width: 100%;
       max-width: 10rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -917,7 +936,7 @@
     line-height: 180%;
 
     @media screen and (max-width: $md) {
-      max-width: 440px;
+      max-width: 27.5rem;
       margin: 0 auto 2.5rem;
       text-align: center;
     }
@@ -929,7 +948,11 @@
     background-color: $white;
     box-shadow: 0 0 74px rgba(29, 50, 86, 0.07);
 
-    @media screen and (max-width: $lg) {
+    @media screen and (max-width: $md) {
+      padding: 1.875rem;
+    }
+
+    @media screen and (max-width: $sm) {
       flex-direction: column;
       padding: 2.25rem 1.5625rem;
     }

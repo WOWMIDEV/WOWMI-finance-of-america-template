@@ -15,6 +15,10 @@
     max-width: 36.875rem;
     background: #e8ecf2;
   }
+
+  &-bottom {
+    margin-bottom: 10rem;
+  }
 }
 
 
@@ -23,7 +27,7 @@
   max-width: 25.4375rem;
   padding: 1.5625rem;
   margin-top: 4.5rem;
-  background: #fff;
+  background-color: $white;
   box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
 
   &__header {
