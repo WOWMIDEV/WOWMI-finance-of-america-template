@@ -30,6 +30,22 @@
   background-color: $white;
   box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
 
+  &.manager-mobile-hidden {
+    display: block;
+
+    @media screen and (max-width: $md) {
+      display: none;
+    }
+  }
+
+  &.manager-mobile-visible {
+    display: none;
+
+    @media screen and (max-width: $md) {
+      display: block;
+    }
+  }
+
   &__header {
     display: flex;
     align-items: center;
