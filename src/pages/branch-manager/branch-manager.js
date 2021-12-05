@@ -3,33 +3,25 @@ import '../../assets/scripts/main';
 
 import Lottie from 'lottie-web';
 import Swiper, { Navigation, Pagination } from 'swiper';
-import Tabs from '../../modules/tabs/tabs';
-import initDD from '../../modules/dropdowns/dropdowns';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 
+import Tabs from '../../modules/tabs/tabs';
+import Dropdowns from '../../modules/dropdowns/dropdowns';
+
 const tabs = new Tabs({
   tabSelector: '.tab',
   btnSelector: '.tabs__nav-btn',
 });
-
 tabs.init();
 
-window.addEventListener('load', () => {
-  initDD({
-    ddSelector: '.faq__item',
-    contentSelector: '.faq__content',
-  });
+const dropdowns = new Dropdowns({
+  dropdownSelector: '.faq__item',
+  contentSelector: '.faq__content',
 });
-
-window.addEventListener('resize', () => {
-  initDD({
-    ddSelector: '.faq__item',
-    contentSelector: '.faq__content',
-  });
-});
+dropdowns.init();
 
 Lottie.loadAnimation({
   container: document.querySelector('.lottie'), // the dom element that will contain the animation

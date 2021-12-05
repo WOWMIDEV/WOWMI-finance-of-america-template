@@ -122,7 +122,7 @@
     line-height: 140%;
     transition: all 0.3s ease 0s;
 
-    &.js-active {
+    &.js--active {
       background-color: $dark-blue;
       color: $white;
     }

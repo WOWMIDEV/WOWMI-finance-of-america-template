@@ -820,7 +820,7 @@
     transition: all 0.3s ease 0s;
 
 
-    &.js-active {
+    &.js--active {
       background-color: $white;
       color: $dark-blue;
     }

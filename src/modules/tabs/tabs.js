@@ -5,7 +5,7 @@ class Tabs {
     tabSelector,
     btnSelector,
     navSelector,
-    activeClass = 'js-active',
+    activeClass = 'js--active',
     eventType = 'click',
     current = 0,
     underlined = false,
