@@ -1,3 +1,5 @@
+import Dropdowns from '../../modules/dropdowns/dropdowns';
+
 import '../styles/main.scss';
 
 const menuBtn = document.querySelector('.header__burger');
@@ -10,13 +12,15 @@ menuBtn.addEventListener('click', () => {
   menu.classList.toggle('js-open');
 });
 
-const menuItem = document.querySelectorAll('.menu__dd-item');
 
-menuItem.forEach((item) => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('js-open');
-  });
+const menuDropdowns = new Dropdowns({
+  dropdownSelector: '.menu__dd-item',
+  toggleSelector: '.menu__arrow',
+  contentSelector: '.menu__dd-content',
+  activeClass: 'js-open',
 });
+menuDropdowns.init();
+
 
 const burgerMutationObserver = new MutationObserver((mutations) => {
   for (let i = 0; i < mutations.length; i += 1) {
