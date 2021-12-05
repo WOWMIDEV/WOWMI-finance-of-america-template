@@ -9,7 +9,7 @@ import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 
 import Tabs from '../../modules/tabs/tabs';
-import initDD from '../../modules/dropdowns/dropdowns';
+import Dropdowns from '../../modules/dropdowns/dropdowns';
 
 const tabs = new Tabs({
   tabSelector: '.tab',
@@ -18,19 +18,13 @@ const tabs = new Tabs({
 
 tabs.init();
 
-window.addEventListener('load', () => {
-  initDD({
-    ddSelector: '.faq__item',
-    contentSelector: '.faq__content',
-  });
+// FAQ dropdowns
+const faqDropdowns = new Dropdowns({
+  dropdownSelector: '.faq__item',
+  contentSelector: '.faq__content',
 });
+faqDropdowns.init();
 
-window.addEventListener('resize', () => {
-  initDD({
-    ddSelector: '.faq__item',
-    contentSelector: '.faq__content',
-  });
-});
 
 const quizLottieContainer = [...document.querySelectorAll('.quiz__lottie')];
 
