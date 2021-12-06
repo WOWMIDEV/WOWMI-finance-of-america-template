@@ -15,7 +15,7 @@ menuBtn.addEventListener('click', () => {
 
 const menuDropdowns = new Dropdowns({
   dropdownSelector: '.menu__dd-item',
-  toggleSelector: '.menu__arrow',
+  toggleSelector: '.menu__dd-category',
   contentSelector: '.menu__dd-content',
   activeClass: 'js-open',
 });
