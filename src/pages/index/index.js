@@ -11,14 +11,21 @@ import 'swiper/components/pagination/pagination.min.css';
 import Tabs from '../../modules/tabs/tabs';
 import Dropdowns from '../../modules/dropdowns/dropdowns';
 
-const tabs = new Tabs({
-  tabSelector: '.tab',
-  btnSelector: '.tabs__nav-btn',
+
+// grow tabs init
+const growTabs = new Tabs({
+  tabSelector: '.grow-tabs__tab',
+  btnSelector: '.grow-tabs__btn',
 });
+growTabs.init();
 
-tabs.init();
+// quiz tabs init
+const quizTabs = new Tabs({
+  tabSelector: '.quiz__wrap, .quiz__wrap-2',
+});
+quizTabs.init();
 
-// FAQ dropdowns
+// FAQ dropdowns init
 const faqDropdowns = new Dropdowns({
   dropdownSelector: '.faq__item',
   contentSelector: '.faq__content',
@@ -84,22 +91,18 @@ initMousemoveHandler({
 });
 
 const quizCards = document.querySelectorAll('.quiz__card');
-const quizWrap = document.querySelector('.quiz__wrap');
-const quizWrapStep2 = document.querySelector('.quiz__wrap-2');
 const stepNumber = document.querySelector('.quiz__step span');
 const btnBack = document.querySelector('.btn-back');
 
 quizCards.forEach((card) => {
   card.addEventListener('click', () => {
-    quizWrap.classList.add('js-hide');
-    quizWrapStep2.classList.add('js-visible');
+    quizTabs.goTo(1);
     stepNumber.textContent = '2';
   });
 });
 
 btnBack.addEventListener('click', () => {
-  quizWrapStep2.classList.remove('js-visible');
-  quizWrap.classList.remove('js-hide');
+  quizTabs.goTo(0);
   stepNumber.textContent = '1';
 });
 

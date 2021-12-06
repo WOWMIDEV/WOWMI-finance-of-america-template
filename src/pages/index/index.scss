@@ -303,19 +303,6 @@
     }
   }
 
-  &__wrap-2 {
-    transition: opacity 0.5s ease 0;
-
-    &:not(.js-visible) {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease 0;
-    }
-  }
-
   &__card {
     position: relative;
     z-index: 1;
