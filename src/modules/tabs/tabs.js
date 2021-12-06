@@ -45,10 +45,12 @@ class Tabs {
     });
     this.tabs[i].classList.add(this.activeClass);
 
-    this.btns.forEach((btn) => {
-      btn.classList.remove(this.activeClass);
-    });
-    this.btns[i].classList.add(this.activeClass);
+    if (this.btns.length) {
+      this.btns.forEach((btn) => {
+        btn.classList.remove(this.activeClass);
+      });
+      this.btns[i].classList.add(this.activeClass);
+    }
 
     if (this.underlined) {
       this.underline.style.left = `${this.btns[i].offsetLeft}px`;
