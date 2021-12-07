@@ -14,7 +14,7 @@ const quizDropdowns = new Dropdowns({
 quizDropdowns.init();
 
 const previewAnswer = document.querySelectorAll('.faq-quiz__answer-preview');
-// const faqQuizItem = document.querySelectorAll('.faq__item');
+const faqQuizItem = document.querySelector('.quiz__item');
 // const btnNextQuestion = document.querySelectorAll('.btn-next');
 // const disabledItem = document.querySelectorAll('.faq-quiz__block');
 const valueRadioBtn = document.querySelectorAll('[data-question = "1"] .faq-quiz__radio');
@@ -27,6 +27,7 @@ const valueRadioBtn = document.querySelectorAll('[data-question = "1"] .faq-quiz
 valueRadioBtn.forEach((radio) => {
   radio.addEventListener('change', () => {
     console.log(radio.value);
-    previewAnswer.textContent = (radio.value);
+    previewAnswer.textContent = radio.value;
+    faqQuizItem.classList.add('js-fill');
   });
 });

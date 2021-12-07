@@ -15,6 +15,14 @@
       gap: 0.9375rem;
     }
   }
+
+  &__item {
+    pointer-events: all;
+
+    &+.quiz__item {
+      pointer-events: none;
+    }
+  }
 }
 
 .faq-quiz {
