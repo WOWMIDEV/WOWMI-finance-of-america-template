@@ -11,7 +11,6 @@ import 'swiper/components/pagination/pagination.min.css';
 import Tabs from '../../modules/tabs/tabs';
 import Dropdowns from '../../modules/dropdowns/dropdowns';
 
-
 // grow tabs init
 const growTabs = new Tabs({
   tabSelector: '.grow-tabs__tab',
@@ -30,8 +29,8 @@ const faqDropdowns = new Dropdowns({
   dropdownSelector: '.faq__item',
   contentSelector: '.faq__content',
 });
-faqDropdowns.init();
 
+faqDropdowns.init();
 
 const quizLottieContainer = [...document.querySelectorAll('.quiz__lottie')];
 
@@ -86,7 +85,7 @@ function initMousemoveHandler({
 }
 
 initMousemoveHandler({
-  wrapperSelector: '.quiz__wrap',
+  wrapperSelector: '.quiz__wrap-grid',
   targetSelector: '.quiz',
 });
 
@@ -109,12 +108,19 @@ btnBack.addEventListener('click', () => {
 Swiper.use([Navigation, Pagination]);
 // eslint-disable-next-line no-unused-vars
 const swiper = new Swiper('.swiper', {
-  slidesPerView: 'auto',
+  slidesPerView: 1,
   spaceBetween: 20,
   speed: 800,
 
   navigation: {
     nextEl: '.reviews__slider-btn--next',
     prevEl: '.reviews__slider-btn--prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    570: {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+    },
   },
 });

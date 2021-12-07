@@ -124,6 +124,7 @@
   },
   "parcelIgnore": [],
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "assemble": "^0.3.83",
     "grunt": "^0.4.5",
     "lottie-web": "^5.8.1",

@@ -1,7 +1,5 @@
 @import '../../assets/styles/variables.scss';
 
-
-
 .video {
   position: relative;
   width: 100%;
@@ -40,6 +38,11 @@
       height: 5rem;
       margin-right: 0;
       background-size: 2rem 2rem;
+
+      svg {
+        width: 1.5625rem;
+        height: 1.5625rem;
+      }
     }
   }
 

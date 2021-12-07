@@ -1,6 +1,15 @@
+import '../styles/main.scss';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Dropdowns from '../../modules/dropdowns/dropdowns';
 
-import '../styles/main.scss';
+
+AOS.init({
+  offset: 150,
+  delay: 200,
+  duration: 600,
+});
 
 const menuBtn = document.querySelector('.header__burger');
 const header = document.querySelector('.header');
@@ -35,3 +44,37 @@ burgerMutationObserver.observe(menuBtn, {
   attributes: true,
   attributeOldValue: true,
 });
+
+window.onload = () => {
+  const transitionElem = document.querySelector('.transition');
+  const anchors = document.querySelectorAll('[data-link="page"]');
+
+  setTimeout(() => {
+    transitionElem.classList.remove('is-active');
+  }, 500);
+
+  anchors.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = e.target.href;
+
+      transitionElem.classList.add('is-active');
+
+      setTimeout(() => {
+        window.location.href = target;
+      }, 500);
+    });
+  });
+};
+
+function isTouchDevice() {
+  return 'ontouchstart' in document.documentElement;
+}
+
+if (isTouchDevice()) {
+  console.log('true');
+  document.querySelector('body').classList.add('touch-device');
+} else {
+  console.log('false');
+  document.querySelector('body').classList.remove('touch-device');
+}

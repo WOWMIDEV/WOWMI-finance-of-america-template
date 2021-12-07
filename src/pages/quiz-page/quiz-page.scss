@@ -8,10 +8,14 @@
     gap: 1.25rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+
+    @media screen and (max-width: $sm) {
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      gap: 0.9375rem;
+    }
   }
 }
-
-.form {}
 
 .faq-quiz {
   &__title {
@@ -23,11 +27,19 @@
     text-align: center;
   }
 
+  & .faq__item {
+    padding: 1.5rem 2.1875rem;
+  }
+
+
   &__answer-preview {
     color: $blue;
     font-size: 1.125rem;
     font-weight: bold;
     line-height: 100%;
+    display: block;
+    margin-top: 0.625rem;
+    overflow: hidden;
   }
 
   &__question {
@@ -39,6 +51,44 @@
     justify-content: center;
     padding: 3.125rem 0;
     margin: 0 auto;
+  }
+
+  &__block {
+    display: block;
+    font-weight: normal;
+    font-size: 1.125rem;
+    line-height: 100%;
+    color: rgba(22, 60, 125, 0.5);
+    padding-left: 1.5rem;
+    background-image: url(../../assets/images/lock.svg);
+    background-repeat: no-repeat;
+    background-position: left top 0.1875rem;
+    overflow: hidden;
+  }
+
+  &__input {
+    padding: 1.25rem;
+    font-size: 1.125rem;
+    line-height: 110%;
+    color: $dark-blue;
+    display: block;
+    margin-bottom: 1.5rem;
+    border: 0;
+    background-color: #E8ECF2;
+    max-width: 24.125rem;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    outline: 1px solid transparent;
+
+    &:focus {
+      outline: 1px solid $dark-blue;
+    }
+
+    &::placeholder {
+      font-size: 1.125rem;
+      line-height: 110%;
+      color: rgba(27, 51, 85, 0.5);
+    }
   }
 
   &__img {
@@ -82,8 +132,7 @@
       transition: all 0.3s ease 0s;
     }
 
-    & #option-1:checked:checked~.option-1,
-    & #option-2:checked:checked~.option-2 {
+    & .faq-quiz__radio:checked:checked~.option {
       background: $white;
       box-shadow: 0 0.875rem 5.25rem rgba(29, 50, 86, 0.14);
 
@@ -95,20 +144,92 @@
       & .dot {
         border-color: $blue;
         background-color: $blue;
+        background-image: url(../../assets/images/check.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
       }
     }
   }
 }
 
-.faq {
+.hero {
+  &__title {
+    @media screen and (max-width: $md) {
+      text-align: center;
+    }
+  }
 
-  &__item {}
+  &__row {
+    justify-content: space-between;
 
-  &__question {}
+    @media screen and (max-width: $md) {
+      justify-content: center;
+      align-items: center;
+      margin-right: 0;
+    }
+  }
 
-  &__content {}
+  &.hero-bottom {
+    & .hero__row {
+      @media screen and (max-width: $sm) {
+        padding-bottom: 5rem;
+      }
+    }
+  }
 
-  &__arrow {}
+  & .manager {
+    @media screen and (max-width: $md) {
+      margin-top: 2.5rem;
+    }
+  }
 
-  &__answer {}
+  &__info {
+
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+      max-width: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0;
+    }
+  }
+
+
+  &__bg {
+    width: 100%;
+    max-width: 36.875rem;
+
+    @media screen and (max-width: $md) {
+      max-width: none;
+      max-height: 27.1875rem;
+    }
+
+    & img {
+      @media screen and (max-width: $md) {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  &-bottom {
+    margin-bottom: 10rem;
+
+    @media screen and (max-width: $md) {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.faq__item {
+
+
+  &.js--disabled {
+    pointer-events: none;
+
+    & .faq__question {
+      cursor: not-allowed;
+    }
+  }
 }

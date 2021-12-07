@@ -3,10 +3,37 @@
 .hero {
   &__row {
     justify-content: space-between;
+
+    @media screen and (max-width: $md) {
+      justify-content: center;
+      align-items: center;
+      margin-right: 0;
+    }
+  }
+
+  &.hero-bottom {
+    & .hero__row {
+      @media screen and (max-width: $sm) {
+        padding-bottom: 5rem;
+      }
+    }
+  }
+
+  & .manager {
+    @media screen and (max-width: $md) {
+      margin-top: 2.5rem;
+    }
   }
 
   &__info {
     margin-right: 1rem;
+
+    @media screen and (max-width: $md) {
+      max-width: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
 
@@ -14,10 +41,19 @@
     width: 100%;
     max-width: 36.875rem;
     background: #e8ecf2;
+
+    @media screen and (max-width: $md) {
+      max-width: none;
+      max-height: 27.1875rem;
+    }
   }
 
   &-bottom {
     margin-bottom: 10rem;
+
+    @media screen and (max-width: $md) {
+      margin-bottom: 5rem;
+    }
   }
 }
 
@@ -111,6 +147,48 @@
     padding: 0.25rem;
     margin: 0 auto 3.75rem;
     background: rgba(22, 59, 125, 0.1);
+
+
+    &-wrap {
+      @media screen and (max-width: $sm) {
+        overflow-x: auto;
+        width: 100vw;
+        margin-left: -0.625rem;
+        padding-left: 0.625rem;
+        display: flex;
+      }
+
+      &::before {
+        content: '';
+        min-width: 0.625rem;
+        display: none;
+        height: 1px;
+
+        @media screen and (max-width: $sm) {
+          display: block;
+        }
+      }
+    }
+
+    @media screen and (max-width: $sm) {
+      display: flex;
+      overflow: auto;
+      width: 100vw;
+      max-width: 100%;
+      margin-left: -0.625rem;
+      padding-left: 0.625rem;
+    }
+
+    &::after {
+      content: '';
+      min-width: 0.625rem;
+      display: none;
+      height: 1px;
+
+      @media screen and (max-width: $sm) {
+        display: block;
+      }
+    }
   }
 
   &__nav-btn {
@@ -148,5 +226,13 @@
     line-height: 180%;
     text-align: center;
     text-align: center;
+  }
+
+  &__nav {
+
+    @media screen and (max-width: $sm) {
+      width: auto;
+      max-width: none;
+    }
   }
 }

@@ -43,8 +43,7 @@
     width: 100%;
     height: 100%;
     inset: 0;
-
-
+    object-fit: cover;
   }
 
   &__info {
@@ -119,12 +118,26 @@
   .play-icon {
     margin-bottom: 5.625rem;
 
+    @media screen and (max-width: $lg) {
+      margin-bottom: 2.625rem;
+    }
+
     @media screen and (max-width: $md) {
       margin-bottom: 1.5rem;
     }
   }
 
   &__info {}
+
+  &__card-info {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+
+    @media screen and (max-width: $sm) {
+      margin-bottom: 0.9375rem;
+    }
+  }
 
   &__title {
     margin-bottom: 1.5625rem;
@@ -136,6 +149,7 @@
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
+      text-align: center;
     }
 
     @media screen and (max-width: $sm) {
@@ -148,6 +162,11 @@
     color: $dark-blue;
     font-size: 1rem;
     line-height: 180%;
+
+    @media screen and (max-width: $md) {
+      text-align: center;
+      margin: 0 auto;
+    }
   }
 
   &__card {
@@ -163,6 +182,17 @@
 
     @media screen and (max-width: $lg) {
       padding: 1.5rem;
+
+    }
+
+    @media screen and (max-width: $md) {
+      max-width: 30rem;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
@@ -231,7 +261,7 @@
     grid-template-columns: 30.5rem 1fr;
 
     @media screen and (max-width: $md) {
-      grid-template-columns: 20.5rem 1fr;
+      grid-template-columns: 1fr 1fr;
     }
 
     @media screen and (max-width: $sm) {
@@ -243,8 +273,6 @@
   .news__card:first-child {
     grid-row-end: auto;
     grid-row-start: auto;
-
-    // @media screen and (max-width: $md) {}
   }
 
   .news__card:last-child {
@@ -253,9 +281,13 @@
     grid-row-start: 1;
 
     @media screen and (max-width: $md) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    @media screen and (max-width: $sm) {
       grid-column-start: auto;
-      grid-row-end: auto;
-      grid-row-start: auto;
+      grid-column-end: auto;
     }
   }
 }
@@ -284,19 +316,41 @@
 
   & .look__img {
     bottom: -17.5rem;
+
+    @media screen and (max-width: $sm) {
+      bottom: -10.5rem;
+    }
   }
 
   & .look__person {
     margin-bottom: 6.0625rem;
   }
 
+  & .look__text {
+    @media screen and (max-width: $sm) {
+      margin-bottom: 1rem;
+    }
+  }
+
   & .banner__person-type {
     margin-bottom: 1.625rem;
+  }
+
+  & .look-section-hide {
+    display: none;
+
+    @media screen and (max-width: $sm) {
+      display: flex;
+    }
   }
 
   &__text {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $sm) {
+      display: none;
+    }
   }
 
   &__item {
