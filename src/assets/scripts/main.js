@@ -68,15 +68,3 @@ window.onload = () => {
     });
   });
 };
-
-function isTouchDevice() {
-  return 'ontouchstart' in document.documentElement;
-}
-
-if (isTouchDevice()) {
-  console.log('true');
-  document.querySelector('body').classList.add('touch-device');
-} else {
-  console.log('false');
-  document.querySelector('body').classList.remove('touch-device');
-}
