@@ -816,12 +816,11 @@
 
   &__arrow {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 1.2rem;
     right: 1.5rem;
     display: flex;
     width: 3.625rem;
-    height: 3.625rem;
+    min-height: 3.625rem;
     align-items: center;
     justify-content: center;
     background-color: rgba(22, 59, 125, 0.13);
@@ -1549,6 +1548,12 @@
     @media screen and (max-width: $md) {
       &+.menu__dd-link {
         margin-left: 1.875rem;
+      }
+    }
+
+    @media screen and (max-width: $sm) {
+      &+.menu__dd-link {
+        margin-left: 1.2rem;
       }
     }
 

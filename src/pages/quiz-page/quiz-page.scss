@@ -17,17 +17,37 @@
   }
 
   &__item {
+    min-height: 5.875rem;
+
+    .faq__question {
+      padding-top: 15px;
+      transition: all 0.3s ease 0s;
+    }
+
     &:not(:first-child) {
       pointer-events: none;
       filter: grayscale(1) contrast(.9);
     }
+
     &.js--filled {
+
       .faq-quiz__answer-preview {
         display: block;
+        opacity: 1;
       }
-      & + .quiz__item {
+
+      & .faq__question {
+        padding-top: 0;
+      }
+
+      &+.quiz__item {
         pointer-events: initial;
         filter: none;
+
+        .faq__question {
+          padding-top: 0;
+        }
+
         .faq-quiz__block {
           display: none;
         }
@@ -58,7 +78,7 @@
     line-height: 100%;
     margin-top: 0.625rem;
     overflow: hidden;
-    display: none;
+    opacity: 0;
   }
 
   &__question {
@@ -81,7 +101,7 @@
     padding-left: 1.5rem;
     background-image: url(../../assets/images/lock.svg);
     background-repeat: no-repeat;
-    background-position: left top 0.1875rem;
+    background-position: left top;
     overflow: hidden;
     margin-top: 0.625rem;
   }
@@ -152,7 +172,7 @@
       transition: all 0.3s ease 0s;
     }
 
-    & .faq-quiz__radio:checked:checked ~ .option {
+    & .faq-quiz__radio:checked:checked~.option {
       background: $white;
       box-shadow: 0 0.875rem 5.25rem rgba(29, 50, 86, 0.14);
 
@@ -239,5 +259,14 @@
     @media screen and (max-width: $md) {
       margin-bottom: 5rem;
     }
+  }
+}
+
+.btn-next:disabled,
+.btn-next[disabled] {
+  filter: grayscale(1) contrast(.9);
+
+  &:hover::before {
+    content: none;
   }
 }

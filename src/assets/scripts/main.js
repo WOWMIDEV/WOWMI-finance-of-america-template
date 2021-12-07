@@ -29,6 +29,7 @@ const menuDropdowns = new Dropdowns({
   toggleSelector: '.menu__dd-category',
   contentSelector: '.menu__dd-content',
   activeClass: 'js-open',
+  initialDropdowns: [0],
 });
 menuDropdowns.init();
 

@@ -8,7 +8,7 @@ const quizDropdowns = new Dropdowns({
   dropdownSelector: '.faq__item',
   toggleSelector: '.faq__question',
   contentSelector: '.faq__content',
-  activeClass: 'js-open',
+  activeClass: 'js--active',
   initialDropdowns: [0],
 });
 

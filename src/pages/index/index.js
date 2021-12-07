@@ -125,6 +125,12 @@ function isTouchDevice() {
   return 'ontouchstart' in document.documentElement;
 }
 
+if (isTouchDevice()) {
+  document.querySelector('body').classList.add('touch-device');
+} else {
+  document.querySelector('body').classList.remove('touch-device');
+}
+
 const quizSteps = document.querySelectorAll('.quiz__tab .quiz__wrap-grid, .quiz__tab .quiz-step-2');
 
 if (!isTouchDevice()) {
