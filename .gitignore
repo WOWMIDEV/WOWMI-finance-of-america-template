@@ -13,7 +13,7 @@ package-lock.json
 /node_modules/
 
 # generated files
-/build/
+# /build/
 /server/
 /.cache/
 
