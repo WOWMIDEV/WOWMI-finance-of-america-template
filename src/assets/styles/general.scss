@@ -1761,6 +1761,11 @@
       border-radius: 50%;
       object-fit: contain;
       transition: all 0.5s ease 0s;
+
+      @media screen and (max-width: $sm) {
+        width: 10rem;
+        height: 10rem;
+      }
     }
   }
 
@@ -1796,6 +1801,10 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr;
     transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+
+    @media screen and (max-width: $sm) {
+      max-height: none;
+    }
   }
 
   &__info-type {

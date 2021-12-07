@@ -205,4 +205,4 @@ module.exports=require("core-js/library/fn/parse-float");
 },{"../styles/main.scss":"oNsJ","aos":"RKkx","aos/dist/aos.css":"cOFZ","../../modules/dropdowns/dropdowns":"dnQP"}],"s3tX":[function(require,module,exports) {
 "use strict";require("./module.scss"),require("../../assets/scripts/main");var e=r(require("../../modules/dropdowns/dropdowns"));function r(e){return e&&e.__esModule?e:{default:e}}var t=new e.default({dropdownSelector:".faq__item",contentSelector:".faq__content"});t.init();
 },{"./module.scss":"iHJ4","../../assets/scripts/main":"fxpR","../../modules/dropdowns/dropdowns":"dnQP"}]},{},["s3tX"], null)
-//# sourceMappingURL=../scripts/module.79985798.js.map
+//# sourceMappingURL=../scripts/module.3a6023bd.js.map
