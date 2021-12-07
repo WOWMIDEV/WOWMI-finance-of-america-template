@@ -84,10 +84,6 @@ function initMousemoveHandler({
   }, 10);
 }
 
-initMousemoveHandler({
-  wrapperSelector: '.quiz__wrap-grid',
-  targetSelector: '.quiz',
-});
 
 const quizCards = document.querySelectorAll('.quiz__card');
 const stepNumber = document.querySelector('.quiz__step span');
@@ -124,3 +120,23 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
+
+function isTouchDevice() {
+  return 'ontouchstart' in document.documentElement;
+}
+
+const quizSteps = document.querySelectorAll('.quiz__tab .quiz__wrap-grid, .quiz__tab .quiz-step-2');
+
+if (!isTouchDevice()) {
+  initMousemoveHandler({
+    wrapperSelector: '.quiz__wrap-grid',
+    targetSelector: '.quiz',
+  });
+  quizSteps.forEach((step) => {
+    step.classList.remove('swipe');
+  });
+} else {
+  quizSteps.forEach((step) => {
+    step.classList.add('swipe');
+  });
+}
