@@ -1,7 +1,7 @@
 module.exports = {
   gifsicle: { optimizationLevel: 2, interlaced: false, colors: 10 },
-  mozjpeg: { progressive: true, quality: 60 },
-  pngquant: { quality: [0.55, 0.8] },
+  mozjpeg: { progressive: true, quality: 90 },
+  pngquant: { quality: [1, 1] },
   svgo: {
     plugins: [
       { removeViewBox: false },
