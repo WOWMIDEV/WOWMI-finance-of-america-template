@@ -572,6 +572,20 @@
       margin-bottom: 1.875rem;
     }
   }
+  &__nav-wrp {
+    @media screen and (max-width: $sm) {
+      margin-inline: -.625rem;
+      overflow-x: auto;
+      display: flex;
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        min-width: .625rem;
+        height: 1px;
+      }
+    }
+  }
 
   &__btn {
     padding: 1.125rem 2rem;
