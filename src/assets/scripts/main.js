@@ -6,9 +6,10 @@ import Dropdowns from '../../modules/dropdowns/dropdowns';
 
 
 AOS.init({
-  offset: 150,
+  offset: 100,
   delay: 200,
   duration: 600,
+  once: true,
 });
 
 

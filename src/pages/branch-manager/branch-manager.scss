@@ -147,46 +147,22 @@
     padding: 0.25rem;
     margin: 0 auto 3.75rem;
     background: rgba(22, 59, 125, 0.1);
+    display: flex;
 
 
     &-wrap {
       @media screen and (max-width: $sm) {
+        margin-inline: -.625rem;
         overflow-x: auto;
-        width: 100vw;
-        margin-left: -0.625rem;
-        padding-left: 0.625rem;
         display: flex;
-      }
 
-      &::before {
-        content: '';
-        min-width: 0.625rem;
-        display: none;
-        height: 1px;
-
-        @media screen and (max-width: $sm) {
+        &::before,
+        &::after {
+          content: '';
           display: block;
+          min-width: .625rem;
+          height: 1px;
         }
-      }
-    }
-
-    @media screen and (max-width: $sm) {
-      display: flex;
-      overflow: auto;
-      width: 100vw;
-      max-width: 100%;
-      margin-left: -0.625rem;
-      padding-left: 0.625rem;
-    }
-
-    &::after {
-      content: '';
-      min-width: 0.625rem;
-      display: none;
-      height: 1px;
-
-      @media screen and (max-width: $sm) {
-        display: block;
       }
     }
   }
