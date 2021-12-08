@@ -270,8 +270,18 @@
 
     &.hero__row--padding {
 
+      @media screen and (max-width: $md) {
+        .hero__text {
+          text-align: left;
+        }
+      }
+
       @media screen and (max-width: $sm) {
         padding: 5.375rem 0 19.875rem;
+
+        .hero__text {
+          text-align: center;
+        }
       }
     }
   }
@@ -548,7 +558,6 @@
       display: flex;
       grid-column-gap: 0;
       grid-row-gap: 0;
-      flex-wrap: wrap;
       align-items: flex-end;
       justify-content: flex-end;
       margin-top: 4.2rem;
@@ -583,6 +592,10 @@
 
     &:hover {
       text-decoration: underline;
+    }
+
+    @media screen and (max-width: $xs) {
+      margin-left: 1rem;
     }
   }
 
@@ -912,6 +925,14 @@
     color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
     line-height: 180%;
+
+    @media screen and (max-width: $md) {
+      max-width: 20rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      margin-inline: auto;
+    }
   }
 
   &__person-info {
@@ -1318,6 +1339,9 @@
     letter-spacing: -0.01em;
     line-height: 120%;
 
+    @media screen and (max-width: $md) {
+      max-width: 26rem;
+    }
   }
 
   &__title--big {
@@ -1328,6 +1352,7 @@
 
     @media screen and (max-width: $md) {
       font-size: 1.8rem;
+      max-width: 26rem;
     }
 
     @media screen and (max-width: $sm) {

@@ -322,6 +322,12 @@
     }
   }
 
+  & .look__info {
+    @media screen and (max-width: $sm) {
+      margin-bottom: 1.75rem;
+    }
+  }
+
   & .look__person {
     margin-bottom: 6.0625rem;
   }

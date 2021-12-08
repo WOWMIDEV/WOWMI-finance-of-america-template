@@ -108,6 +108,7 @@
 
     @media screen and (max-width: $md) {
       font-size: 2.5rem;
+      max-width: 25rem;
     }
 
     @media screen and (max-width: $sm) {
@@ -119,6 +120,10 @@
     color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
     line-height: 180%;
+
+    @media screen and (max-width: $md) {
+      max-width: 33rem;
+    }
   }
 
   &__number {
@@ -255,11 +260,7 @@
     padding-bottom: 10.8rem;
 
     @media screen and (max-width: $md) {
-      padding-bottom: 8rem;
-    }
-
-    @media screen and (max-width: $sm) {
-      padding-bottom: 5rem;
+      padding-bottom: 1rem;
     }
   }
 
@@ -335,7 +336,7 @@
     }
 
     &.swipe {
-      padding-bottom: 1.5625rem;
+      padding-bottom: 5.5rem;
       margin-inline: -1.125rem;
       overflow-x: auto;
 
