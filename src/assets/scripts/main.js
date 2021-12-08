@@ -33,7 +33,6 @@ const menuTabs = new Tabs({
 
 menuTabs.init();
 
-
 // TODO create function to init menu opening logic
 const menuBtn = document.querySelector('.header__burger');
 const header = document.querySelector('.header');
