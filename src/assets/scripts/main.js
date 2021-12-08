@@ -15,6 +15,13 @@ import Tabs from '../../modules/tabs/tabs';
 
 Swiper.use([Navigation, Pagination]);
 
+
+const observerConfig = {
+  attributes: true,
+  childList: false,
+  subtree: false,
+};
+
 function isTouchDevice() {
   return 'ontouchstart' in document.documentElement;
 }
@@ -136,20 +143,37 @@ burgerMutationObserver.observe(menuBtn, {
       menuSwipers.push(swiper);
     }
 
-    const config = {
-      attributes: true,
-      childList: false,
-      subtree: false,
+    const ddCallback = function goToFirstSlide(mutationsList) {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'attributes') {
+          const dropdown = mutation.target;
+          const swiperIndex = menuDropdowns.dropdowns
+            .findIndex((dd) => dd.dropdownElement === dropdown);
+
+          if (dropdown.classList.contains(menuDropdowns.activeClass)) {
+            menuSwipers[swiperIndex].slideTo(0);
+          }
+        }
+      }
     };
-    const callback = function activeSlideToActiveTabcallback(mutationsList, observer) {
+
+    setTimeout(() => {
+      menuDropdowns.open(0);
+    }, 1000);
+
+    const activeDropdownObserver = new MutationObserver(ddCallback);
+    menuDropdowns.dropdowns.forEach((dropdown) => {
+      activeDropdownObserver.observe(dropdown.dropdownElement, observerConfig);
+    });
+
+    const callback = function activeSlideToActiveTabcallback(mutationsList) {
       // eslint-disable-next-line no-restricted-syntax
       for (const mutation of mutationsList) {
         if (mutation.type === 'attributes') {
           const tab = mutation.target;
           if (tab.classList.contains('swiper-slide-active')) {
-            console.log(tab);
             const tabIndex = tabs.indexOf(tab);
-            console.log(tabIndex);
             buttons.forEach((btn) => {
               btn.classList.remove('js--active');
             });
@@ -160,7 +184,7 @@ burgerMutationObserver.observe(menuBtn, {
     };
     const activeTabObserver = new MutationObserver(callback);
     tabs.forEach((tab) => {
-      activeTabObserver.observe(tab, config);
+      activeTabObserver.observe(tab, observerConfig);
     });
   }
   swiperTemplate.remove();
