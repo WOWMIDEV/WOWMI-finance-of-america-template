@@ -25,14 +25,6 @@ const scroll = new SmoothScroll('a', {
   touchpadSupport: true,
 });
 
-const menuTabs = new Tabs({
-  eventType: 'mouseover',
-  tabSelector: '.menu-tabs__tab',
-  btnSelector: '.menu__dd-link',
-});
-
-menuTabs.init();
-
 // TODO create function to init menu opening logic
 const menuBtn = document.querySelector('.header__burger');
 const header = document.querySelector('.header');
