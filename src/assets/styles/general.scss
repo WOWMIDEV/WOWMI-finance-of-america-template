@@ -1679,7 +1679,7 @@
 
   &__slider-wrp {
     overflow: hidden;
-    margin-right: calc((#{$container-width} - #{$container-inline-padding} - 100vw) / 2);
+    margin-right: calc(((#{$container-width} - #{$container-inline-padding} - 100vw) / 2) - 16px + #{$scroll-width});
 
     @media screen and (max-width: $lg) {
       margin-right: -1.25rem;
