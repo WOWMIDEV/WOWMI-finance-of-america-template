@@ -104,9 +104,27 @@ btnBack.addEventListener('click', () => {
   quizTitle.textContent = 'Сhoose who you are';
 });
 
+const reviewsDropdowns = new Dropdowns(
+  {
+    dropdownSelector: '.reviews__slide',
+    contentSelector: '.reviews__dropdown',
+    eventType: 'none',
+    initialDropdowns: [0],
+  },
+);
+reviewsDropdowns.init();
+
+function setMinReviewsHeight(swiper) {
+  setTimeout(() => {
+    const firstSlide = swiper.slides[0];
+    const wrp = swiper.$wrapperEl[0];
+    wrp.style.minHeight = `${firstSlide.clientHeight}px`;
+  }, 2000);
+}
+
 Swiper.use([Navigation, Pagination]);
 // eslint-disable-next-line no-unused-vars
-const swiper = new Swiper('.swiper', {
+const reviewsSwiper = new Swiper('.swiper', {
   slidesPerView: 1,
   spaceBetween: 20,
   speed: 800,
@@ -130,7 +148,15 @@ const swiper = new Swiper('.swiper', {
       spaceBetween: 20,
     },
   },
+
+  on: {
+    activeIndexChange: () => {
+      reviewsDropdowns.open(reviewsSwiper.activeIndex);
+    },
+    init: setMinReviewsHeight,
+  },
 });
+
 
 function isTouchDevice() {
   return 'ontouchstart' in document.documentElement;
