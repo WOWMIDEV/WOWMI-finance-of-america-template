@@ -2,6 +2,7 @@ import '../styles/main.scss';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import SmoothScroll from 'smooth-scroll';
 import Dropdowns from '../../modules/dropdowns/dropdowns';
 
 
@@ -10,6 +11,16 @@ AOS.init({
   delay: 200,
   duration: 600,
   once: true,
+});
+
+SmoothScroll({
+  animationTime: 1000, // [ms]
+  stepSize: 100, // [px]
+  accelerationDelta: 20,
+  accelerationMax: 5,
+  keyboardSupport: true,
+  arrowScroll: 50, // [px]
+  touchpadSupport: true,
 });
 
 

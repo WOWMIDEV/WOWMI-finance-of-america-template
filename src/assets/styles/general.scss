@@ -1598,6 +1598,7 @@
   @media screen and (max-width: $sm) {
     width: auto;
     max-width: 100%;
+    padding-bottom: 7.5rem;
   }
 
   &__container {
@@ -1639,6 +1640,40 @@
     @media screen and (max-width: $sm) {
       display: none;
     }
+  }
+
+
+  & .swiper-pagination-bullets {
+    bottom: -2.5rem !important;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    display: none;
+
+    @media screen and (max-width: $sm) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  & .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: $white;
+  }
+
+  & .swiper-pagination-bullet {
+    height: 0.125rem;
+    width: 2.5rem;
+    margin: 0 0.4375rem !important;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0;
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+  }
+
+  & .swiper-container-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: -3.125rem;
   }
 
   &__slider-wrp {
@@ -1712,8 +1747,7 @@
     max-height: 23.375rem;
     padding: 2.5rem;
     background-color: $dark-blue;
-    transition: all 0.6s ease 0s;
-    transition: max-height 1s ease-in-out;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 
 
     @media screen and (max-width: $sm) {
@@ -1736,11 +1770,19 @@
         transition: max-height 1s ease-in-out;
       }
 
-      & .reviews__img img {
-        width: 10rem;
-        height: 10rem;
-        box-shadow: 0 0 0 0.5625rem $white;
+      & .reviews__img {
+        img {
+          width: 10rem;
+          height: 10rem;
+          box-shadow: 0 0 0 0.5625rem $white;
+        }
+
+        &::before {
+          opacity: 1;
+        }
+
       }
+
     }
   }
 
@@ -1754,6 +1796,22 @@
 
   &__img {
     margin-bottom: 1.5rem;
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: "";
+      background-image: url(../../assets/images/quote-icon.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      bottom: -0.1875rem;
+      right: -0.3125rem;
+      width: 3.4375rem;
+      height: 3.4375rem;
+      opacity: 0;
+      transition: all 0.3s ease 0s;
+    }
 
     img {
       width: 6rem;
@@ -1800,7 +1858,7 @@
     grid-row-gap: 0.25rem;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr;
-    transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 
     @media screen and (max-width: $sm) {
       max-height: none;

@@ -34,12 +34,27 @@ Lottie.loadAnimation({
 Swiper.use([Navigation, Pagination]);
 // eslint-disable-next-line no-unused-vars
 const swiper = new Swiper('.swiper', {
-  slidesPerView: 'auto',
+  slidesPerView: 1,
   spaceBetween: 20,
   speed: 800,
+  dynamicBullets: true,
+  dynamicMainBullets: 3,
 
   navigation: {
     nextEl: '.reviews__slider-btn--next',
     prevEl: '.reviews__slider-btn--prev',
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  breakpoints: {
+    // when window width is >= 320px
+    570: {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+    },
   },
 });

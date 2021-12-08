@@ -152,7 +152,7 @@
       left: 0;
       color: #FFFFFF;
       overflow: hidden;
-      transition: width 1000ms ease;
+      transition: width 5000ms ease;
       width: 0;
       white-space: nowrap;
 
@@ -181,7 +181,7 @@
 
   &__year {
     position: absolute;
-    top: 50%;
+    top: 44%;
     right: 0;
     color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
@@ -537,20 +537,51 @@
     padding: 1.875rem;
     background-color: $white;
     box-shadow: 0 24px 74px rgba(29, 50, 86, 0.11);
+    position: relative;
+    z-index: 1;
 
-    // &:hover {
-    //   & .quiz-step-2__number {
-    //     background-color: $white;
-    //   }
+    &::before {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      background-image: url(../../assets/images/card-logo.svg), $bg-gradient;
+      background-position: bottom right, center;
+      background-repeat: no-repeat;
+      content: '';
+      opacity: 0;
+      transition: all 300ms ease-in-out;
+    }
 
-    //   & .quiz-step-2__title {
-    //     color: $white;
-    //   }
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
 
-    //   & .quiz-step-2__title {
-    //     color: rgba(255, 255, 255, 0.8);
-    //   }
-    // }
+      & .quiz-step-2__number {
+        background-color: $white;
+      }
+
+      & .quiz-step-2__title {
+        color: $white;
+      }
+
+      & .quiz-step-2__text {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      & .btn.btn-svg {
+        color: $blue;
+        background-color: $white;
+
+        &::before {
+          content: none;
+        }
+      }
+    }
   }
 
   &__number {

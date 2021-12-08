@@ -88,17 +88,20 @@ function initMousemoveHandler({
 const quizCards = document.querySelectorAll('.quiz__card');
 const stepNumber = document.querySelector('.quiz__step span');
 const btnBack = document.querySelector('.btn-back');
+const quizTitle = document.querySelector('.quiz__title');
 
 quizCards.forEach((card) => {
   card.addEventListener('click', () => {
     quizTabs.goTo(1);
     stepNumber.textContent = '2';
+    quizTitle.textContent = 'Select the type of assistance';
   });
 });
 
 btnBack.addEventListener('click', () => {
   quizTabs.goTo(0);
   stepNumber.textContent = '1';
+  quizTitle.textContent = 'Сhoose who you are';
 });
 
 Swiper.use([Navigation, Pagination]);
@@ -107,11 +110,19 @@ const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
   spaceBetween: 20,
   speed: 800,
+  dynamicBullets: true,
+  dynamicMainBullets: 3,
 
   navigation: {
     nextEl: '.reviews__slider-btn--next',
     prevEl: '.reviews__slider-btn--prev',
   },
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
   breakpoints: {
     // when window width is >= 320px
     570: {
@@ -146,3 +157,15 @@ if (!isTouchDevice()) {
     step.classList.add('swipe');
   });
 }
+
+
+const sectionFuture = document.querySelector('.future');
+
+sectionFuture.addEventListener('aos:in', ({ detail }) => {
+  console.log('animated in', detail);
+});
+
+sectionFuture.addEventListener('aos:out', ({ detail }) => {
+  console.log('animated out', detail);
+});
+

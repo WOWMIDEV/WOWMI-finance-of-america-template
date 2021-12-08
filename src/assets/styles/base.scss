@@ -6,6 +6,24 @@ html {
   font-size: 16px;
 }
 
+::-webkit-scrollbar-track {
+  background-color: $white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: $white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $dark-blue;
+}
+
+* {
+  scrollbar-color: $dark-blue $white;
+  scrollbar-width: thin;
+}
+
 .container {
   width: 100%;
   max-width: $container-width;
@@ -152,6 +170,19 @@ html {
 
     &::before {
       background-position: center right 1.0625rem, center;
+    }
+  }
+
+  &.btn-svg {
+    background-image: none;
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+
+    .quiz__arrow {
+      margin-left: 0.625rem;
+    }
+
+    &::before {
+      background: $bg-gradient;
     }
   }
 

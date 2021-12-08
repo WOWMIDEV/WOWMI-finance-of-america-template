@@ -11,3 +11,13 @@
     transform: rotate(-6deg);
   }
 }
+
+[data-aos="number-animation"] {
+  opacity: 1;
+
+  &.aos-animate {
+    &::before {
+      width: 100%;
+    }
+  }
+}
