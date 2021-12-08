@@ -1745,7 +1745,6 @@
     position: relative;
     width: 100%;
     max-width: $slider-width;
-    max-height: 23.375rem;
     padding: 2.5rem;
     background-color: $dark-blue;
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
@@ -1759,16 +1758,14 @@
 
     &.swiper-slide-active {
       width: 100%;
-      max-height: 30.875rem;
       transition: max-height 1s ease-in-out;
 
       @media screen and (max-width: $sm) {
         max-height: none;
       }
 
-      & .reviews__info {
-        max-height: 500px;
-        transition: max-height 1s ease-in-out;
+      & .reviews__dropdown {
+        margin-top: 1.5rem;
       }
 
       & .reviews__img {
@@ -1847,23 +1844,28 @@
     color: $white;
     font-size: 1rem;
     line-height: 180%;
-
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    @media screen and (max-width: $sm) {
+      -webkit-line-clamp: initial;
+    }
   }
-
+  &__dropdown {
+    overflow: hidden;
+    transition: all 1s ease;
+    @media screen and (max-width: $sm) {
+      height: auto !important;
+      margin-top: 1.5rem;
+    }
+  }
   &__info {
     display: grid;
-    overflow: hidden;
-    max-height: 0;
-    margin-top: 1.5rem;
     grid-column-gap: 3.625rem;
     grid-row-gap: 0.25rem;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-
-    @media screen and (max-width: $sm) {
-      max-height: none;
-    }
   }
 
   &__info-type {
