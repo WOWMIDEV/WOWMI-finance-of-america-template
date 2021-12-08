@@ -124,7 +124,7 @@ function setMinReviewsHeight(swiper) {
 
 Swiper.use([Navigation, Pagination]);
 // eslint-disable-next-line no-unused-vars
-const reviewsSwiper = new Swiper('.swiper', {
+const reviewsSwiper = new Swiper('.reviews__swiper', {
   slidesPerView: 1,
   spaceBetween: 20,
   speed: 800,
@@ -158,19 +158,9 @@ const reviewsSwiper = new Swiper('.swiper', {
 });
 
 
-function isTouchDevice() {
-  return 'ontouchstart' in document.documentElement;
-}
-
-if (isTouchDevice()) {
-  document.querySelector('body').classList.add('touch-device');
-} else {
-  document.querySelector('body').classList.remove('touch-device');
-}
-
 const quizSteps = document.querySelectorAll('.quiz__tab .quiz__wrap-grid, .quiz__tab .quiz-step-2');
 
-if (!isTouchDevice()) {
+if (!document.body.classList.contains('touch-device')) {
   initMousemoveHandler({
     wrapperSelector: '.quiz__wrap-grid',
     targetSelector: '.quiz',

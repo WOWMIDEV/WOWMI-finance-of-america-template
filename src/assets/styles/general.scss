@@ -1516,7 +1516,9 @@
 
   & .news {
     margin-left: 3rem;
-
+    &:not(.js--active) {
+      width: unset;
+    }
     @media screen and (max-width: $md) {
       margin-left: 0;
     }

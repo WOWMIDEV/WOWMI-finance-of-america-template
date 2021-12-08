@@ -3,8 +3,27 @@ import '../styles/main.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SmoothScroll from 'smooth-scroll';
+
+import Swiper, { Navigation, Pagination } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+import 'swiper/components/navigation/navigation.min.css';
+import 'swiper/components/pagination/pagination.min.css';
+
 import Dropdowns from '../../modules/dropdowns/dropdowns';
 import Tabs from '../../modules/tabs/tabs';
+
+Swiper.use([Navigation, Pagination]);
+
+function isTouchDevice() {
+  return 'ontouchstart' in document.documentElement;
+}
+
+if (isTouchDevice()) {
+  document.body.classList.add('touch-device');
+} else {
+  document.body.classList.remove('touch-device');
+}
 
 
 AOS.init({
@@ -25,13 +44,6 @@ const scroll = new SmoothScroll('a', {
   touchpadSupport: true,
 });
 
-const menuTabs = new Tabs({
-  eventType: 'mouseover',
-  tabSelector: '.menu-tabs__tab',
-  btnSelector: '.menu__dd-link',
-});
-
-menuTabs.init();
 
 // TODO create function to init menu opening logic
 const menuBtn = document.querySelector('.header__burger');
@@ -68,6 +80,64 @@ burgerMutationObserver.observe(menuBtn, {
   attributes: true,
   attributeOldValue: true,
 });
+
+(function initMenuTabs() {
+  const tabSelector = '.types__cards';
+  const btnSelector = '.menu__dd-link';
+
+
+  if (!document.body.classList.contains('touch-device')) {
+    const menuTabs = new Tabs({
+      tabSelector,
+      btnSelector,
+      eventType: 'mouseover',
+    });
+
+    menuTabs.init();
+  } else {
+    const buttons = document.querySelectorAll(btnSelector);
+    const tabs = document.querySelectorAll(tabSelector);
+    const tabsGroups = [[]];
+    const swiperTemplate = document.querySelector('.menu__swiper');
+    const swipersWrappers = document.querySelectorAll('.menu__dd-content-inner');
+    const menuSwipers = [];
+
+    let buttonParent = buttons[0].parentNode;
+    let k = 0;
+
+    for (let i = 0; i < buttons.length; i += 1) {
+      if (buttonParent !== buttons[i].parentNode) {
+        k += 1;
+        buttonParent = buttons[i].parentNode;
+        tabsGroups[k] = [];
+      }
+      tabsGroups[k].push(tabs[i]);
+    }
+
+    for (let i = 0; i < tabsGroups.length; i += 1) {
+      const group = tabsGroups[i];
+      const swiperEl = swiperTemplate.cloneNode(true);
+      const wrapper = swiperEl.firstElementChild;
+
+      for (let j = 0; j < group.length; j += 1) {
+        const tab = group[j];
+        tab.classList.remove('tab');
+        tab.classList.add('swiper-slide');
+        wrapper.appendChild(tab);
+      }
+      swiperEl.classList.add(`menu__swiper--${i + 1}`);
+      swipersWrappers[i].appendChild(swiperEl);
+
+      const swiper = new Swiper(`.menu__swiper--${i + 1}`, {
+        slidesPerView: 1,
+        speed: 800,
+      });
+
+      menuSwipers.push(swiper);
+    }
+  }
+}());
+
 
 window.onload = () => {
   const transitionElem = document.querySelector('.transition');
