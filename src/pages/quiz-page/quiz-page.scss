@@ -20,7 +20,6 @@
     min-height: 5.875rem;
 
     .faq__question {
-      padding-top: 15px;
       transition: all 0.3s ease 0s;
     }
 
@@ -90,6 +89,16 @@
     justify-content: center;
     padding: 3.125rem 0;
     margin: 0 auto;
+  }
+
+  &__question--wrp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .faq__arrow {
+      position: static;
+    }
   }
 
   &__block {
