@@ -2,6 +2,10 @@
 @import '../../assets/styles/animation.scss';
 
 
+.page {
+  overflow: hidden;
+}
+
 .hero-card {
   position: absolute;
   bottom: 7.5rem;

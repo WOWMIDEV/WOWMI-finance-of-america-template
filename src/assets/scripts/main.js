@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SmoothScroll from 'smooth-scroll';
 import Dropdowns from '../../modules/dropdowns/dropdowns';
+import Tabs from '../../modules/tabs/tabs';
 
 
 AOS.init({
@@ -13,7 +14,8 @@ AOS.init({
   once: true,
 });
 
-SmoothScroll({
+// eslint-disable-next-line no-unused-vars
+const scroll = new SmoothScroll('a', {
   animationTime: 1000, // [ms]
   stepSize: 100, // [px]
   accelerationDelta: 20,
@@ -22,6 +24,14 @@ SmoothScroll({
   arrowScroll: 50, // [px]
   touchpadSupport: true,
 });
+
+const menuTabs = new Tabs({
+  eventType: 'mouseover',
+  tabSelector: '.menu-tabs__tab',
+  btnSelector: '.menu__dd-link',
+});
+
+menuTabs.init();
 
 
 // TODO create function to init menu opening logic
