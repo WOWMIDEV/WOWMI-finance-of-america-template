@@ -85,6 +85,7 @@ burgerMutationObserver.observe(menuBtn, {
   const tabSelector = '.types__cards';
   const btnSelector = '.menu__dd-link';
 
+  const swiperTemplate = document.querySelector('.menu__swiper');
 
   if (!document.body.classList.contains('touch-device')) {
     const menuTabs = new Tabs({
@@ -96,9 +97,8 @@ burgerMutationObserver.observe(menuBtn, {
     menuTabs.init();
   } else {
     const buttons = document.querySelectorAll(btnSelector);
-    const tabs = document.querySelectorAll(tabSelector);
+    const tabs = [...document.querySelectorAll(tabSelector)];
     const tabsGroups = [[]];
-    const swiperTemplate = document.querySelector('.menu__swiper');
     const swipersWrappers = document.querySelectorAll('.menu__dd-content-inner');
     const menuSwipers = [];
 
@@ -135,7 +135,35 @@ burgerMutationObserver.observe(menuBtn, {
 
       menuSwipers.push(swiper);
     }
+
+    const config = {
+      attributes: true,
+      childList: false,
+      subtree: false,
+    };
+    const callback = function activeSlideToActiveTabcallback(mutationsList, observer) {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'attributes') {
+          const tab = mutation.target;
+          if (tab.classList.contains('swiper-slide-active')) {
+            console.log(tab);
+            const tabIndex = tabs.indexOf(tab);
+            console.log(tabIndex);
+            buttons.forEach((btn) => {
+              btn.classList.remove('js--active');
+            });
+            buttons[tabIndex].classList.add('js--active');
+          }
+        }
+      }
+    };
+    const activeTabObserver = new MutationObserver(callback);
+    tabs.forEach((tab) => {
+      activeTabObserver.observe(tab, config);
+    });
   }
+  swiperTemplate.remove();
 }());
 
 
