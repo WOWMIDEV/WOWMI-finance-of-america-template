@@ -85,7 +85,7 @@ function initMousemoveHandler({
 }
 
 
-const quizCards = document.querySelectorAll('.quiz__card');
+const quizCards = document.querySelectorAll('.quiz__type-2');
 const stepNumber = document.querySelector('.quiz__step span');
 const btnBack = document.querySelector('.btn-back');
 const quizTitle = document.querySelector('.quiz__title');

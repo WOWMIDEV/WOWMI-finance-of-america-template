@@ -211,8 +211,4 @@ window.onload = () => {
   });
 };
 
-function toggle() {
-  const video = document.querySelector('.video');
 
-  video.classList.toggle('js-active');
-}
