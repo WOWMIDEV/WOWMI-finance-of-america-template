@@ -1478,6 +1478,15 @@
     padding: 7rem 0 5rem 0;
   }
 
+  &__swiper {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    min-height: 0;
+    min-width: 0;
+
+  }
+
   & .types__cards {
     display: grid;
     grid-template-columns: 1fr 19.8125rem;
@@ -1485,6 +1494,9 @@
     @media screen and (max-width: $lg) {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;
+      width: auto;
+      height: 100%;
+      max-height: 100%;
     }
 
     @media screen and (max-width: $md) {
@@ -1522,8 +1534,9 @@
       width: unset;
     }
 
-    @media screen and (max-width: $md) {
+    @media screen and (max-width: $lg) {
       margin-left: 0;
+      padding-bottom: 2.5rem;
     }
   }
 
@@ -1551,7 +1564,7 @@
   }
 
   &__dd-links {
-    @media screen and (max-width: $md) {
+    @media screen and (max-width: $lg) {
       display: flex;
     }
   }
@@ -1597,7 +1610,7 @@
     line-height: 110%;
     transition: all 0.3s ease 0s;
 
-    @media screen and (max-width: $md) {
+    @media screen and (max-width: $lg) {
       &+.menu__dd-link {
         margin-left: 1.875rem;
       }

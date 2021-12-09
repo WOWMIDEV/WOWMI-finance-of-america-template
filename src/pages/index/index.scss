@@ -79,6 +79,21 @@
 
 
 .future {
+
+  &.section {
+    background-image: url(../../assets/images/noise.png), url(../../assets/images/full-logo-mobile.svg), linear-gradient(98.74deg, #1c3155 0%, #2459b5 94.47%);
+    background-position: center, bottom -109px right -171px, center;
+    background-repeat: repeat, no-repeat;
+    background-size: auto, 34.625rem 42.1875rem, auto;
+
+    @media screen and (max-width: $sm) {
+      background-position: center, center center, center;
+      background-size: auto, 27.625rem 33.188rem, auto;
+    }
+
+  }
+
+
   &-wrp {
     display: flex;
     justify-content: space-between;
