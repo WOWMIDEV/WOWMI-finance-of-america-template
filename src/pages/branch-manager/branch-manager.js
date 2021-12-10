@@ -12,7 +12,7 @@ import Tabs from '../../modules/tabs/tabs';
 import Dropdowns from '../../modules/dropdowns/dropdowns';
 
 const tabs = new Tabs({
-  tabSelector: '.tab',
+  tabSelector: '.types-tabs__tab',
   btnSelector: '.tabs__nav-btn',
 });
 tabs.init();
