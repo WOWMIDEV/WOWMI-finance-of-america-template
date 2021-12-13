@@ -87,22 +87,26 @@ function initMousemoveHandler({
 
 const quizCards = document.querySelectorAll('.quiz__type-2');
 const stepNumber = document.querySelector('.quiz__step span');
-const btnBack = document.querySelector('.btn-back');
+const btnBack = document.querySelectorAll('.btn-back');
 const quizTitle = document.querySelector('.quiz__title');
 
-quizCards.forEach((card) => {
+quizCards.forEach((card, i) => {
   card.addEventListener('click', () => {
-    quizTabs.goTo(1);
+    quizTabs.goTo(i + 1);
     stepNumber.textContent = '2';
     quizTitle.textContent = 'Select the type of assistance';
   });
 });
 
-btnBack.addEventListener('click', () => {
-  quizTabs.goTo(0);
-  stepNumber.textContent = '1';
-  quizTitle.textContent = 'Сhoose who you are';
+
+btnBack.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    quizTabs.goTo(0);
+    stepNumber.textContent = '1';
+    quizTitle.textContent = 'Сhoose who you are';
+  });
 });
+
 
 const reviewsDropdowns = new Dropdowns(
   {
@@ -174,14 +178,4 @@ if (!document.body.classList.contains('touch-device')) {
   });
 }
 
-
-const sectionFuture = document.querySelector('.future');
-
-sectionFuture.addEventListener('aos:in', ({ detail }) => {
-  console.log('animated in', detail);
-});
-
-sectionFuture.addEventListener('aos:out', ({ detail }) => {
-  console.log('animated out', detail);
-});
 

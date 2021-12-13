@@ -43,7 +43,10 @@
   &__bg {
     width: 100%;
     max-width: 36.875rem;
-    background: #e8ecf2;
+    background-color: #e8ecf2;
+    background-image: url(../../assets/images/bg_logo-whhite.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
 
     @media screen and (max-width: $md) {
       max-width: none;
