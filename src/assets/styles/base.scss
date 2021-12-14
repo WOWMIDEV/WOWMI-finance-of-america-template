@@ -54,6 +54,8 @@ html {
 .bg-gradient {
   padding: 7.5rem 0;
   background-image: url(../images/noise.png), linear-gradient(98.74deg, #1c3155 0%, #2459b5 94.47%);
+  background-size: auto, 200% 200%;
+  animation: gradient 10s ease infinite;
 
   @media screen and (max-width: $md) {
     padding: 5rem 0;

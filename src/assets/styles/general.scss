@@ -79,6 +79,59 @@
     justify-content: space-between;
   }
 
+  &__item {
+    position: relative;
+    margin-bottom: -2.75rem;
+    padding-bottom: 2.75rem;
+
+    &:hover {
+      & .header__dd {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: initial;
+        transition: all 0.3s ease 0s;
+      }
+    }
+  }
+
+  &__dd {
+    min-width: 100%;
+    padding: 1.875rem;
+    position: absolute;
+    background: $white;
+    box-shadow: 0px 24px 74px rgba(29, 50, 86, 0.15);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+    min-width: 13rem;
+    top: 2.75rem;
+    left: 1.5625rem;
+
+    @media screen and (max-width: $lg) {
+      display: none;
+    }
+  }
+
+  &__dd-link {
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 110%;
+    color: $dark-blue;
+    transition: all 0.3s ease 0s;
+    margin-bottom: 1.5625rem;
+    display: block;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
   &__left {
     display: flex;
     align-items: center;
@@ -564,7 +617,7 @@
     display: grid;
     grid-column-gap: 2rem;
     grid-row-gap: 1.25rem;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 
     @media screen and (max-width: $md) {
@@ -1238,6 +1291,7 @@
   &__card {
     position: relative;
     padding: 2.5rem;
+    display: block;
 
     & .play-icon {
       @media screen and (max-width: $sm) {

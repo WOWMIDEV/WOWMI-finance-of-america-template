@@ -8,6 +8,7 @@
   // z-index: 1;
   padding: 5rem 0;
   color: $white;
+  padding-top: 9rem;
 
   &::after {
     position: absolute;
@@ -24,7 +25,7 @@
     &::after {
       content: '';
       background-image: url(../../assets/images/logo.svg);
-      background-position: center top -1.3125rem;
+      background-position: center top 2rem;
       background-repeat: no-repeat;
       background-size: 33.0625rem 33rem;
       width: 100%;

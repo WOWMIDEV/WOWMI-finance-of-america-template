@@ -742,6 +742,10 @@
     padding: 2.5rem;
     background-color: $dark-blue;
 
+    &--min-padding {
+      padding: 2.1875rem 2.5rem;
+    }
+
     @media screen and (max-width: $lg) {
       padding: 1.875rem;
     }

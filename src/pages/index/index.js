@@ -59,11 +59,17 @@ function initMousemoveHandler({
   targetSelector,
   padding = 60,
   softness = 20,
+  centred = false,
 }) {
   const wrapper = document.querySelector(wrapperSelector);
   const target = document.querySelector(targetSelector);
 
-  const targetWidth = target.clientWidth;
+  let targetWidth;
+  if (padding > 0 && !centred) {
+    targetWidth = target.clientWidth + window.innerWidth * 0.0625;
+  } else {
+    targetWidth = target.clientWidth;
+  }
   const targetScrollWidth = target.scrollWidth;
   const widthDifferenceRatio = targetScrollWidth / targetWidth - 1;
 
@@ -71,17 +77,29 @@ function initMousemoveHandler({
   let mX2 = 0; // Modified mouse position
   let posX = 0;
   const mmAA = targetWidth - padding * 2; // The mousemove available area
-  const mmAAr = targetWidth / mmAA; // get available mousemove difference ratio
+  const mmAAr = targetWidth / mmAA; // get available mousemove fidderence ratio
 
   target.addEventListener('mousemove', (event) => {
     mX = event.pageX - target.offsetLeft;
     mX2 = Math.min(Math.max(0, mX - padding), mmAA) * mmAAr;
   });
 
+  target.addEventListener('mouseleave', () => {
+    if (centred) {
+      mX2 = window.innerWidth / 2;
+    } else {
+      mX2 = 0;
+    }
+  });
+
+  if (centred) {
+    mX2 = window.innerWidth / 2;
+  }
+
   setInterval(() => {
     posX += (mX2 - posX) / softness; // zeno's paradox equation "catching delay"
     wrapper.style.marginLeft = `${-posX * widthDifferenceRatio}px`;
-  }, 10);
+  }, 20);
 }
 
 

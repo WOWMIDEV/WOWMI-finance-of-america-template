@@ -70,6 +70,7 @@ const menuDropdowns = new Dropdowns({
 });
 menuDropdowns.init();
 
+
 // TODO do we really need this observer?
 const burgerMutationObserver = new MutationObserver((mutations) => {
   for (let i = 0; i < mutations.length; i += 1) {
