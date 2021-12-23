@@ -20,25 +20,68 @@
   }
 }
 
+
+
 .section.inner-page {
   overflow: hidden;
+  padding-top: 0;
+
+  .hero__info {
+    @media screen and (max-width: $md) {
+      max-width: none;
+    }
+  }
+
+  .hero__title {
+    @media screen and (max-width: $md) {
+      text-align: center;
+    }
+  }
+
+  .breadcrumbs {
+    @media screen and (max-width: $md) {
+      justify-content: center;
+    }
+  }
+
+  & .swiper-button-prev,
+  & .swiper-button-next {
+    width: 4rem;
+    height: 4rem;
+    background: #e1e6ee;
+    border-radius: 50%;
+    transition: all 0.3s ease 0s;
+    position: static !important;
+    display: inline-flex;
+
+    @media screen and (max-width: $lg) {
+      display: none;
+    }
+
+    & .slider-arrow path {
+      transition: all 0.3s ease 0s;
+    }
+
+    &:hover {
+      background-color: $dark-blue;
+
+      .slider-arrow path {
+        stroke: $white;
+      }
+    }
+  }
+
+  & .swiper-button-prev {
+    margin-right: 0.9375rem;
+  }
 }
 
 .carousel {
-
+  max-width: 36.875rem;
   position: relative;
-  margin-bottom: 11.2rem;
-
-  @media screen and (max-width: $lg) {
-    margin-bottom: 8rem;
-  }
-
-  @media screen and (max-width: $sm) {
-    margin-bottom: 7rem;
-  }
+  margin-bottom: 3.9375rem;
 
   &.swiper {
-    overflow: visible;
 
     & .swiper-pagination-bullets {
       bottom: -4.25rem !important;
@@ -90,37 +133,24 @@
   .swiper-pagination-fraction {
     bottom: -3.125rem;
   }
+}
 
-  & .swiper-button-prev,
-  & .swiper-button-next {
-    width: 4rem;
-    height: 4rem;
-    background: #e1e6ee;
-    border-radius: 50%;
-    transition: all 0.3s ease 0s;
+.hero__bg.hero__bg-block {
+  display: block;
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 36.875rem;
 
-    @media screen and (max-width: $lg) {
-      display: none;
-    }
-
-    & .slider-arrow path {
-      transition: all 0.3s ease 0s;
-    }
-
-    &:hover {
-      background-color: $dark-blue;
-
-      .slider-arrow path {
-        stroke: $white;
-      }
-    }
+  @media screen and (max-width: $lg) {
+    max-height: none;
   }
+}
 
-  & .swiper-button-prev {
-    left: 16.8125rem;
-  }
+.hero__text {
+  margin-bottom: 3.125rem;
 
-  & .swiper-button-next {
-    right: 16.8125rem;
+  @media screen and (max-width: $md) {
+    margin-inline: auto;
+    margin-bottom: 1.25rem;
   }
 }
