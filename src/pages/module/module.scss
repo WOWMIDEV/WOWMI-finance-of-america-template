@@ -128,7 +128,23 @@
     }
   }
 
-  &__info {}
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $blue;
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 140%;
+    transition: all 0.3s ease 0s;
+
+    svg {
+      margin-left: 0.4rem;
+    }
+
+    &:hover {
+      color: $dark-blue;
+    }
+  }
 
   &__card-info {
     display: flex;
@@ -220,7 +236,7 @@
   }
 
   &__card-text {
-    max-width: 15.625rem;
+    max-width: 18.625rem;
     color: rgba(28, 49, 84, 0.8);
     font-size: 0.875rem;
     line-height: 180%;
