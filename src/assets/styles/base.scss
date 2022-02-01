@@ -38,8 +38,32 @@ html {
 .section {
   padding: 7.5rem 0;
 
+  &--blue {
+    background-color: rgba(70, 161, 209, 0.1);
+  }
+
   @media screen and (max-width: $md) {
     padding: 5rem 0;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.1875rem;
+
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__subtitle {
+    max-width: 30.5rem;
+    color: $dark-blue;
+
+    @media screen and (max-width: $md) {
+      text-align: center;
+    }
   }
 }
 

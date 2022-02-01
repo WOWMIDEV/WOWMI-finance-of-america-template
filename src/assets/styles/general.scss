@@ -1336,6 +1336,12 @@
     height: 100%;
     grid-template-rows: 1fr auto;
 
+    &-bottom--center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     // @media screen and (max-width: $md) {
     //   align-items: flex-end;
     // }
@@ -1452,6 +1458,10 @@
     height: 100%;
     grid-template-rows: 1fr auto;
 
+    @media screen and (max-width: $sm) {
+      background-size: 12.5rem;
+    }
+
     .news__tag {
       color: rgba(22, 60, 126, 0.6);
       align-self: flex-start;
@@ -1463,6 +1473,20 @@
 
     .news__title {
       color: $dark-blue;
+    }
+
+    .news__descr {
+      color: $dark-blue;
+    }
+
+    &.news__card--quote {
+      background-image: url(../images/quote-card.svg);
+      background-position: top 2.8125rem right 3.125rem;
+
+      @media screen and (max-width: $sm) {
+        background-position: bottom 1.25rem right 1.25rem;
+        background-size: auto;
+      }
     }
   }
 }
