@@ -476,11 +476,7 @@
     box-sizing: border-box;
     border: 0.125rem solid $blue;
     margin: 2.5rem auto 0.625rem;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    animation-name: mouseScroll;
-    animation-timing-function: ease;
+    animation: mouseScroll 5s infinite ease-in-out 2s;
     border-radius: 1.875rem;
 
     &::before {
