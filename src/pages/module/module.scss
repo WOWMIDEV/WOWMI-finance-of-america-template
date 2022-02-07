@@ -614,6 +614,10 @@
 
 
 .learn {
+  &__link {
+    margin-top: 0.5rem;
+  }
+
   &__text {
     @media screen and (max-width: $lg) {
       margin-bottom: 2.5rem;
