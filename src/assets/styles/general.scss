@@ -41,7 +41,56 @@
   }
 }
 
+.quiz {
+  &__mouse {
+    position: relative;
+    width: 1.5rem;
+    height: 2.375rem;
+    box-sizing: border-box;
+    border: 0.125rem solid $blue;
+    margin: 2.5rem auto 0.625rem;
+    animation: mouseScroll 5s infinite ease-in-out 2s;
+    border-radius: 1.875rem;
 
+    &.no-animation {
+      animation: none;
+    }
+
+    &.mouse--white {
+      border-color: #fff;
+      margin-top: 5rem;
+
+      &::before {
+        background-color: #fff;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 0.5625rem;
+      left: 50%;
+      width: 0.125rem;
+      height: 0.4375rem;
+      background-color: $blue;
+      border-radius: 6.25rem;
+      content: '';
+      transform: translateX(-50%);
+    }
+  }
+
+  &__mouse-text {
+    color: rgba(22, 60, 126, 0.5);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 100%;
+    text-align: center;
+    text-transform: capitalize;
+
+    &.mouse-text--white {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
 
 .header {
   position: fixed;
@@ -1316,10 +1365,6 @@
       grid-row-end: 3;
       grid-row-start: 1;
 
-      // @media screen and (max-width: $md) {
-      //   grid-row-end: auto;
-      //   grid-row-start: auto;
-      // }
       @media screen and (max-width: $sm) {
         grid-row-end: 1;
         grid-row-start: 1;
@@ -1341,10 +1386,6 @@
       flex-direction: column;
       justify-content: center;
     }
-
-    // @media screen and (max-width: $md) {
-    //   align-items: flex-end;
-    // }
 
     @media screen and (max-width: $sm) {
       display: block;
@@ -1400,8 +1441,7 @@
       width: 0.25rem;
       height: 0.25rem;
       margin-right: 0.3125rem;
-      background-color: inherit;
-      background-color: $dark-blue;
+      background-color: currentColor;
       border-radius: 50%;
       content: '';
     }

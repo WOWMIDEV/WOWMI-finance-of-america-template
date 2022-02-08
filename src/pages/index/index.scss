@@ -469,37 +469,7 @@
     display: inline-block;
   }
 
-  &__mouse {
-    position: relative;
-    width: 1.5rem;
-    height: 2.375rem;
-    box-sizing: border-box;
-    border: 0.125rem solid $blue;
-    margin: 2.5rem auto 0.625rem;
-    animation: mouseScroll 5s infinite ease-in-out 2s;
-    border-radius: 1.875rem;
 
-    &::before {
-      position: absolute;
-      top: 0.5625rem;
-      left: 50%;
-      width: 0.125rem;
-      height: 0.4375rem;
-      background-color: $blue;
-      border-radius: 6.25rem;
-      content: '';
-      transform: translateX(-50%);
-    }
-  }
-
-  &__mouse-text {
-    color: rgba(22, 60, 126, 0.5);
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 100%;
-    text-align: center;
-    text-transform: capitalize;
-  }
 
   &__lottie {
     svg {
